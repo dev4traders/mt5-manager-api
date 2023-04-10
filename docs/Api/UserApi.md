@@ -1,20 +1,74 @@
-# Swagger\Client\UserApi
+# D4T\UserApi
 
 All URIs are relative to *http://localhost:6503/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**updateUser**](UserApi.md#updateuser) | **POST** /user/update | Update user
-[**userAddPost**](UserApi.md#useraddpost) | **POST** /user/add | Create user
-[**userDepositPost**](UserApi.md#userdepositpost) | **POST** /user/deposit | Deposit account
-[**userResetPwdPost**](UserApi.md#userresetpwdpost) | **POST** /user/reset_pwd | Reset password
-[**userUserLoginDelete**](UserApi.md#useruserlogindelete) | **DELETE** /user/{user_login} | Delete user
-[**userUserLoginGet**](UserApi.md#useruserloginget) | **GET** /user/{user_login} | Get user by user login
-[**userWithdrawPost**](UserApi.md#userwithdrawpost) | **POST** /user/withdraw | Withdraw account
-[**usersGroupGet**](UserApi.md#usersgroupget) | **GET** /users/{group} | Get list of users
+[**deleteUser**](UserApi.md#deleteUser) | **DELETE** /user/{user_login} | Delete user
+[**updateUser**](UserApi.md#updateUser) | **POST** /user/update | Update user
+[**userAddPost**](UserApi.md#userAddPost) | **POST** /user/add | Create user
+[**userDepositPost**](UserApi.md#userDepositPost) | **POST** /user/deposit | Deposit account
+[**userResetPwdPost**](UserApi.md#userResetPwdPost) | **POST** /user/reset_pwd | Reset password
+[**userUserLoginGet**](UserApi.md#userUserLoginGet) | **GET** /user/{user_login} | Get user by user login
+[**userWithdrawPost**](UserApi.md#userWithdrawPost) | **POST** /user/withdraw | Withdraw account
+[**usersBulkAddPost**](UserApi.md#usersBulkAddPost) | **POST** /users/bulk_add | Create users
+[**usersBulkBalancePost**](UserApi.md#usersBulkBalancePost) | **POST** /users/bulk_balance | bulk balance
+[**usersBulkUpdatePost**](UserApi.md#usersBulkUpdatePost) | **POST** /users/bulk_update | bulk update
+[**usersBulkWithdrawPost**](UserApi.md#usersBulkWithdrawPost) | **POST** /users/bulk_withdraw | bulk withdraw
+[**usersGroupGet**](UserApi.md#usersGroupGet) | **GET** /users/{group} | Get list of users
+[**usersUploadPost**](UserApi.md#usersUploadPost) | **POST** /users/upload | Upload account in csv
+
+
+# **deleteUser**
+> deleteUser($token, $user_login)
+
+Delete user
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new D4T\Api\UserApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$token = "token_example"; // string | Session token
+$user_login = "user_login_example"; // string | The login that needs to be deleted
+
+try {
+    $apiInstance->deleteUser($token, $user_login);
+} catch (Exception $e) {
+    echo 'Exception when calling UserApi->deleteUser: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **token** | **string**| Session token |
+ **user_login** | **string**| The login that needs to be deleted |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateUser**
-> updateUser($body)
+> updateUser($token, $body)
 
 Update user
 
@@ -22,21 +76,17 @@ Update user
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-    // Configure HTTP bearer authorization: bearerAuth
-    $config = Swagger\Client\Configuration::getDefaultConfiguration()
-    ->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
-$apiInstance = new Swagger\Client\Api\UserApi(
+$apiInstance = new D4T\Api\UserApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
-$body = new \Swagger\Client\Model\User(); // \Swagger\Client\Model\User | {"login": 1, "password":"new_pwd", "name":"new_name"}
+$token = "token_example"; // string | Session token
+$body = new \D4T\MT5ManagerModels\User(); // \D4T\MT5ManagerModels\User | {\"login\": 1, \"password\":\"new_pwd\", \"name\":\"new_name\"}
 
 try {
-    $apiInstance->updateUser($body);
+    $apiInstance->updateUser($token, $body);
 } catch (Exception $e) {
     echo 'Exception when calling UserApi->updateUser: ', $e->getMessage(), PHP_EOL;
 }
@@ -47,7 +97,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\User**](../Model/User.md)| {&quot;login&quot;: 1, &quot;password&quot;:&quot;new_pwd&quot;, &quot;name&quot;:&quot;new_name&quot;} |
+ **token** | **string**| Session token |
+ **body** | [**\D4T\MT5ManagerModels\User**](../Model/User.md)| {\&quot;login\&quot;: 1, \&quot;password\&quot;:\&quot;new_pwd\&quot;, \&quot;name\&quot;:\&quot;new_name\&quot;} |
 
 ### Return type
 
@@ -55,7 +106,7 @@ void (empty response body)
 
 ### Authorization
 
-[bearerAuth](../../README.md#bearerAuth)
+No authorization required
 
 ### HTTP request headers
 
@@ -65,7 +116,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **userAddPost**
-> \Swagger\Client\Model\UserReturnType userAddPost($body)
+> \D4T\MT5ManagerModels\UserReturnType userAddPost($token, $body)
 
 Create user
 
@@ -73,21 +124,17 @@ Create user
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-    // Configure HTTP bearer authorization: bearerAuth
-    $config = Swagger\Client\Configuration::getDefaultConfiguration()
-    ->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
-$apiInstance = new Swagger\Client\Api\UserApi(
+$apiInstance = new D4T\Api\UserApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
-$body = new \Swagger\Client\Model\User(); // \Swagger\Client\Model\User | {"password_investor":"123456Aa","password":"123456Aa", "name":"test", "email": "test@test.com","group":"demo\demoforex","leverage":100}
+$token = "token_example"; // string | Session token
+$body = new \D4T\MT5ManagerModels\User(); // \D4T\MT5ManagerModels\User | {\"password_investor\":\"123456Aa\",\"password\":\"123456Aa\", \"name\":\"test\", \"email\": \"test@test.com\",\"group\":\"demo\\demoforex\",\"leverage\":100}
 
 try {
-    $result = $apiInstance->userAddPost($body);
+    $result = $apiInstance->userAddPost($token, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UserApi->userAddPost: ', $e->getMessage(), PHP_EOL;
@@ -99,15 +146,16 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\User**](../Model/User.md)| {&quot;password_investor&quot;:&quot;123456Aa&quot;,&quot;password&quot;:&quot;123456Aa&quot;, &quot;name&quot;:&quot;test&quot;, &quot;email&quot;: &quot;test@test.com&quot;,&quot;group&quot;:&quot;demo\demoforex&quot;,&quot;leverage&quot;:100} |
+ **token** | **string**| Session token |
+ **body** | [**\D4T\MT5ManagerModels\User**](../Model/User.md)| {\&quot;password_investor\&quot;:\&quot;123456Aa\&quot;,\&quot;password\&quot;:\&quot;123456Aa\&quot;, \&quot;name\&quot;:\&quot;test\&quot;, \&quot;email\&quot;: \&quot;test@test.com\&quot;,\&quot;group\&quot;:\&quot;demo\\demoforex\&quot;,\&quot;leverage\&quot;:100} |
 
 ### Return type
 
-[**\Swagger\Client\Model\UserReturnType**](../Model/UserReturnType.md)
+[**\D4T\MT5ManagerModels\UserReturnType**](../Model/UserReturnType.md)
 
 ### Authorization
 
-[bearerAuth](../../README.md#bearerAuth)
+No authorization required
 
 ### HTTP request headers
 
@@ -117,31 +165,27 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **userDepositPost**
-> userDepositPost($body)
+> userDepositPost($token, $body)
 
 Deposit account
 
-Deposit account
+
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-    // Configure HTTP bearer authorization: bearerAuth
-    $config = Swagger\Client\Configuration::getDefaultConfiguration()
-    ->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
-$apiInstance = new Swagger\Client\Api\UserApi(
+$apiInstance = new D4T\Api\UserApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
-$body = new \Swagger\Client\Model\BalanceType(); // \Swagger\Client\Model\BalanceType | {"login": 1, "amount":1, "type": 3, "comment": "F.Management"}
+$token = "token_example"; // string | Session token
+$body = new \D4T\MT5ManagerModels\BalanceType(); // \D4T\MT5ManagerModels\BalanceType | {\"login\": 1, \"amount\":1, \"type\": 3, \"comment\": \"F.Management\"}
 
 try {
-    $apiInstance->userDepositPost($body);
+    $apiInstance->userDepositPost($token, $body);
 } catch (Exception $e) {
     echo 'Exception when calling UserApi->userDepositPost: ', $e->getMessage(), PHP_EOL;
 }
@@ -152,7 +196,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\BalanceType**](../Model/BalanceType.md)| {&quot;login&quot;: 1, &quot;amount&quot;:1, &quot;type&quot;: 3, &quot;comment&quot;: &quot;F.Management&quot;} |
+ **token** | **string**| Session token |
+ **body** | [**\D4T\MT5ManagerModels\BalanceType**](../Model/BalanceType.md)| {\&quot;login\&quot;: 1, \&quot;amount\&quot;:1, \&quot;type\&quot;: 3, \&quot;comment\&quot;: \&quot;F.Management\&quot;} |
 
 ### Return type
 
@@ -160,7 +205,7 @@ void (empty response body)
 
 ### Authorization
 
-[bearerAuth](../../README.md#bearerAuth)
+No authorization required
 
 ### HTTP request headers
 
@@ -170,7 +215,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **userResetPwdPost**
-> userResetPwdPost($body)
+> userResetPwdPost($token, $body)
 
 Reset password
 
@@ -180,21 +225,17 @@ Reset password
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-    // Configure HTTP bearer authorization: bearerAuth
-    $config = Swagger\Client\Configuration::getDefaultConfiguration()
-    ->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
-$apiInstance = new Swagger\Client\Api\UserApi(
+$apiInstance = new D4T\Api\UserApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
-$body = new \Swagger\Client\Model\ResetPwdType(); // \Swagger\Client\Model\ResetPwdType | {"login": 1, "password":"new_pwd", "change_investor":0}
+$token = "token_example"; // string | Session token
+$body = new \D4T\MT5ManagerModels\ResetPwdType(); // \D4T\MT5ManagerModels\ResetPwdType | {\"login\": 1, \"password\":\"new_pwd\", \"change_investor\":0}
 
 try {
-    $apiInstance->userResetPwdPost($body);
+    $apiInstance->userResetPwdPost($token, $body);
 } catch (Exception $e) {
     echo 'Exception when calling UserApi->userResetPwdPost: ', $e->getMessage(), PHP_EOL;
 }
@@ -205,7 +246,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\ResetPwdType**](../Model/ResetPwdType.md)| {&quot;login&quot;: 1, &quot;password&quot;:&quot;new_pwd&quot;, &quot;change_investor&quot;:0} |
+ **token** | **string**| Session token |
+ **body** | [**\D4T\MT5ManagerModels\ResetPwdType**](../Model/ResetPwdType.md)| {\&quot;login\&quot;: 1, \&quot;password\&quot;:\&quot;new_pwd\&quot;, \&quot;change_investor\&quot;:0} |
 
 ### Return type
 
@@ -213,7 +255,7 @@ void (empty response body)
 
 ### Authorization
 
-[bearerAuth](../../README.md#bearerAuth)
+No authorization required
 
 ### HTTP request headers
 
@@ -222,83 +264,28 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **userUserLoginDelete**
-> userUserLoginDelete($user_login)
-
-Delete user
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-    // Configure HTTP bearer authorization: bearerAuth
-    $config = Swagger\Client\Configuration::getDefaultConfiguration()
-    ->setAccessToken('YOUR_ACCESS_TOKEN');
-
-
-$apiInstance = new Swagger\Client\Api\UserApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$user_login = "user_login_example"; // string | The login that needs to be deleted
-
-try {
-    $apiInstance->userUserLoginDelete($user_login);
-} catch (Exception $e) {
-    echo 'Exception when calling UserApi->userUserLoginDelete: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **user_login** | **string**| The login that needs to be deleted |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[bearerAuth](../../README.md#bearerAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
 # **userUserLoginGet**
-> \Swagger\Client\Model\User userUserLoginGet($user_login)
+> \D4T\MT5ManagerModels\User userUserLoginGet($token, $user_login)
 
 Get user by user login
 
-Deposit account
+
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-    // Configure HTTP bearer authorization: bearerAuth
-    $config = Swagger\Client\Configuration::getDefaultConfiguration()
-    ->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
-$apiInstance = new Swagger\Client\Api\UserApi(
+$apiInstance = new D4T\Api\UserApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
+$token = "token_example"; // string | Session token
 $user_login = "user_login_example"; // string | The name that needs to be fetched. Use 3 for testing.
 
 try {
-    $result = $apiInstance->userUserLoginGet($user_login);
+    $result = $apiInstance->userUserLoginGet($token, $user_login);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UserApi->userUserLoginGet: ', $e->getMessage(), PHP_EOL;
@@ -310,15 +297,16 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **token** | **string**| Session token |
  **user_login** | **string**| The name that needs to be fetched. Use 3 for testing. |
 
 ### Return type
 
-[**\Swagger\Client\Model\User**](../Model/User.md)
+[**\D4T\MT5ManagerModels\User**](../Model/User.md)
 
 ### Authorization
 
-[bearerAuth](../../README.md#bearerAuth)
+No authorization required
 
 ### HTTP request headers
 
@@ -328,7 +316,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **userWithdrawPost**
-> userWithdrawPost($body)
+> userWithdrawPost($token, $body)
 
 Withdraw account
 
@@ -338,21 +326,17 @@ Withdraw account
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-    // Configure HTTP bearer authorization: bearerAuth
-    $config = Swagger\Client\Configuration::getDefaultConfiguration()
-    ->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
-$apiInstance = new Swagger\Client\Api\UserApi(
+$apiInstance = new D4T\Api\UserApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
-$body = new \Swagger\Client\Model\BalanceType(); // \Swagger\Client\Model\BalanceType | {"login": 1, "amount":1, "type": 3, "comment": "F.Management"}
+$token = "token_example"; // string | Session token
+$body = new \D4T\MT5ManagerModels\BalanceType(); // \D4T\MT5ManagerModels\BalanceType | {\"login\": 1, \"amount\":1, \"type\": 3, \"comment\": \"F.Management\"}
 
 try {
-    $apiInstance->userWithdrawPost($body);
+    $apiInstance->userWithdrawPost($token, $body);
 } catch (Exception $e) {
     echo 'Exception when calling UserApi->userWithdrawPost: ', $e->getMessage(), PHP_EOL;
 }
@@ -363,7 +347,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\BalanceType**](../Model/BalanceType.md)| {&quot;login&quot;: 1, &quot;amount&quot;:1, &quot;type&quot;: 3, &quot;comment&quot;: &quot;F.Management&quot;} |
+ **token** | **string**| Session token |
+ **body** | [**\D4T\MT5ManagerModels\BalanceType**](../Model/BalanceType.md)| {\&quot;login\&quot;: 1, \&quot;amount\&quot;:1, \&quot;type\&quot;: 3, \&quot;comment\&quot;: \&quot;F.Management\&quot;} |
 
 ### Return type
 
@@ -371,7 +356,7 @@ void (empty response body)
 
 ### Authorization
 
-[bearerAuth](../../README.md#bearerAuth)
+No authorization required
 
 ### HTTP request headers
 
@@ -380,8 +365,202 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **usersBulkAddPost**
+> usersBulkAddPost($token, $body)
+
+Create users
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new D4T\Api\UserApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$token = "token_example"; // string | Session token
+$body = new \D4T\MT5ManagerModels\Users(); // \D4T\MT5ManagerModels\Users | {\"groupname\":\"demohfx-usd\",\"password\":\"123456Aa\", \"firstname\":\"test\", \"firstname\":\"test\", \"email\": \"test@test.com\"}
+
+try {
+    $apiInstance->usersBulkAddPost($token, $body);
+} catch (Exception $e) {
+    echo 'Exception when calling UserApi->usersBulkAddPost: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **token** | **string**| Session token |
+ **body** | [**\D4T\MT5ManagerModels\Users**](../Model/Users.md)| {\&quot;groupname\&quot;:\&quot;demohfx-usd\&quot;,\&quot;password\&quot;:\&quot;123456Aa\&quot;, \&quot;firstname\&quot;:\&quot;test\&quot;, \&quot;firstname\&quot;:\&quot;test\&quot;, \&quot;email\&quot;: \&quot;test@test.com\&quot;} |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **usersBulkBalancePost**
+> usersBulkBalancePost($token, $upfile)
+
+bulk balance
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new D4T\Api\UserApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$token = "token_example"; // string | Session token
+$upfile = "/path/to/file.txt"; // \SplFileObject | File in CSV format
+
+try {
+    $apiInstance->usersBulkBalancePost($token, $upfile);
+} catch (Exception $e) {
+    echo 'Exception when calling UserApi->usersBulkBalancePost: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **token** | **string**| Session token |
+ **upfile** | **\SplFileObject**| File in CSV format |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **usersBulkUpdatePost**
+> \D4T\MT5ManagerModels\ReturnType usersBulkUpdatePost($token, $upfile)
+
+bulk update
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new D4T\Api\UserApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$token = "token_example"; // string | Session token
+$upfile = "/path/to/file.txt"; // \SplFileObject | File in CSV format
+
+try {
+    $result = $apiInstance->usersBulkUpdatePost($token, $upfile);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling UserApi->usersBulkUpdatePost: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **token** | **string**| Session token |
+ **upfile** | **\SplFileObject**| File in CSV format |
+
+### Return type
+
+[**\D4T\MT5ManagerModels\ReturnType**](../Model/ReturnType.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **usersBulkWithdrawPost**
+> \D4T\MT5ManagerModels\ReturnType usersBulkWithdrawPost($token, $upfile)
+
+bulk withdraw
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new D4T\Api\UserApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$token = "token_example"; // string | Session token
+$upfile = "/path/to/file.txt"; // \SplFileObject | File in CSV format
+
+try {
+    $result = $apiInstance->usersBulkWithdrawPost($token, $upfile);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling UserApi->usersBulkWithdrawPost: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **token** | **string**| Session token |
+ **upfile** | **\SplFileObject**| File in CSV format |
+
+### Return type
+
+[**\D4T\MT5ManagerModels\ReturnType**](../Model/ReturnType.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **usersGroupGet**
-> \Swagger\Client\Model\ArrayOfCachedLogins usersGroupGet($group)
+> \D4T\MT5ManagerModels\ArrayOfCachedLogins usersGroupGet($token, $group)
 
 Get list of users
 
@@ -389,21 +568,17 @@ Get list of users
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-    // Configure HTTP bearer authorization: bearerAuth
-    $config = Swagger\Client\Configuration::getDefaultConfiguration()
-    ->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
-$apiInstance = new Swagger\Client\Api\UserApi(
+$apiInstance = new D4T\Api\UserApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
+$token = "token_example"; // string | Session token
 $group = "group_example"; // string | Group name
 
 try {
-    $result = $apiInstance->usersGroupGet($group);
+    $result = $apiInstance->usersGroupGet($token, $group);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UserApi->usersGroupGet: ', $e->getMessage(), PHP_EOL;
@@ -415,19 +590,69 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **token** | **string**| Session token |
  **group** | **string**| Group name |
 
 ### Return type
 
-[**\Swagger\Client\Model\ArrayOfCachedLogins**](../Model/ArrayOfCachedLogins.md)
+[**\D4T\MT5ManagerModels\ArrayOfCachedLogins**](../Model/ArrayOfCachedLogins.md)
 
 ### Authorization
 
-[bearerAuth](../../README.md#bearerAuth)
+No authorization required
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **usersUploadPost**
+> \D4T\MT5ManagerModels\ReturnType usersUploadPost($token, $upfile)
+
+Upload account in csv
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new D4T\Api\UserApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$token = "token_example"; // string | Session token
+$upfile = "/path/to/file.txt"; // \SplFileObject | File in CSV format
+
+try {
+    $result = $apiInstance->usersUploadPost($token, $upfile);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling UserApi->usersUploadPost: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **token** | **string**| Session token |
+ **upfile** | **\SplFileObject**| File in CSV format |
+
+### Return type
+
+[**\D4T\MT5ManagerModels\ReturnType**](../Model/ReturnType.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)

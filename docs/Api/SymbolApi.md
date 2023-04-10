@@ -1,13 +1,14 @@
-# Swagger\Client\SymbolApi
+# D4T\SymbolApi
 
 All URIs are relative to *http://localhost:6503/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**symbolsGet**](SymbolApi.md#symbolsget) | **GET** /symbols/ | Get list of market symbols
+[**symbolsGet**](SymbolApi.md#symbolsGet) | **GET** /symbols/ | Get list of market symbols
+
 
 # **symbolsGet**
-> \Swagger\Client\Model\ArrayOfSymbols symbolsGet()
+> \D4T\MT5ManagerModels\ArrayOfSymbols symbolsGet($token)
 
 Get list of market symbols
 
@@ -15,20 +16,16 @@ Get list of market symbols
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-    // Configure HTTP bearer authorization: bearerAuth
-    $config = Swagger\Client\Configuration::getDefaultConfiguration()
-    ->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
-$apiInstance = new Swagger\Client\Api\SymbolApi(
+$apiInstance = new D4T\Api\SymbolApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
+$token = "token_example"; // string | Session token
 
 try {
-    $result = $apiInstance->symbolsGet();
+    $result = $apiInstance->symbolsGet($token);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SymbolApi->symbolsGet: ', $e->getMessage(), PHP_EOL;
@@ -37,15 +34,18 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **token** | **string**| Session token |
 
 ### Return type
 
-[**\Swagger\Client\Model\ArrayOfSymbols**](../Model/ArrayOfSymbols.md)
+[**\D4T\MT5ManagerModels\ArrayOfSymbols**](../Model/ArrayOfSymbols.md)
 
 ### Authorization
 
-[bearerAuth](../../README.md#bearerAuth)
+No authorization required
 
 ### HTTP request headers
 
