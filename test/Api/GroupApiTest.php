@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  D4T
+ * @package  D4T\MT5Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,17 +26,17 @@
  * Please update the test case below to test the endpoint.
  */
 
-namespace D4T;
+namespace D4T\MT5Sdk;
 
-use \D4T\Configuration;
-use \D4T\ApiException;
-use \D4T\ObjectSerializer;
+use \D4T\MT5Sdk\Configuration;
+use \D4T\MT5Sdk\ApiException;
+use \D4T\MT5Sdk\ObjectSerializer;
 
 /**
  * GroupApiTest Class Doc Comment
  *
  * @category Class
- * @package  D4T
+ * @package  D4T\MT5Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */

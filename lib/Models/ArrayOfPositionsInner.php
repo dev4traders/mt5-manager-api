@@ -1,11 +1,11 @@
 <?php
 /**
- * ArrayOfSymbols
+ * ArrayOfPositionsInner
  *
  * PHP version 5
  *
  * @category Class
- * @package  D4T
+ * @package  D4T\MT5Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,20 +27,20 @@
  * Do not edit the class manually.
  */
 
-namespace D4T\MT5ManagerModels;
+namespace D4T\MT5Sdk\Models;
 
 use \ArrayAccess;
-use \D4T\ObjectSerializer;
+use \D4T\MT5Sdk\ObjectSerializer;
 
 /**
- * ArrayOfSymbols Class Doc Comment
+ * ArrayOfPositionsInner Class Doc Comment
  *
  * @category Class
- * @package  D4T
+ * @package  D4T\MT5Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ArrayOfSymbols implements ModelInterface, ArrayAccess
+class ArrayOfPositionsInner implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class ArrayOfSymbols implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ArrayOfSymbols';
+    protected static $swaggerModelName = 'ArrayOfPositions_inner';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,7 +57,12 @@ class ArrayOfSymbols implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        
+        'action' => 'int',
+        'volume' => 'float',
+        'symbol' => 'string',
+        'price' => 'float',
+        'time' => 'string',
+        'id' => 'int'
     ];
 
     /**
@@ -66,7 +71,12 @@ class ArrayOfSymbols implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        
+        'action' => null,
+        'volume' => null,
+        'symbol' => null,
+        'price' => null,
+        'time' => null,
+        'id' => null
     ];
 
     /**
@@ -96,7 +106,12 @@ class ArrayOfSymbols implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        
+        'action' => 'action',
+        'volume' => 'volume',
+        'symbol' => 'symbol',
+        'price' => 'price',
+        'time' => 'time',
+        'id' => 'id'
     ];
 
     /**
@@ -105,7 +120,12 @@ class ArrayOfSymbols implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        
+        'action' => 'setAction',
+        'volume' => 'setVolume',
+        'symbol' => 'setSymbol',
+        'price' => 'setPrice',
+        'time' => 'setTime',
+        'id' => 'setId'
     ];
 
     /**
@@ -114,7 +134,12 @@ class ArrayOfSymbols implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        
+        'action' => 'getAction',
+        'volume' => 'getVolume',
+        'symbol' => 'getSymbol',
+        'price' => 'getPrice',
+        'time' => 'getTime',
+        'id' => 'getId'
     ];
 
     /**
@@ -177,6 +202,12 @@ class ArrayOfSymbols implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['action'] = isset($data['action']) ? $data['action'] : null;
+        $this->container['volume'] = isset($data['volume']) ? $data['volume'] : null;
+        $this->container['symbol'] = isset($data['symbol']) ? $data['symbol'] : null;
+        $this->container['price'] = isset($data['price']) ? $data['price'] : null;
+        $this->container['time'] = isset($data['time']) ? $data['time'] : null;
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
     }
 
     /**
@@ -186,7 +217,7 @@ class ArrayOfSymbols implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = parent::listInvalidProperties();
+        $invalidProperties = [];
 
         return $invalidProperties;
     }
@@ -202,6 +233,150 @@ class ArrayOfSymbols implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets action
+     *
+     * @return int
+     */
+    public function getAction()
+    {
+        return $this->container['action'];
+    }
+
+    /**
+     * Sets action
+     *
+     * @param int $action action
+     *
+     * @return $this
+     */
+    public function setAction($action)
+    {
+        $this->container['action'] = $action;
+
+        return $this;
+    }
+
+    /**
+     * Gets volume
+     *
+     * @return float
+     */
+    public function getVolume()
+    {
+        return $this->container['volume'];
+    }
+
+    /**
+     * Sets volume
+     *
+     * @param float $volume volume
+     *
+     * @return $this
+     */
+    public function setVolume($volume)
+    {
+        $this->container['volume'] = $volume;
+
+        return $this;
+    }
+
+    /**
+     * Gets symbol
+     *
+     * @return string
+     */
+    public function getSymbol()
+    {
+        return $this->container['symbol'];
+    }
+
+    /**
+     * Sets symbol
+     *
+     * @param string $symbol symbol
+     *
+     * @return $this
+     */
+    public function setSymbol($symbol)
+    {
+        $this->container['symbol'] = $symbol;
+
+        return $this;
+    }
+
+    /**
+     * Gets price
+     *
+     * @return float
+     */
+    public function getPrice()
+    {
+        return $this->container['price'];
+    }
+
+    /**
+     * Sets price
+     *
+     * @param float $price price
+     *
+     * @return $this
+     */
+    public function setPrice($price)
+    {
+        $this->container['price'] = $price;
+
+        return $this;
+    }
+
+    /**
+     * Gets time
+     *
+     * @return string
+     */
+    public function getTime()
+    {
+        return $this->container['time'];
+    }
+
+    /**
+     * Sets time
+     *
+     * @param string $time time
+     *
+     * @return $this
+     */
+    public function setTime($time)
+    {
+        $this->container['time'] = $time;
+
+        return $this;
+    }
+
+    /**
+     * Gets id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param int $id id
+     *
+     * @return $this
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
+
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      *

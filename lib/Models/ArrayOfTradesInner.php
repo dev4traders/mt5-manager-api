@@ -1,11 +1,11 @@
 <?php
 /**
- * ArrayOfUserResponsesInner
+ * ArrayOfTradesInner
  *
  * PHP version 5
  *
  * @category Class
- * @package  D4T
+ * @package  D4T\MT5Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,20 +27,20 @@
  * Do not edit the class manually.
  */
 
-namespace D4T\MT5ManagerModels;
+namespace D4T\MT5Sdk\Models;
 
 use \ArrayAccess;
-use \D4T\ObjectSerializer;
+use \D4T\MT5Sdk\ObjectSerializer;
 
 /**
- * ArrayOfUserResponsesInner Class Doc Comment
+ * ArrayOfTradesInner Class Doc Comment
  *
  * @category Class
- * @package  D4T
+ * @package  D4T\MT5Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ArrayOfUserResponsesInner implements ModelInterface, ArrayAccess
+class ArrayOfTradesInner implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class ArrayOfUserResponsesInner implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ArrayOfUserResponses_inner';
+    protected static $swaggerModelName = 'ArrayOfTrades_inner';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,10 +57,10 @@ class ArrayOfUserResponsesInner implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'login' => 'int',
-        'email' => 'string',
-        'code' => 'int',
-        'message' => 'string'
+        'symbol' => 'string',
+        'type' => 'int',
+        'type_str' => 'string',
+        'profit' => 'float'
     ];
 
     /**
@@ -69,10 +69,10 @@ class ArrayOfUserResponsesInner implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'login' => null,
-        'email' => null,
-        'code' => null,
-        'message' => null
+        'symbol' => null,
+        'type' => null,
+        'type_str' => null,
+        'profit' => null
     ];
 
     /**
@@ -102,10 +102,10 @@ class ArrayOfUserResponsesInner implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'login' => 'login',
-        'email' => 'email',
-        'code' => 'code',
-        'message' => 'message'
+        'symbol' => 'symbol',
+        'type' => 'type',
+        'type_str' => 'type_str',
+        'profit' => 'profit'
     ];
 
     /**
@@ -114,10 +114,10 @@ class ArrayOfUserResponsesInner implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'login' => 'setLogin',
-        'email' => 'setEmail',
-        'code' => 'setCode',
-        'message' => 'setMessage'
+        'symbol' => 'setSymbol',
+        'type' => 'setType',
+        'type_str' => 'setTypeStr',
+        'profit' => 'setProfit'
     ];
 
     /**
@@ -126,10 +126,10 @@ class ArrayOfUserResponsesInner implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'login' => 'getLogin',
-        'email' => 'getEmail',
-        'code' => 'getCode',
-        'message' => 'getMessage'
+        'symbol' => 'getSymbol',
+        'type' => 'getType',
+        'type_str' => 'getTypeStr',
+        'profit' => 'getProfit'
     ];
 
     /**
@@ -192,10 +192,10 @@ class ArrayOfUserResponsesInner implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['login'] = isset($data['login']) ? $data['login'] : null;
-        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
-        $this->container['code'] = isset($data['code']) ? $data['code'] : null;
-        $this->container['message'] = isset($data['message']) ? $data['message'] : null;
+        $this->container['symbol'] = isset($data['symbol']) ? $data['symbol'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['type_str'] = isset($data['type_str']) ? $data['type_str'] : null;
+        $this->container['profit'] = isset($data['profit']) ? $data['profit'] : null;
     }
 
     /**
@@ -223,97 +223,97 @@ class ArrayOfUserResponsesInner implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets login
-     *
-     * @return int
-     */
-    public function getLogin()
-    {
-        return $this->container['login'];
-    }
-
-    /**
-     * Sets login
-     *
-     * @param int $login login
-     *
-     * @return $this
-     */
-    public function setLogin($login)
-    {
-        $this->container['login'] = $login;
-
-        return $this;
-    }
-
-    /**
-     * Gets email
+     * Gets symbol
      *
      * @return string
      */
-    public function getEmail()
+    public function getSymbol()
     {
-        return $this->container['email'];
+        return $this->container['symbol'];
     }
 
     /**
-     * Sets email
+     * Sets symbol
      *
-     * @param string $email email
+     * @param string $symbol symbol
      *
      * @return $this
      */
-    public function setEmail($email)
+    public function setSymbol($symbol)
     {
-        $this->container['email'] = $email;
+        $this->container['symbol'] = $symbol;
 
         return $this;
     }
 
     /**
-     * Gets code
+     * Gets type
      *
      * @return int
      */
-    public function getCode()
+    public function getType()
     {
-        return $this->container['code'];
+        return $this->container['type'];
     }
 
     /**
-     * Sets code
+     * Sets type
      *
-     * @param int $code code
+     * @param int $type type
      *
      * @return $this
      */
-    public function setCode($code)
+    public function setType($type)
     {
-        $this->container['code'] = $code;
+        $this->container['type'] = $type;
 
         return $this;
     }
 
     /**
-     * Gets message
+     * Gets type_str
      *
      * @return string
      */
-    public function getMessage()
+    public function getTypeStr()
     {
-        return $this->container['message'];
+        return $this->container['type_str'];
     }
 
     /**
-     * Sets message
+     * Sets type_str
      *
-     * @param string $message message
+     * @param string $type_str type_str
      *
      * @return $this
      */
-    public function setMessage($message)
+    public function setTypeStr($type_str)
     {
-        $this->container['message'] = $message;
+        $this->container['type_str'] = $type_str;
+
+        return $this;
+    }
+
+    /**
+     * Gets profit
+     *
+     * @return float
+     */
+    public function getProfit()
+    {
+        return $this->container['profit'];
+    }
+
+    /**
+     * Sets profit
+     *
+     * @param float $profit profit
+     *
+     * @return $this
+     */
+    public function setProfit($profit)
+    {
+        $this->container['profit'] = $profit;
 
         return $this;
     }

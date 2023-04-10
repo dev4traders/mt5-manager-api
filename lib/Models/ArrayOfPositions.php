@@ -1,11 +1,11 @@
 <?php
 /**
- * ArrayOfCachedLogins
+ * ArrayOfPositions
  *
  * PHP version 5
  *
  * @category Class
- * @package  D4T
+ * @package  D4T\MT5Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,20 +27,20 @@
  * Do not edit the class manually.
  */
 
-namespace D4T\MT5ManagerModels;
+namespace D4T\MT5Sdk\Models;
 
 use \ArrayAccess;
-use \D4T\ObjectSerializer;
+use \D4T\MT5Sdk\ObjectSerializer;
 
 /**
- * ArrayOfCachedLogins Class Doc Comment
+ * ArrayOfPositions Class Doc Comment
  *
  * @category Class
- * @package  D4T
+ * @package  D4T\MT5Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ArrayOfCachedLogins implements ModelInterface, ArrayAccess
+class ArrayOfPositions implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class ArrayOfCachedLogins implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ArrayOfCachedLogins';
+    protected static $swaggerModelName = 'ArrayOfPositions';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,8 +57,7 @@ class ArrayOfCachedLogins implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'cached_at' => 'int',
-        'data' => 'int[]'
+        
     ];
 
     /**
@@ -67,8 +66,7 @@ class ArrayOfCachedLogins implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'cached_at' => null,
-        'data' => null
+        
     ];
 
     /**
@@ -98,8 +96,7 @@ class ArrayOfCachedLogins implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'cached_at' => 'cached_at',
-        'data' => 'data'
+        
     ];
 
     /**
@@ -108,8 +105,7 @@ class ArrayOfCachedLogins implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'cached_at' => 'setCachedAt',
-        'data' => 'setData'
+        
     ];
 
     /**
@@ -118,8 +114,7 @@ class ArrayOfCachedLogins implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'cached_at' => 'getCachedAt',
-        'data' => 'getData'
+        
     ];
 
     /**
@@ -182,8 +177,6 @@ class ArrayOfCachedLogins implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['cached_at'] = isset($data['cached_at']) ? $data['cached_at'] : null;
-        $this->container['data'] = isset($data['data']) ? $data['data'] : null;
     }
 
     /**
@@ -193,7 +186,7 @@ class ArrayOfCachedLogins implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
+        $invalidProperties = parent::listInvalidProperties();
 
         return $invalidProperties;
     }
@@ -209,54 +202,6 @@ class ArrayOfCachedLogins implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets cached_at
-     *
-     * @return int
-     */
-    public function getCachedAt()
-    {
-        return $this->container['cached_at'];
-    }
-
-    /**
-     * Sets cached_at
-     *
-     * @param int $cached_at cached_at
-     *
-     * @return $this
-     */
-    public function setCachedAt($cached_at)
-    {
-        $this->container['cached_at'] = $cached_at;
-
-        return $this;
-    }
-
-    /**
-     * Gets data
-     *
-     * @return int[]
-     */
-    public function getData()
-    {
-        return $this->container['data'];
-    }
-
-    /**
-     * Sets data
-     *
-     * @param int[] $data data
-     *
-     * @return $this
-     */
-    public function setData($data)
-    {
-        $this->container['data'] = $data;
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      *

@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  D4T
+ * @package  D4T\MT5Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace D4T\MT5Manager;
+namespace D4T\MT5Sdk\MT5Manager;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use D4T\ApiException;
-use D4T\Configuration;
-use D4T\HeaderSelector;
-use D4T\ObjectSerializer;
+use D4T\MT5Sdk\ApiException;
+use D4T\MT5Sdk\Configuration;
+use D4T\MT5Sdk\HeaderSelector;
+use D4T\MT5Sdk\ObjectSerializer;
 
 /**
  * UserApi Class Doc Comment
  *
  * @category Class
- * @package  D4T
+ * @package  D4T\MT5Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -95,7 +95,7 @@ class UserApi
      * @param  string $token Session token (required)
      * @param  string $user_login The login that needs to be deleted (required)
      *
-     * @throws \D4T\ApiException on non-2xx response
+     * @throws \D4T\MT5Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -112,7 +112,7 @@ class UserApi
      * @param  string $token Session token (required)
      * @param  string $user_login The login that needs to be deleted (required)
      *
-     * @throws \D4T\ApiException on non-2xx response
+     * @throws \D4T\MT5Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -156,7 +156,7 @@ class UserApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\D4T\MT5ManagerModels\ReturnType',
+                        '\D4T\MT5Sdk\Models\ReturnType',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -348,9 +348,9 @@ class UserApi
      * Update user
      *
      * @param  string $token Session token (required)
-     * @param  \D4T\MT5ManagerModels\User $body {\&quot;login\&quot;: 1, \&quot;password\&quot;:\&quot;new_pwd\&quot;, \&quot;name\&quot;:\&quot;new_name\&quot;} (required)
+     * @param  \D4T\MT5Sdk\Models\User $body {\&quot;login\&quot;: 1, \&quot;password\&quot;:\&quot;new_pwd\&quot;, \&quot;name\&quot;:\&quot;new_name\&quot;} (required)
      *
-     * @throws \D4T\ApiException on non-2xx response
+     * @throws \D4T\MT5Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -365,9 +365,9 @@ class UserApi
      * Update user
      *
      * @param  string $token Session token (required)
-     * @param  \D4T\MT5ManagerModels\User $body {\&quot;login\&quot;: 1, \&quot;password\&quot;:\&quot;new_pwd\&quot;, \&quot;name\&quot;:\&quot;new_name\&quot;} (required)
+     * @param  \D4T\MT5Sdk\Models\User $body {\&quot;login\&quot;: 1, \&quot;password\&quot;:\&quot;new_pwd\&quot;, \&quot;name\&quot;:\&quot;new_name\&quot;} (required)
      *
-     * @throws \D4T\ApiException on non-2xx response
+     * @throws \D4T\MT5Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -411,7 +411,7 @@ class UserApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\D4T\MT5ManagerModels\ReturnType',
+                        '\D4T\MT5Sdk\Models\ReturnType',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -427,7 +427,7 @@ class UserApi
      * Update user
      *
      * @param  string $token Session token (required)
-     * @param  \D4T\MT5ManagerModels\User $body {\&quot;login\&quot;: 1, \&quot;password\&quot;:\&quot;new_pwd\&quot;, \&quot;name\&quot;:\&quot;new_name\&quot;} (required)
+     * @param  \D4T\MT5Sdk\Models\User $body {\&quot;login\&quot;: 1, \&quot;password\&quot;:\&quot;new_pwd\&quot;, \&quot;name\&quot;:\&quot;new_name\&quot;} (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -448,7 +448,7 @@ class UserApi
      * Update user
      *
      * @param  string $token Session token (required)
-     * @param  \D4T\MT5ManagerModels\User $body {\&quot;login\&quot;: 1, \&quot;password\&quot;:\&quot;new_pwd\&quot;, \&quot;name\&quot;:\&quot;new_name\&quot;} (required)
+     * @param  \D4T\MT5Sdk\Models\User $body {\&quot;login\&quot;: 1, \&quot;password\&quot;:\&quot;new_pwd\&quot;, \&quot;name\&quot;:\&quot;new_name\&quot;} (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -485,7 +485,7 @@ class UserApi
      * Create request for operation 'updateUser'
      *
      * @param  string $token Session token (required)
-     * @param  \D4T\MT5ManagerModels\User $body {\&quot;login\&quot;: 1, \&quot;password\&quot;:\&quot;new_pwd\&quot;, \&quot;name\&quot;:\&quot;new_name\&quot;} (required)
+     * @param  \D4T\MT5Sdk\Models\User $body {\&quot;login\&quot;: 1, \&quot;password\&quot;:\&quot;new_pwd\&quot;, \&quot;name\&quot;:\&quot;new_name\&quot;} (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -598,11 +598,11 @@ class UserApi
      * Create user
      *
      * @param  string $token Session token (required)
-     * @param  \D4T\MT5ManagerModels\User $body {\&quot;password_investor\&quot;:\&quot;123456Aa\&quot;,\&quot;password\&quot;:\&quot;123456Aa\&quot;, \&quot;name\&quot;:\&quot;test\&quot;, \&quot;email\&quot;: \&quot;test@test.com\&quot;,\&quot;group\&quot;:\&quot;demo\\demoforex\&quot;,\&quot;leverage\&quot;:100} (required)
+     * @param  \D4T\MT5Sdk\Models\User $body {\&quot;password_investor\&quot;:\&quot;123456Aa\&quot;,\&quot;password\&quot;:\&quot;123456Aa\&quot;, \&quot;name\&quot;:\&quot;test\&quot;, \&quot;email\&quot;: \&quot;test@test.com\&quot;,\&quot;group\&quot;:\&quot;demo\\demoforex\&quot;,\&quot;leverage\&quot;:100} (required)
      *
-     * @throws \D4T\ApiException on non-2xx response
+     * @throws \D4T\MT5Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \D4T\MT5ManagerModels\UserReturnType
+     * @return \D4T\MT5Sdk\Models\UserReturnType
      */
     public function userAddPost($token, $body)
     {
@@ -616,15 +616,15 @@ class UserApi
      * Create user
      *
      * @param  string $token Session token (required)
-     * @param  \D4T\MT5ManagerModels\User $body {\&quot;password_investor\&quot;:\&quot;123456Aa\&quot;,\&quot;password\&quot;:\&quot;123456Aa\&quot;, \&quot;name\&quot;:\&quot;test\&quot;, \&quot;email\&quot;: \&quot;test@test.com\&quot;,\&quot;group\&quot;:\&quot;demo\\demoforex\&quot;,\&quot;leverage\&quot;:100} (required)
+     * @param  \D4T\MT5Sdk\Models\User $body {\&quot;password_investor\&quot;:\&quot;123456Aa\&quot;,\&quot;password\&quot;:\&quot;123456Aa\&quot;, \&quot;name\&quot;:\&quot;test\&quot;, \&quot;email\&quot;: \&quot;test@test.com\&quot;,\&quot;group\&quot;:\&quot;demo\\demoforex\&quot;,\&quot;leverage\&quot;:100} (required)
      *
-     * @throws \D4T\ApiException on non-2xx response
+     * @throws \D4T\MT5Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \D4T\MT5ManagerModels\UserReturnType, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \D4T\MT5Sdk\Models\UserReturnType, HTTP status code, HTTP response headers (array of strings)
      */
     public function userAddPostWithHttpInfo($token, $body)
     {
-        $returnType = '\D4T\MT5ManagerModels\UserReturnType';
+        $returnType = '\D4T\MT5Sdk\Models\UserReturnType';
         $request = $this->userAddPostRequest($token, $body);
 
         try {
@@ -676,7 +676,7 @@ class UserApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\D4T\MT5ManagerModels\UserReturnType',
+                        '\D4T\MT5Sdk\Models\UserReturnType',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -684,7 +684,7 @@ class UserApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\D4T\MT5ManagerModels\ReturnType',
+                        '\D4T\MT5Sdk\Models\ReturnType',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -700,7 +700,7 @@ class UserApi
      * Create user
      *
      * @param  string $token Session token (required)
-     * @param  \D4T\MT5ManagerModels\User $body {\&quot;password_investor\&quot;:\&quot;123456Aa\&quot;,\&quot;password\&quot;:\&quot;123456Aa\&quot;, \&quot;name\&quot;:\&quot;test\&quot;, \&quot;email\&quot;: \&quot;test@test.com\&quot;,\&quot;group\&quot;:\&quot;demo\\demoforex\&quot;,\&quot;leverage\&quot;:100} (required)
+     * @param  \D4T\MT5Sdk\Models\User $body {\&quot;password_investor\&quot;:\&quot;123456Aa\&quot;,\&quot;password\&quot;:\&quot;123456Aa\&quot;, \&quot;name\&quot;:\&quot;test\&quot;, \&quot;email\&quot;: \&quot;test@test.com\&quot;,\&quot;group\&quot;:\&quot;demo\\demoforex\&quot;,\&quot;leverage\&quot;:100} (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -721,14 +721,14 @@ class UserApi
      * Create user
      *
      * @param  string $token Session token (required)
-     * @param  \D4T\MT5ManagerModels\User $body {\&quot;password_investor\&quot;:\&quot;123456Aa\&quot;,\&quot;password\&quot;:\&quot;123456Aa\&quot;, \&quot;name\&quot;:\&quot;test\&quot;, \&quot;email\&quot;: \&quot;test@test.com\&quot;,\&quot;group\&quot;:\&quot;demo\\demoforex\&quot;,\&quot;leverage\&quot;:100} (required)
+     * @param  \D4T\MT5Sdk\Models\User $body {\&quot;password_investor\&quot;:\&quot;123456Aa\&quot;,\&quot;password\&quot;:\&quot;123456Aa\&quot;, \&quot;name\&quot;:\&quot;test\&quot;, \&quot;email\&quot;: \&quot;test@test.com\&quot;,\&quot;group\&quot;:\&quot;demo\\demoforex\&quot;,\&quot;leverage\&quot;:100} (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function userAddPostAsyncWithHttpInfo($token, $body)
     {
-        $returnType = '\D4T\MT5ManagerModels\UserReturnType';
+        $returnType = '\D4T\MT5Sdk\Models\UserReturnType';
         $request = $this->userAddPostRequest($token, $body);
 
         return $this->client
@@ -772,7 +772,7 @@ class UserApi
      * Create request for operation 'userAddPost'
      *
      * @param  string $token Session token (required)
-     * @param  \D4T\MT5ManagerModels\User $body {\&quot;password_investor\&quot;:\&quot;123456Aa\&quot;,\&quot;password\&quot;:\&quot;123456Aa\&quot;, \&quot;name\&quot;:\&quot;test\&quot;, \&quot;email\&quot;: \&quot;test@test.com\&quot;,\&quot;group\&quot;:\&quot;demo\\demoforex\&quot;,\&quot;leverage\&quot;:100} (required)
+     * @param  \D4T\MT5Sdk\Models\User $body {\&quot;password_investor\&quot;:\&quot;123456Aa\&quot;,\&quot;password\&quot;:\&quot;123456Aa\&quot;, \&quot;name\&quot;:\&quot;test\&quot;, \&quot;email\&quot;: \&quot;test@test.com\&quot;,\&quot;group\&quot;:\&quot;demo\\demoforex\&quot;,\&quot;leverage\&quot;:100} (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -885,9 +885,9 @@ class UserApi
      * Deposit account
      *
      * @param  string $token Session token (required)
-     * @param  \D4T\MT5ManagerModels\BalanceType $body {\&quot;login\&quot;: 1, \&quot;amount\&quot;:1, \&quot;type\&quot;: 3, \&quot;comment\&quot;: \&quot;F.Management\&quot;} (required)
+     * @param  \D4T\MT5Sdk\Models\BalanceType $body {\&quot;login\&quot;: 1, \&quot;amount\&quot;:1, \&quot;type\&quot;: 3, \&quot;comment\&quot;: \&quot;F.Management\&quot;} (required)
      *
-     * @throws \D4T\ApiException on non-2xx response
+     * @throws \D4T\MT5Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -902,9 +902,9 @@ class UserApi
      * Deposit account
      *
      * @param  string $token Session token (required)
-     * @param  \D4T\MT5ManagerModels\BalanceType $body {\&quot;login\&quot;: 1, \&quot;amount\&quot;:1, \&quot;type\&quot;: 3, \&quot;comment\&quot;: \&quot;F.Management\&quot;} (required)
+     * @param  \D4T\MT5Sdk\Models\BalanceType $body {\&quot;login\&quot;: 1, \&quot;amount\&quot;:1, \&quot;type\&quot;: 3, \&quot;comment\&quot;: \&quot;F.Management\&quot;} (required)
      *
-     * @throws \D4T\ApiException on non-2xx response
+     * @throws \D4T\MT5Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -948,7 +948,7 @@ class UserApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\D4T\MT5ManagerModels\ReturnType',
+                        '\D4T\MT5Sdk\Models\ReturnType',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -964,7 +964,7 @@ class UserApi
      * Deposit account
      *
      * @param  string $token Session token (required)
-     * @param  \D4T\MT5ManagerModels\BalanceType $body {\&quot;login\&quot;: 1, \&quot;amount\&quot;:1, \&quot;type\&quot;: 3, \&quot;comment\&quot;: \&quot;F.Management\&quot;} (required)
+     * @param  \D4T\MT5Sdk\Models\BalanceType $body {\&quot;login\&quot;: 1, \&quot;amount\&quot;:1, \&quot;type\&quot;: 3, \&quot;comment\&quot;: \&quot;F.Management\&quot;} (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -985,7 +985,7 @@ class UserApi
      * Deposit account
      *
      * @param  string $token Session token (required)
-     * @param  \D4T\MT5ManagerModels\BalanceType $body {\&quot;login\&quot;: 1, \&quot;amount\&quot;:1, \&quot;type\&quot;: 3, \&quot;comment\&quot;: \&quot;F.Management\&quot;} (required)
+     * @param  \D4T\MT5Sdk\Models\BalanceType $body {\&quot;login\&quot;: 1, \&quot;amount\&quot;:1, \&quot;type\&quot;: 3, \&quot;comment\&quot;: \&quot;F.Management\&quot;} (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1022,7 +1022,7 @@ class UserApi
      * Create request for operation 'userDepositPost'
      *
      * @param  string $token Session token (required)
-     * @param  \D4T\MT5ManagerModels\BalanceType $body {\&quot;login\&quot;: 1, \&quot;amount\&quot;:1, \&quot;type\&quot;: 3, \&quot;comment\&quot;: \&quot;F.Management\&quot;} (required)
+     * @param  \D4T\MT5Sdk\Models\BalanceType $body {\&quot;login\&quot;: 1, \&quot;amount\&quot;:1, \&quot;type\&quot;: 3, \&quot;comment\&quot;: \&quot;F.Management\&quot;} (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1135,9 +1135,9 @@ class UserApi
      * Reset password
      *
      * @param  string $token Session token (required)
-     * @param  \D4T\MT5ManagerModels\ResetPwdType $body {\&quot;login\&quot;: 1, \&quot;password\&quot;:\&quot;new_pwd\&quot;, \&quot;change_investor\&quot;:0} (required)
+     * @param  \D4T\MT5Sdk\Models\ResetPwdType $body {\&quot;login\&quot;: 1, \&quot;password\&quot;:\&quot;new_pwd\&quot;, \&quot;change_investor\&quot;:0} (required)
      *
-     * @throws \D4T\ApiException on non-2xx response
+     * @throws \D4T\MT5Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1152,9 +1152,9 @@ class UserApi
      * Reset password
      *
      * @param  string $token Session token (required)
-     * @param  \D4T\MT5ManagerModels\ResetPwdType $body {\&quot;login\&quot;: 1, \&quot;password\&quot;:\&quot;new_pwd\&quot;, \&quot;change_investor\&quot;:0} (required)
+     * @param  \D4T\MT5Sdk\Models\ResetPwdType $body {\&quot;login\&quot;: 1, \&quot;password\&quot;:\&quot;new_pwd\&quot;, \&quot;change_investor\&quot;:0} (required)
      *
-     * @throws \D4T\ApiException on non-2xx response
+     * @throws \D4T\MT5Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1198,7 +1198,7 @@ class UserApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\D4T\MT5ManagerModels\ReturnType',
+                        '\D4T\MT5Sdk\Models\ReturnType',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1214,7 +1214,7 @@ class UserApi
      * Reset password
      *
      * @param  string $token Session token (required)
-     * @param  \D4T\MT5ManagerModels\ResetPwdType $body {\&quot;login\&quot;: 1, \&quot;password\&quot;:\&quot;new_pwd\&quot;, \&quot;change_investor\&quot;:0} (required)
+     * @param  \D4T\MT5Sdk\Models\ResetPwdType $body {\&quot;login\&quot;: 1, \&quot;password\&quot;:\&quot;new_pwd\&quot;, \&quot;change_investor\&quot;:0} (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1235,7 +1235,7 @@ class UserApi
      * Reset password
      *
      * @param  string $token Session token (required)
-     * @param  \D4T\MT5ManagerModels\ResetPwdType $body {\&quot;login\&quot;: 1, \&quot;password\&quot;:\&quot;new_pwd\&quot;, \&quot;change_investor\&quot;:0} (required)
+     * @param  \D4T\MT5Sdk\Models\ResetPwdType $body {\&quot;login\&quot;: 1, \&quot;password\&quot;:\&quot;new_pwd\&quot;, \&quot;change_investor\&quot;:0} (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1272,7 +1272,7 @@ class UserApi
      * Create request for operation 'userResetPwdPost'
      *
      * @param  string $token Session token (required)
-     * @param  \D4T\MT5ManagerModels\ResetPwdType $body {\&quot;login\&quot;: 1, \&quot;password\&quot;:\&quot;new_pwd\&quot;, \&quot;change_investor\&quot;:0} (required)
+     * @param  \D4T\MT5Sdk\Models\ResetPwdType $body {\&quot;login\&quot;: 1, \&quot;password\&quot;:\&quot;new_pwd\&quot;, \&quot;change_investor\&quot;:0} (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1387,9 +1387,9 @@ class UserApi
      * @param  string $token Session token (required)
      * @param  string $user_login The name that needs to be fetched. Use 3 for testing. (required)
      *
-     * @throws \D4T\ApiException on non-2xx response
+     * @throws \D4T\MT5Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \D4T\MT5ManagerModels\User
+     * @return \D4T\MT5Sdk\Models\User
      */
     public function userUserLoginGet($token, $user_login)
     {
@@ -1405,13 +1405,13 @@ class UserApi
      * @param  string $token Session token (required)
      * @param  string $user_login The name that needs to be fetched. Use 3 for testing. (required)
      *
-     * @throws \D4T\ApiException on non-2xx response
+     * @throws \D4T\MT5Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \D4T\MT5ManagerModels\User, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \D4T\MT5Sdk\Models\User, HTTP status code, HTTP response headers (array of strings)
      */
     public function userUserLoginGetWithHttpInfo($token, $user_login)
     {
-        $returnType = '\D4T\MT5ManagerModels\User';
+        $returnType = '\D4T\MT5Sdk\Models\User';
         $request = $this->userUserLoginGetRequest($token, $user_login);
 
         try {
@@ -1463,7 +1463,7 @@ class UserApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\D4T\MT5ManagerModels\User',
+                        '\D4T\MT5Sdk\Models\User',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1471,7 +1471,7 @@ class UserApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\D4T\MT5ManagerModels\ReturnType',
+                        '\D4T\MT5Sdk\Models\ReturnType',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1515,7 +1515,7 @@ class UserApi
      */
     public function userUserLoginGetAsyncWithHttpInfo($token, $user_login)
     {
-        $returnType = '\D4T\MT5ManagerModels\User';
+        $returnType = '\D4T\MT5Sdk\Models\User';
         $request = $this->userUserLoginGetRequest($token, $user_login);
 
         return $this->client
@@ -1677,9 +1677,9 @@ class UserApi
      * Withdraw account
      *
      * @param  string $token Session token (required)
-     * @param  \D4T\MT5ManagerModels\BalanceType $body {\&quot;login\&quot;: 1, \&quot;amount\&quot;:1, \&quot;type\&quot;: 3, \&quot;comment\&quot;: \&quot;F.Management\&quot;} (required)
+     * @param  \D4T\MT5Sdk\Models\BalanceType $body {\&quot;login\&quot;: 1, \&quot;amount\&quot;:1, \&quot;type\&quot;: 3, \&quot;comment\&quot;: \&quot;F.Management\&quot;} (required)
      *
-     * @throws \D4T\ApiException on non-2xx response
+     * @throws \D4T\MT5Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1694,9 +1694,9 @@ class UserApi
      * Withdraw account
      *
      * @param  string $token Session token (required)
-     * @param  \D4T\MT5ManagerModels\BalanceType $body {\&quot;login\&quot;: 1, \&quot;amount\&quot;:1, \&quot;type\&quot;: 3, \&quot;comment\&quot;: \&quot;F.Management\&quot;} (required)
+     * @param  \D4T\MT5Sdk\Models\BalanceType $body {\&quot;login\&quot;: 1, \&quot;amount\&quot;:1, \&quot;type\&quot;: 3, \&quot;comment\&quot;: \&quot;F.Management\&quot;} (required)
      *
-     * @throws \D4T\ApiException on non-2xx response
+     * @throws \D4T\MT5Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1740,7 +1740,7 @@ class UserApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\D4T\MT5ManagerModels\ReturnType',
+                        '\D4T\MT5Sdk\Models\ReturnType',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1756,7 +1756,7 @@ class UserApi
      * Withdraw account
      *
      * @param  string $token Session token (required)
-     * @param  \D4T\MT5ManagerModels\BalanceType $body {\&quot;login\&quot;: 1, \&quot;amount\&quot;:1, \&quot;type\&quot;: 3, \&quot;comment\&quot;: \&quot;F.Management\&quot;} (required)
+     * @param  \D4T\MT5Sdk\Models\BalanceType $body {\&quot;login\&quot;: 1, \&quot;amount\&quot;:1, \&quot;type\&quot;: 3, \&quot;comment\&quot;: \&quot;F.Management\&quot;} (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1777,7 +1777,7 @@ class UserApi
      * Withdraw account
      *
      * @param  string $token Session token (required)
-     * @param  \D4T\MT5ManagerModels\BalanceType $body {\&quot;login\&quot;: 1, \&quot;amount\&quot;:1, \&quot;type\&quot;: 3, \&quot;comment\&quot;: \&quot;F.Management\&quot;} (required)
+     * @param  \D4T\MT5Sdk\Models\BalanceType $body {\&quot;login\&quot;: 1, \&quot;amount\&quot;:1, \&quot;type\&quot;: 3, \&quot;comment\&quot;: \&quot;F.Management\&quot;} (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1814,7 +1814,7 @@ class UserApi
      * Create request for operation 'userWithdrawPost'
      *
      * @param  string $token Session token (required)
-     * @param  \D4T\MT5ManagerModels\BalanceType $body {\&quot;login\&quot;: 1, \&quot;amount\&quot;:1, \&quot;type\&quot;: 3, \&quot;comment\&quot;: \&quot;F.Management\&quot;} (required)
+     * @param  \D4T\MT5Sdk\Models\BalanceType $body {\&quot;login\&quot;: 1, \&quot;amount\&quot;:1, \&quot;type\&quot;: 3, \&quot;comment\&quot;: \&quot;F.Management\&quot;} (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1927,9 +1927,9 @@ class UserApi
      * Create users
      *
      * @param  string $token Session token (required)
-     * @param  \D4T\MT5ManagerModels\Users $body {\&quot;groupname\&quot;:\&quot;demohfx-usd\&quot;,\&quot;password\&quot;:\&quot;123456Aa\&quot;, \&quot;firstname\&quot;:\&quot;test\&quot;, \&quot;firstname\&quot;:\&quot;test\&quot;, \&quot;email\&quot;: \&quot;test@test.com\&quot;} (required)
+     * @param  \D4T\MT5Sdk\Models\Users $body {\&quot;groupname\&quot;:\&quot;demohfx-usd\&quot;,\&quot;password\&quot;:\&quot;123456Aa\&quot;, \&quot;firstname\&quot;:\&quot;test\&quot;, \&quot;firstname\&quot;:\&quot;test\&quot;, \&quot;email\&quot;: \&quot;test@test.com\&quot;} (required)
      *
-     * @throws \D4T\ApiException on non-2xx response
+     * @throws \D4T\MT5Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1944,9 +1944,9 @@ class UserApi
      * Create users
      *
      * @param  string $token Session token (required)
-     * @param  \D4T\MT5ManagerModels\Users $body {\&quot;groupname\&quot;:\&quot;demohfx-usd\&quot;,\&quot;password\&quot;:\&quot;123456Aa\&quot;, \&quot;firstname\&quot;:\&quot;test\&quot;, \&quot;firstname\&quot;:\&quot;test\&quot;, \&quot;email\&quot;: \&quot;test@test.com\&quot;} (required)
+     * @param  \D4T\MT5Sdk\Models\Users $body {\&quot;groupname\&quot;:\&quot;demohfx-usd\&quot;,\&quot;password\&quot;:\&quot;123456Aa\&quot;, \&quot;firstname\&quot;:\&quot;test\&quot;, \&quot;firstname\&quot;:\&quot;test\&quot;, \&quot;email\&quot;: \&quot;test@test.com\&quot;} (required)
      *
-     * @throws \D4T\ApiException on non-2xx response
+     * @throws \D4T\MT5Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1990,7 +1990,7 @@ class UserApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\D4T\MT5ManagerModels\ArrayOfUserResponses',
+                        '\D4T\MT5Sdk\Models\ArrayOfUserResponses',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2006,7 +2006,7 @@ class UserApi
      * Create users
      *
      * @param  string $token Session token (required)
-     * @param  \D4T\MT5ManagerModels\Users $body {\&quot;groupname\&quot;:\&quot;demohfx-usd\&quot;,\&quot;password\&quot;:\&quot;123456Aa\&quot;, \&quot;firstname\&quot;:\&quot;test\&quot;, \&quot;firstname\&quot;:\&quot;test\&quot;, \&quot;email\&quot;: \&quot;test@test.com\&quot;} (required)
+     * @param  \D4T\MT5Sdk\Models\Users $body {\&quot;groupname\&quot;:\&quot;demohfx-usd\&quot;,\&quot;password\&quot;:\&quot;123456Aa\&quot;, \&quot;firstname\&quot;:\&quot;test\&quot;, \&quot;firstname\&quot;:\&quot;test\&quot;, \&quot;email\&quot;: \&quot;test@test.com\&quot;} (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2027,7 +2027,7 @@ class UserApi
      * Create users
      *
      * @param  string $token Session token (required)
-     * @param  \D4T\MT5ManagerModels\Users $body {\&quot;groupname\&quot;:\&quot;demohfx-usd\&quot;,\&quot;password\&quot;:\&quot;123456Aa\&quot;, \&quot;firstname\&quot;:\&quot;test\&quot;, \&quot;firstname\&quot;:\&quot;test\&quot;, \&quot;email\&quot;: \&quot;test@test.com\&quot;} (required)
+     * @param  \D4T\MT5Sdk\Models\Users $body {\&quot;groupname\&quot;:\&quot;demohfx-usd\&quot;,\&quot;password\&quot;:\&quot;123456Aa\&quot;, \&quot;firstname\&quot;:\&quot;test\&quot;, \&quot;firstname\&quot;:\&quot;test\&quot;, \&quot;email\&quot;: \&quot;test@test.com\&quot;} (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2064,7 +2064,7 @@ class UserApi
      * Create request for operation 'usersBulkAddPost'
      *
      * @param  string $token Session token (required)
-     * @param  \D4T\MT5ManagerModels\Users $body {\&quot;groupname\&quot;:\&quot;demohfx-usd\&quot;,\&quot;password\&quot;:\&quot;123456Aa\&quot;, \&quot;firstname\&quot;:\&quot;test\&quot;, \&quot;firstname\&quot;:\&quot;test\&quot;, \&quot;email\&quot;: \&quot;test@test.com\&quot;} (required)
+     * @param  \D4T\MT5Sdk\Models\Users $body {\&quot;groupname\&quot;:\&quot;demohfx-usd\&quot;,\&quot;password\&quot;:\&quot;123456Aa\&quot;, \&quot;firstname\&quot;:\&quot;test\&quot;, \&quot;firstname\&quot;:\&quot;test\&quot;, \&quot;email\&quot;: \&quot;test@test.com\&quot;} (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -2179,7 +2179,7 @@ class UserApi
      * @param  string $token Session token (required)
      * @param  \SplFileObject $upfile File in CSV format (required)
      *
-     * @throws \D4T\ApiException on non-2xx response
+     * @throws \D4T\MT5Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2196,7 +2196,7 @@ class UserApi
      * @param  string $token Session token (required)
      * @param  \SplFileObject $upfile File in CSV format (required)
      *
-     * @throws \D4T\ApiException on non-2xx response
+     * @throws \D4T\MT5Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2240,7 +2240,7 @@ class UserApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\D4T\MT5ManagerModels\ReturnType',
+                        '\D4T\MT5Sdk\Models\ReturnType',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2431,9 +2431,9 @@ class UserApi
      * @param  string $token Session token (required)
      * @param  \SplFileObject $upfile File in CSV format (required)
      *
-     * @throws \D4T\ApiException on non-2xx response
+     * @throws \D4T\MT5Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \D4T\MT5ManagerModels\ReturnType
+     * @return \D4T\MT5Sdk\Models\ReturnType
      */
     public function usersBulkUpdatePost($token, $upfile)
     {
@@ -2449,13 +2449,13 @@ class UserApi
      * @param  string $token Session token (required)
      * @param  \SplFileObject $upfile File in CSV format (required)
      *
-     * @throws \D4T\ApiException on non-2xx response
+     * @throws \D4T\MT5Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \D4T\MT5ManagerModels\ReturnType, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \D4T\MT5Sdk\Models\ReturnType, HTTP status code, HTTP response headers (array of strings)
      */
     public function usersBulkUpdatePostWithHttpInfo($token, $upfile)
     {
-        $returnType = '\D4T\MT5ManagerModels\ReturnType';
+        $returnType = '\D4T\MT5Sdk\Models\ReturnType';
         $request = $this->usersBulkUpdatePostRequest($token, $upfile);
 
         try {
@@ -2507,7 +2507,7 @@ class UserApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\D4T\MT5ManagerModels\ReturnType',
+                        '\D4T\MT5Sdk\Models\ReturnType',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2515,7 +2515,7 @@ class UserApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\D4T\MT5ManagerModels\ReturnType',
+                        '\D4T\MT5Sdk\Models\ReturnType',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2559,7 +2559,7 @@ class UserApi
      */
     public function usersBulkUpdatePostAsyncWithHttpInfo($token, $upfile)
     {
-        $returnType = '\D4T\MT5ManagerModels\ReturnType';
+        $returnType = '\D4T\MT5Sdk\Models\ReturnType';
         $request = $this->usersBulkUpdatePostRequest($token, $upfile);
 
         return $this->client
@@ -2720,9 +2720,9 @@ class UserApi
      * @param  string $token Session token (required)
      * @param  \SplFileObject $upfile File in CSV format (required)
      *
-     * @throws \D4T\ApiException on non-2xx response
+     * @throws \D4T\MT5Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \D4T\MT5ManagerModels\ReturnType
+     * @return \D4T\MT5Sdk\Models\ReturnType
      */
     public function usersBulkWithdrawPost($token, $upfile)
     {
@@ -2738,13 +2738,13 @@ class UserApi
      * @param  string $token Session token (required)
      * @param  \SplFileObject $upfile File in CSV format (required)
      *
-     * @throws \D4T\ApiException on non-2xx response
+     * @throws \D4T\MT5Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \D4T\MT5ManagerModels\ReturnType, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \D4T\MT5Sdk\Models\ReturnType, HTTP status code, HTTP response headers (array of strings)
      */
     public function usersBulkWithdrawPostWithHttpInfo($token, $upfile)
     {
-        $returnType = '\D4T\MT5ManagerModels\ReturnType';
+        $returnType = '\D4T\MT5Sdk\Models\ReturnType';
         $request = $this->usersBulkWithdrawPostRequest($token, $upfile);
 
         try {
@@ -2796,7 +2796,7 @@ class UserApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\D4T\MT5ManagerModels\ReturnType',
+                        '\D4T\MT5Sdk\Models\ReturnType',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2804,7 +2804,7 @@ class UserApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\D4T\MT5ManagerModels\ReturnType',
+                        '\D4T\MT5Sdk\Models\ReturnType',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2848,7 +2848,7 @@ class UserApi
      */
     public function usersBulkWithdrawPostAsyncWithHttpInfo($token, $upfile)
     {
-        $returnType = '\D4T\MT5ManagerModels\ReturnType';
+        $returnType = '\D4T\MT5Sdk\Models\ReturnType';
         $request = $this->usersBulkWithdrawPostRequest($token, $upfile);
 
         return $this->client
@@ -3009,9 +3009,9 @@ class UserApi
      * @param  string $token Session token (required)
      * @param  string $group Group name (required)
      *
-     * @throws \D4T\ApiException on non-2xx response
+     * @throws \D4T\MT5Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \D4T\MT5ManagerModels\ArrayOfCachedLogins
+     * @return \D4T\MT5Sdk\Models\ArrayOfCachedLogins
      */
     public function usersGroupGet($token, $group)
     {
@@ -3027,13 +3027,13 @@ class UserApi
      * @param  string $token Session token (required)
      * @param  string $group Group name (required)
      *
-     * @throws \D4T\ApiException on non-2xx response
+     * @throws \D4T\MT5Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \D4T\MT5ManagerModels\ArrayOfCachedLogins, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \D4T\MT5Sdk\Models\ArrayOfCachedLogins, HTTP status code, HTTP response headers (array of strings)
      */
     public function usersGroupGetWithHttpInfo($token, $group)
     {
-        $returnType = '\D4T\MT5ManagerModels\ArrayOfCachedLogins';
+        $returnType = '\D4T\MT5Sdk\Models\ArrayOfCachedLogins';
         $request = $this->usersGroupGetRequest($token, $group);
 
         try {
@@ -3085,7 +3085,7 @@ class UserApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\D4T\MT5ManagerModels\ArrayOfCachedLogins',
+                        '\D4T\MT5Sdk\Models\ArrayOfCachedLogins',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3093,7 +3093,7 @@ class UserApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\D4T\MT5ManagerModels\ReturnType',
+                        '\D4T\MT5Sdk\Models\ReturnType',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3137,7 +3137,7 @@ class UserApi
      */
     public function usersGroupGetAsyncWithHttpInfo($token, $group)
     {
-        $returnType = '\D4T\MT5ManagerModels\ArrayOfCachedLogins';
+        $returnType = '\D4T\MT5Sdk\Models\ArrayOfCachedLogins';
         $request = $this->usersGroupGetRequest($token, $group);
 
         return $this->client
@@ -3301,9 +3301,9 @@ class UserApi
      * @param  string $token Session token (required)
      * @param  \SplFileObject $upfile File in CSV format (required)
      *
-     * @throws \D4T\ApiException on non-2xx response
+     * @throws \D4T\MT5Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \D4T\MT5ManagerModels\ReturnType
+     * @return \D4T\MT5Sdk\Models\ReturnType
      */
     public function usersUploadPost($token, $upfile)
     {
@@ -3319,13 +3319,13 @@ class UserApi
      * @param  string $token Session token (required)
      * @param  \SplFileObject $upfile File in CSV format (required)
      *
-     * @throws \D4T\ApiException on non-2xx response
+     * @throws \D4T\MT5Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \D4T\MT5ManagerModels\ReturnType, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \D4T\MT5Sdk\Models\ReturnType, HTTP status code, HTTP response headers (array of strings)
      */
     public function usersUploadPostWithHttpInfo($token, $upfile)
     {
-        $returnType = '\D4T\MT5ManagerModels\ReturnType';
+        $returnType = '\D4T\MT5Sdk\Models\ReturnType';
         $request = $this->usersUploadPostRequest($token, $upfile);
 
         try {
@@ -3377,7 +3377,7 @@ class UserApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\D4T\MT5ManagerModels\ReturnType',
+                        '\D4T\MT5Sdk\Models\ReturnType',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3385,7 +3385,7 @@ class UserApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\D4T\MT5ManagerModels\ReturnType',
+                        '\D4T\MT5Sdk\Models\ReturnType',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3429,7 +3429,7 @@ class UserApi
      */
     public function usersUploadPostAsyncWithHttpInfo($token, $upfile)
     {
-        $returnType = '\D4T\MT5ManagerModels\ReturnType';
+        $returnType = '\D4T\MT5Sdk\Models\ReturnType';
         $request = $this->usersUploadPostRequest($token, $upfile);
 
         return $this->client

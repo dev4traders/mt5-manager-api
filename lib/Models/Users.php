@@ -1,11 +1,11 @@
 <?php
 /**
- * BalanceType
+ * Users
  *
  * PHP version 5
  *
  * @category Class
- * @package  D4T
+ * @package  D4T\MT5Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,20 +27,20 @@
  * Do not edit the class manually.
  */
 
-namespace D4T\MT5ManagerModels;
+namespace D4T\MT5Sdk\Models;
 
 use \ArrayAccess;
-use \D4T\ObjectSerializer;
+use \D4T\MT5Sdk\ObjectSerializer;
 
 /**
- * BalanceType Class Doc Comment
+ * Users Class Doc Comment
  *
  * @category Class
- * @package  D4T
+ * @package  D4T\MT5Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class BalanceType implements ModelInterface, ArrayAccess
+class Users implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class BalanceType implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'BalanceType';
+    protected static $swaggerModelName = 'Users';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,10 +57,7 @@ class BalanceType implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'login' => 'int',
-        'amount' => 'float',
-        'type' => 'float',
-        'comment' => 'string'
+        
     ];
 
     /**
@@ -69,10 +66,7 @@ class BalanceType implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'login' => null,
-        'amount' => null,
-        'type' => null,
-        'comment' => null
+        
     ];
 
     /**
@@ -102,10 +96,7 @@ class BalanceType implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'login' => 'login',
-        'amount' => 'amount',
-        'type' => 'type',
-        'comment' => 'comment'
+        
     ];
 
     /**
@@ -114,10 +105,7 @@ class BalanceType implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'login' => 'setLogin',
-        'amount' => 'setAmount',
-        'type' => 'setType',
-        'comment' => 'setComment'
+        
     ];
 
     /**
@@ -126,10 +114,7 @@ class BalanceType implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'login' => 'getLogin',
-        'amount' => 'getAmount',
-        'type' => 'getType',
-        'comment' => 'getComment'
+        
     ];
 
     /**
@@ -192,10 +177,6 @@ class BalanceType implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['login'] = isset($data['login']) ? $data['login'] : null;
-        $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['comment'] = isset($data['comment']) ? $data['comment'] : null;
     }
 
     /**
@@ -205,7 +186,7 @@ class BalanceType implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
+        $invalidProperties = parent::listInvalidProperties();
 
         return $invalidProperties;
     }
@@ -221,102 +202,6 @@ class BalanceType implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets login
-     *
-     * @return int
-     */
-    public function getLogin()
-    {
-        return $this->container['login'];
-    }
-
-    /**
-     * Sets login
-     *
-     * @param int $login login
-     *
-     * @return $this
-     */
-    public function setLogin($login)
-    {
-        $this->container['login'] = $login;
-
-        return $this;
-    }
-
-    /**
-     * Gets amount
-     *
-     * @return float
-     */
-    public function getAmount()
-    {
-        return $this->container['amount'];
-    }
-
-    /**
-     * Sets amount
-     *
-     * @param float $amount amount
-     *
-     * @return $this
-     */
-    public function setAmount($amount)
-    {
-        $this->container['amount'] = $amount;
-
-        return $this;
-    }
-
-    /**
-     * Gets type
-     *
-     * @return float
-     */
-    public function getType()
-    {
-        return $this->container['type'];
-    }
-
-    /**
-     * Sets type
-     *
-     * @param float $type type
-     *
-     * @return $this
-     */
-    public function setType($type)
-    {
-        $this->container['type'] = $type;
-
-        return $this;
-    }
-
-    /**
-     * Gets comment
-     *
-     * @return string
-     */
-    public function getComment()
-    {
-        return $this->container['comment'];
-    }
-
-    /**
-     * Sets comment
-     *
-     * @param string $comment comment
-     *
-     * @return $this
-     */
-    public function setComment($comment)
-    {
-        $this->container['comment'] = $comment;
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      *

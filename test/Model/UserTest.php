@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  D4T
+ * @package  D4T\MT5Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,14 +27,14 @@
  * Please update the test case below to test the model.
  */
 
-namespace D4T;
+namespace D4T\MT5Sdk;
 
 /**
  * UserTest Class Doc Comment
  *
  * @category    Class
  * @description User
- * @package     D4T
+ * @package     D4T\MT5Sdk
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */

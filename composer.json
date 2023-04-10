@@ -20,7 +20,7 @@
         "ext-curl": "*",
         "ext-json": "*",
         "ext-mbstring": "*",
-        "guzzlehttp/guzzle": "*"
+        "guzzlehttp/guzzle": "^6.2"
     },
     "require-dev": {
         "phpunit/phpunit": "^4.8",
@@ -28,9 +28,9 @@
         "friendsofphp/php-cs-fixer": "~2.12"
     },
     "autoload": {
-        "psr-4": { "D4T\\" : "lib/" }
+        "psr-4": { "D4T\\MT5Sdk\\" : "lib/" }
     },
     "autoload-dev": {
-        "psr-4": { "D4T\\" : "test/" }
+        "psr-4": { "D4T\\MT5Sdk\\" : "test/" }
     }
 }

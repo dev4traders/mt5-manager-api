@@ -1,4 +1,4 @@
-# D4T\SymbolApi
+# D4T\MT5Sdk\SymbolApi
 
 All URIs are relative to *http://localhost:6503/v1*
 
@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **symbolsGet**
-> \D4T\MT5ManagerModels\ArrayOfSymbols symbolsGet($token)
+> \D4T\MT5Sdk\Models\ArrayOfSymbols symbolsGet($token)
 
 Get list of market symbols
 
@@ -17,7 +17,7 @@ Get list of market symbols
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new D4T\Api\SymbolApi(
+$apiInstance = new D4T\MT5Sdk\Api\SymbolApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -41,7 +41,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\D4T\MT5ManagerModels\ArrayOfSymbols**](../Model/ArrayOfSymbols.md)
+[**\D4T\MT5Sdk\Models\ArrayOfSymbols**](../Model/ArrayOfSymbols.md)
 
 ### Authorization
 

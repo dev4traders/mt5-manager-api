@@ -1,4 +1,4 @@
-# D4T\UserApi
+# D4T\MT5Sdk\UserApi
 
 All URIs are relative to *http://localhost:6503/v1*
 
@@ -29,7 +29,7 @@ Delete user
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new D4T\Api\UserApi(
+$apiInstance = new D4T\MT5Sdk\Api\UserApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -77,13 +77,13 @@ Update user
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new D4T\Api\UserApi(
+$apiInstance = new D4T\MT5Sdk\Api\UserApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $token = "token_example"; // string | Session token
-$body = new \D4T\MT5ManagerModels\User(); // \D4T\MT5ManagerModels\User | {\"login\": 1, \"password\":\"new_pwd\", \"name\":\"new_name\"}
+$body = new \D4T\MT5Sdk\Models\User(); // \D4T\MT5Sdk\Models\User | {\"login\": 1, \"password\":\"new_pwd\", \"name\":\"new_name\"}
 
 try {
     $apiInstance->updateUser($token, $body);
@@ -98,7 +98,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **token** | **string**| Session token |
- **body** | [**\D4T\MT5ManagerModels\User**](../Model/User.md)| {\&quot;login\&quot;: 1, \&quot;password\&quot;:\&quot;new_pwd\&quot;, \&quot;name\&quot;:\&quot;new_name\&quot;} |
+ **body** | [**\D4T\MT5Sdk\Models\User**](../Model/User.md)| {\&quot;login\&quot;: 1, \&quot;password\&quot;:\&quot;new_pwd\&quot;, \&quot;name\&quot;:\&quot;new_name\&quot;} |
 
 ### Return type
 
@@ -116,7 +116,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **userAddPost**
-> \D4T\MT5ManagerModels\UserReturnType userAddPost($token, $body)
+> \D4T\MT5Sdk\Models\UserReturnType userAddPost($token, $body)
 
 Create user
 
@@ -125,13 +125,13 @@ Create user
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new D4T\Api\UserApi(
+$apiInstance = new D4T\MT5Sdk\Api\UserApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $token = "token_example"; // string | Session token
-$body = new \D4T\MT5ManagerModels\User(); // \D4T\MT5ManagerModels\User | {\"password_investor\":\"123456Aa\",\"password\":\"123456Aa\", \"name\":\"test\", \"email\": \"test@test.com\",\"group\":\"demo\\demoforex\",\"leverage\":100}
+$body = new \D4T\MT5Sdk\Models\User(); // \D4T\MT5Sdk\Models\User | {\"password_investor\":\"123456Aa\",\"password\":\"123456Aa\", \"name\":\"test\", \"email\": \"test@test.com\",\"group\":\"demo\\demoforex\",\"leverage\":100}
 
 try {
     $result = $apiInstance->userAddPost($token, $body);
@@ -147,11 +147,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **token** | **string**| Session token |
- **body** | [**\D4T\MT5ManagerModels\User**](../Model/User.md)| {\&quot;password_investor\&quot;:\&quot;123456Aa\&quot;,\&quot;password\&quot;:\&quot;123456Aa\&quot;, \&quot;name\&quot;:\&quot;test\&quot;, \&quot;email\&quot;: \&quot;test@test.com\&quot;,\&quot;group\&quot;:\&quot;demo\\demoforex\&quot;,\&quot;leverage\&quot;:100} |
+ **body** | [**\D4T\MT5Sdk\Models\User**](../Model/User.md)| {\&quot;password_investor\&quot;:\&quot;123456Aa\&quot;,\&quot;password\&quot;:\&quot;123456Aa\&quot;, \&quot;name\&quot;:\&quot;test\&quot;, \&quot;email\&quot;: \&quot;test@test.com\&quot;,\&quot;group\&quot;:\&quot;demo\\demoforex\&quot;,\&quot;leverage\&quot;:100} |
 
 ### Return type
 
-[**\D4T\MT5ManagerModels\UserReturnType**](../Model/UserReturnType.md)
+[**\D4T\MT5Sdk\Models\UserReturnType**](../Model/UserReturnType.md)
 
 ### Authorization
 
@@ -176,13 +176,13 @@ Deposit account
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new D4T\Api\UserApi(
+$apiInstance = new D4T\MT5Sdk\Api\UserApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $token = "token_example"; // string | Session token
-$body = new \D4T\MT5ManagerModels\BalanceType(); // \D4T\MT5ManagerModels\BalanceType | {\"login\": 1, \"amount\":1, \"type\": 3, \"comment\": \"F.Management\"}
+$body = new \D4T\MT5Sdk\Models\BalanceType(); // \D4T\MT5Sdk\Models\BalanceType | {\"login\": 1, \"amount\":1, \"type\": 3, \"comment\": \"F.Management\"}
 
 try {
     $apiInstance->userDepositPost($token, $body);
@@ -197,7 +197,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **token** | **string**| Session token |
- **body** | [**\D4T\MT5ManagerModels\BalanceType**](../Model/BalanceType.md)| {\&quot;login\&quot;: 1, \&quot;amount\&quot;:1, \&quot;type\&quot;: 3, \&quot;comment\&quot;: \&quot;F.Management\&quot;} |
+ **body** | [**\D4T\MT5Sdk\Models\BalanceType**](../Model/BalanceType.md)| {\&quot;login\&quot;: 1, \&quot;amount\&quot;:1, \&quot;type\&quot;: 3, \&quot;comment\&quot;: \&quot;F.Management\&quot;} |
 
 ### Return type
 
@@ -226,13 +226,13 @@ Reset password
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new D4T\Api\UserApi(
+$apiInstance = new D4T\MT5Sdk\Api\UserApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $token = "token_example"; // string | Session token
-$body = new \D4T\MT5ManagerModels\ResetPwdType(); // \D4T\MT5ManagerModels\ResetPwdType | {\"login\": 1, \"password\":\"new_pwd\", \"change_investor\":0}
+$body = new \D4T\MT5Sdk\Models\ResetPwdType(); // \D4T\MT5Sdk\Models\ResetPwdType | {\"login\": 1, \"password\":\"new_pwd\", \"change_investor\":0}
 
 try {
     $apiInstance->userResetPwdPost($token, $body);
@@ -247,7 +247,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **token** | **string**| Session token |
- **body** | [**\D4T\MT5ManagerModels\ResetPwdType**](../Model/ResetPwdType.md)| {\&quot;login\&quot;: 1, \&quot;password\&quot;:\&quot;new_pwd\&quot;, \&quot;change_investor\&quot;:0} |
+ **body** | [**\D4T\MT5Sdk\Models\ResetPwdType**](../Model/ResetPwdType.md)| {\&quot;login\&quot;: 1, \&quot;password\&quot;:\&quot;new_pwd\&quot;, \&quot;change_investor\&quot;:0} |
 
 ### Return type
 
@@ -265,7 +265,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **userUserLoginGet**
-> \D4T\MT5ManagerModels\User userUserLoginGet($token, $user_login)
+> \D4T\MT5Sdk\Models\User userUserLoginGet($token, $user_login)
 
 Get user by user login
 
@@ -276,7 +276,7 @@ Get user by user login
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new D4T\Api\UserApi(
+$apiInstance = new D4T\MT5Sdk\Api\UserApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -302,7 +302,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\D4T\MT5ManagerModels\User**](../Model/User.md)
+[**\D4T\MT5Sdk\Models\User**](../Model/User.md)
 
 ### Authorization
 
@@ -327,13 +327,13 @@ Withdraw account
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new D4T\Api\UserApi(
+$apiInstance = new D4T\MT5Sdk\Api\UserApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $token = "token_example"; // string | Session token
-$body = new \D4T\MT5ManagerModels\BalanceType(); // \D4T\MT5ManagerModels\BalanceType | {\"login\": 1, \"amount\":1, \"type\": 3, \"comment\": \"F.Management\"}
+$body = new \D4T\MT5Sdk\Models\BalanceType(); // \D4T\MT5Sdk\Models\BalanceType | {\"login\": 1, \"amount\":1, \"type\": 3, \"comment\": \"F.Management\"}
 
 try {
     $apiInstance->userWithdrawPost($token, $body);
@@ -348,7 +348,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **token** | **string**| Session token |
- **body** | [**\D4T\MT5ManagerModels\BalanceType**](../Model/BalanceType.md)| {\&quot;login\&quot;: 1, \&quot;amount\&quot;:1, \&quot;type\&quot;: 3, \&quot;comment\&quot;: \&quot;F.Management\&quot;} |
+ **body** | [**\D4T\MT5Sdk\Models\BalanceType**](../Model/BalanceType.md)| {\&quot;login\&quot;: 1, \&quot;amount\&quot;:1, \&quot;type\&quot;: 3, \&quot;comment\&quot;: \&quot;F.Management\&quot;} |
 
 ### Return type
 
@@ -375,13 +375,13 @@ Create users
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new D4T\Api\UserApi(
+$apiInstance = new D4T\MT5Sdk\Api\UserApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 $token = "token_example"; // string | Session token
-$body = new \D4T\MT5ManagerModels\Users(); // \D4T\MT5ManagerModels\Users | {\"groupname\":\"demohfx-usd\",\"password\":\"123456Aa\", \"firstname\":\"test\", \"firstname\":\"test\", \"email\": \"test@test.com\"}
+$body = new \D4T\MT5Sdk\Models\Users(); // \D4T\MT5Sdk\Models\Users | {\"groupname\":\"demohfx-usd\",\"password\":\"123456Aa\", \"firstname\":\"test\", \"firstname\":\"test\", \"email\": \"test@test.com\"}
 
 try {
     $apiInstance->usersBulkAddPost($token, $body);
@@ -396,7 +396,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **token** | **string**| Session token |
- **body** | [**\D4T\MT5ManagerModels\Users**](../Model/Users.md)| {\&quot;groupname\&quot;:\&quot;demohfx-usd\&quot;,\&quot;password\&quot;:\&quot;123456Aa\&quot;, \&quot;firstname\&quot;:\&quot;test\&quot;, \&quot;firstname\&quot;:\&quot;test\&quot;, \&quot;email\&quot;: \&quot;test@test.com\&quot;} |
+ **body** | [**\D4T\MT5Sdk\Models\Users**](../Model/Users.md)| {\&quot;groupname\&quot;:\&quot;demohfx-usd\&quot;,\&quot;password\&quot;:\&quot;123456Aa\&quot;, \&quot;firstname\&quot;:\&quot;test\&quot;, \&quot;firstname\&quot;:\&quot;test\&quot;, \&quot;email\&quot;: \&quot;test@test.com\&quot;} |
 
 ### Return type
 
@@ -423,7 +423,7 @@ bulk balance
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new D4T\Api\UserApi(
+$apiInstance = new D4T\MT5Sdk\Api\UserApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -462,7 +462,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **usersBulkUpdatePost**
-> \D4T\MT5ManagerModels\ReturnType usersBulkUpdatePost($token, $upfile)
+> \D4T\MT5Sdk\Models\ReturnType usersBulkUpdatePost($token, $upfile)
 
 bulk update
 
@@ -471,7 +471,7 @@ bulk update
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new D4T\Api\UserApi(
+$apiInstance = new D4T\MT5Sdk\Api\UserApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -497,7 +497,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\D4T\MT5ManagerModels\ReturnType**](../Model/ReturnType.md)
+[**\D4T\MT5Sdk\Models\ReturnType**](../Model/ReturnType.md)
 
 ### Authorization
 
@@ -511,7 +511,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **usersBulkWithdrawPost**
-> \D4T\MT5ManagerModels\ReturnType usersBulkWithdrawPost($token, $upfile)
+> \D4T\MT5Sdk\Models\ReturnType usersBulkWithdrawPost($token, $upfile)
 
 bulk withdraw
 
@@ -520,7 +520,7 @@ bulk withdraw
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new D4T\Api\UserApi(
+$apiInstance = new D4T\MT5Sdk\Api\UserApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -546,7 +546,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\D4T\MT5ManagerModels\ReturnType**](../Model/ReturnType.md)
+[**\D4T\MT5Sdk\Models\ReturnType**](../Model/ReturnType.md)
 
 ### Authorization
 
@@ -560,7 +560,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **usersGroupGet**
-> \D4T\MT5ManagerModels\ArrayOfCachedLogins usersGroupGet($token, $group)
+> \D4T\MT5Sdk\Models\ArrayOfCachedLogins usersGroupGet($token, $group)
 
 Get list of users
 
@@ -569,7 +569,7 @@ Get list of users
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new D4T\Api\UserApi(
+$apiInstance = new D4T\MT5Sdk\Api\UserApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -595,7 +595,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\D4T\MT5ManagerModels\ArrayOfCachedLogins**](../Model/ArrayOfCachedLogins.md)
+[**\D4T\MT5Sdk\Models\ArrayOfCachedLogins**](../Model/ArrayOfCachedLogins.md)
 
 ### Authorization
 
@@ -609,7 +609,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **usersUploadPost**
-> \D4T\MT5ManagerModels\ReturnType usersUploadPost($token, $upfile)
+> \D4T\MT5Sdk\Models\ReturnType usersUploadPost($token, $upfile)
 
 Upload account in csv
 
@@ -618,7 +618,7 @@ Upload account in csv
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new D4T\Api\UserApi(
+$apiInstance = new D4T\MT5Sdk\Api\UserApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -644,7 +644,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\D4T\MT5ManagerModels\ReturnType**](../Model/ReturnType.md)
+[**\D4T\MT5Sdk\Models\ReturnType**](../Model/ReturnType.md)
 
 ### Authorization
 

@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  D4T
+ * @package  D4T\MT5Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace D4T\MT5Manager;
+namespace D4T\MT5Sdk\MT5Manager;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use D4T\ApiException;
-use D4T\Configuration;
-use D4T\HeaderSelector;
-use D4T\ObjectSerializer;
+use D4T\MT5Sdk\ApiException;
+use D4T\MT5Sdk\Configuration;
+use D4T\MT5Sdk\HeaderSelector;
+use D4T\MT5Sdk\ObjectSerializer;
 
 /**
  * GroupApi Class Doc Comment
  *
  * @category Class
- * @package  D4T
+ * @package  D4T\MT5Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -95,9 +95,9 @@ class GroupApi
      * @param  string $token Session token (required)
      * @param  string $group_name The name that needs to be fetched. (required)
      *
-     * @throws \D4T\ApiException on non-2xx response
+     * @throws \D4T\MT5Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \D4T\MT5ManagerModels\Group
+     * @return \D4T\MT5Sdk\Models\Group
      */
     public function groupGroupNameGet($token, $group_name)
     {
@@ -113,13 +113,13 @@ class GroupApi
      * @param  string $token Session token (required)
      * @param  string $group_name The name that needs to be fetched. (required)
      *
-     * @throws \D4T\ApiException on non-2xx response
+     * @throws \D4T\MT5Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \D4T\MT5ManagerModels\Group, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \D4T\MT5Sdk\Models\Group, HTTP status code, HTTP response headers (array of strings)
      */
     public function groupGroupNameGetWithHttpInfo($token, $group_name)
     {
-        $returnType = '\D4T\MT5ManagerModels\Group';
+        $returnType = '\D4T\MT5Sdk\Models\Group';
         $request = $this->groupGroupNameGetRequest($token, $group_name);
 
         try {
@@ -171,7 +171,7 @@ class GroupApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\D4T\MT5ManagerModels\Group',
+                        '\D4T\MT5Sdk\Models\Group',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -179,7 +179,7 @@ class GroupApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\D4T\MT5ManagerModels\ReturnType',
+                        '\D4T\MT5Sdk\Models\ReturnType',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -223,7 +223,7 @@ class GroupApi
      */
     public function groupGroupNameGetAsyncWithHttpInfo($token, $group_name)
     {
-        $returnType = '\D4T\MT5ManagerModels\Group';
+        $returnType = '\D4T\MT5Sdk\Models\Group';
         $request = $this->groupGroupNameGetRequest($token, $group_name);
 
         return $this->client
@@ -386,9 +386,9 @@ class GroupApi
      *
      * @param  string $token Session token (required)
      *
-     * @throws \D4T\ApiException on non-2xx response
+     * @throws \D4T\MT5Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \D4T\MT5ManagerModels\ArrayOfGroups
+     * @return \D4T\MT5Sdk\Models\ArrayOfGroups
      */
     public function groupsGet($token)
     {
@@ -403,13 +403,13 @@ class GroupApi
      *
      * @param  string $token Session token (required)
      *
-     * @throws \D4T\ApiException on non-2xx response
+     * @throws \D4T\MT5Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \D4T\MT5ManagerModels\ArrayOfGroups, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \D4T\MT5Sdk\Models\ArrayOfGroups, HTTP status code, HTTP response headers (array of strings)
      */
     public function groupsGetWithHttpInfo($token)
     {
-        $returnType = '\D4T\MT5ManagerModels\ArrayOfGroups';
+        $returnType = '\D4T\MT5Sdk\Models\ArrayOfGroups';
         $request = $this->groupsGetRequest($token);
 
         try {
@@ -461,7 +461,7 @@ class GroupApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\D4T\MT5ManagerModels\ArrayOfGroups',
+                        '\D4T\MT5Sdk\Models\ArrayOfGroups',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -469,7 +469,7 @@ class GroupApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\D4T\MT5ManagerModels\ReturnType',
+                        '\D4T\MT5Sdk\Models\ReturnType',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -511,7 +511,7 @@ class GroupApi
      */
     public function groupsGetAsyncWithHttpInfo($token)
     {
-        $returnType = '\D4T\MT5ManagerModels\ArrayOfGroups';
+        $returnType = '\D4T\MT5Sdk\Models\ArrayOfGroups';
         $request = $this->groupsGetRequest($token);
 
         return $this->client

@@ -1,11 +1,11 @@
 <?php
 /**
- * ArrayOfTrades
+ * ArrayOfUserResponsesInner
  *
  * PHP version 5
  *
  * @category Class
- * @package  D4T
+ * @package  D4T\MT5Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,20 +27,20 @@
  * Do not edit the class manually.
  */
 
-namespace D4T\MT5ManagerModels;
+namespace D4T\MT5Sdk\Models;
 
 use \ArrayAccess;
-use \D4T\ObjectSerializer;
+use \D4T\MT5Sdk\ObjectSerializer;
 
 /**
- * ArrayOfTrades Class Doc Comment
+ * ArrayOfUserResponsesInner Class Doc Comment
  *
  * @category Class
- * @package  D4T
+ * @package  D4T\MT5Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ArrayOfTrades implements ModelInterface, ArrayAccess
+class ArrayOfUserResponsesInner implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class ArrayOfTrades implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ArrayOfTrades';
+    protected static $swaggerModelName = 'ArrayOfUserResponses_inner';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,7 +57,10 @@ class ArrayOfTrades implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        
+        'login' => 'int',
+        'email' => 'string',
+        'code' => 'int',
+        'message' => 'string'
     ];
 
     /**
@@ -66,7 +69,10 @@ class ArrayOfTrades implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        
+        'login' => null,
+        'email' => null,
+        'code' => null,
+        'message' => null
     ];
 
     /**
@@ -96,7 +102,10 @@ class ArrayOfTrades implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        
+        'login' => 'login',
+        'email' => 'email',
+        'code' => 'code',
+        'message' => 'message'
     ];
 
     /**
@@ -105,7 +114,10 @@ class ArrayOfTrades implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        
+        'login' => 'setLogin',
+        'email' => 'setEmail',
+        'code' => 'setCode',
+        'message' => 'setMessage'
     ];
 
     /**
@@ -114,7 +126,10 @@ class ArrayOfTrades implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        
+        'login' => 'getLogin',
+        'email' => 'getEmail',
+        'code' => 'getCode',
+        'message' => 'getMessage'
     ];
 
     /**
@@ -177,6 +192,10 @@ class ArrayOfTrades implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['login'] = isset($data['login']) ? $data['login'] : null;
+        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
+        $this->container['code'] = isset($data['code']) ? $data['code'] : null;
+        $this->container['message'] = isset($data['message']) ? $data['message'] : null;
     }
 
     /**
@@ -186,7 +205,7 @@ class ArrayOfTrades implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = parent::listInvalidProperties();
+        $invalidProperties = [];
 
         return $invalidProperties;
     }
@@ -202,6 +221,102 @@ class ArrayOfTrades implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets login
+     *
+     * @return int
+     */
+    public function getLogin()
+    {
+        return $this->container['login'];
+    }
+
+    /**
+     * Sets login
+     *
+     * @param int $login login
+     *
+     * @return $this
+     */
+    public function setLogin($login)
+    {
+        $this->container['login'] = $login;
+
+        return $this;
+    }
+
+    /**
+     * Gets email
+     *
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->container['email'];
+    }
+
+    /**
+     * Sets email
+     *
+     * @param string $email email
+     *
+     * @return $this
+     */
+    public function setEmail($email)
+    {
+        $this->container['email'] = $email;
+
+        return $this;
+    }
+
+    /**
+     * Gets code
+     *
+     * @return int
+     */
+    public function getCode()
+    {
+        return $this->container['code'];
+    }
+
+    /**
+     * Sets code
+     *
+     * @param int $code code
+     *
+     * @return $this
+     */
+    public function setCode($code)
+    {
+        $this->container['code'] = $code;
+
+        return $this;
+    }
+
+    /**
+     * Gets message
+     *
+     * @return string
+     */
+    public function getMessage()
+    {
+        return $this->container['message'];
+    }
+
+    /**
+     * Sets message
+     *
+     * @param string $message message
+     *
+     * @return $this
+     */
+    public function setMessage($message)
+    {
+        $this->container['message'] = $message;
+
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      *

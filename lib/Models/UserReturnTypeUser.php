@@ -1,11 +1,11 @@
 <?php
 /**
- * UsersInner
+ * UserReturnTypeUser
  *
  * PHP version 5
  *
  * @category Class
- * @package  D4T
+ * @package  D4T\MT5Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,20 +27,20 @@
  * Do not edit the class manually.
  */
 
-namespace D4T\MT5ManagerModels;
+namespace D4T\MT5Sdk\Models;
 
 use \ArrayAccess;
-use \D4T\ObjectSerializer;
+use \D4T\MT5Sdk\ObjectSerializer;
 
 /**
- * UsersInner Class Doc Comment
+ * UserReturnTypeUser Class Doc Comment
  *
  * @category Class
- * @package  D4T
+ * @package  D4T\MT5Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class UsersInner implements ModelInterface, ArrayAccess
+class UserReturnTypeUser implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class UsersInner implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Users_inner';
+    protected static $swaggerModelName = 'UserReturnType_user';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,16 +57,26 @@ class UsersInner implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'firstname' => 'string',
-        'lastname' => 'string',
+        'login' => 'int',
+        'name' => 'string',
         'group' => 'string',
         'email' => 'string',
+        'phone' => 'string',
         'password' => 'string',
-        'phonenumber' => 'string',
+        'password_investor' => 'string',
+        'status' => 'string',
         'state' => 'string',
         'city' => 'string',
         'address' => 'string',
-        'countrycode' => 'string'
+        'comment' => 'string',
+        'agent_account' => 'int',
+        'id_number' => 'string',
+        'zipcode' => 'string',
+        'leverage' => 'int',
+        'enabled' => 'int',
+        'enable_change_password' => 'int',
+        'send_report' => 'int',
+        'read_only' => 'int'
     ];
 
     /**
@@ -75,16 +85,26 @@ class UsersInner implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'firstname' => null,
-        'lastname' => null,
+        'login' => null,
+        'name' => null,
         'group' => null,
         'email' => null,
+        'phone' => null,
         'password' => null,
-        'phonenumber' => null,
+        'password_investor' => null,
+        'status' => null,
         'state' => null,
         'city' => null,
         'address' => null,
-        'countrycode' => null
+        'comment' => null,
+        'agent_account' => null,
+        'id_number' => null,
+        'zipcode' => null,
+        'leverage' => null,
+        'enabled' => null,
+        'enable_change_password' => null,
+        'send_report' => null,
+        'read_only' => null
     ];
 
     /**
@@ -114,16 +134,26 @@ class UsersInner implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'firstname' => 'firstname',
-        'lastname' => 'lastname',
+        'login' => 'login',
+        'name' => 'name',
         'group' => 'group',
         'email' => 'email',
+        'phone' => 'phone',
         'password' => 'password',
-        'phonenumber' => 'phonenumber',
+        'password_investor' => 'password_investor',
+        'status' => 'status',
         'state' => 'state',
         'city' => 'city',
         'address' => 'address',
-        'countrycode' => 'countrycode'
+        'comment' => 'comment',
+        'agent_account' => 'agent_account',
+        'id_number' => 'id_number',
+        'zipcode' => 'zipcode',
+        'leverage' => 'leverage',
+        'enabled' => 'enabled',
+        'enable_change_password' => 'enable_change_password',
+        'send_report' => 'send_report',
+        'read_only' => 'read_only'
     ];
 
     /**
@@ -132,16 +162,26 @@ class UsersInner implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'firstname' => 'setFirstname',
-        'lastname' => 'setLastname',
+        'login' => 'setLogin',
+        'name' => 'setName',
         'group' => 'setGroup',
         'email' => 'setEmail',
+        'phone' => 'setPhone',
         'password' => 'setPassword',
-        'phonenumber' => 'setPhonenumber',
+        'password_investor' => 'setPasswordInvestor',
+        'status' => 'setStatus',
         'state' => 'setState',
         'city' => 'setCity',
         'address' => 'setAddress',
-        'countrycode' => 'setCountrycode'
+        'comment' => 'setComment',
+        'agent_account' => 'setAgentAccount',
+        'id_number' => 'setIdNumber',
+        'zipcode' => 'setZipcode',
+        'leverage' => 'setLeverage',
+        'enabled' => 'setEnabled',
+        'enable_change_password' => 'setEnableChangePassword',
+        'send_report' => 'setSendReport',
+        'read_only' => 'setReadOnly'
     ];
 
     /**
@@ -150,16 +190,26 @@ class UsersInner implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'firstname' => 'getFirstname',
-        'lastname' => 'getLastname',
+        'login' => 'getLogin',
+        'name' => 'getName',
         'group' => 'getGroup',
         'email' => 'getEmail',
+        'phone' => 'getPhone',
         'password' => 'getPassword',
-        'phonenumber' => 'getPhonenumber',
+        'password_investor' => 'getPasswordInvestor',
+        'status' => 'getStatus',
         'state' => 'getState',
         'city' => 'getCity',
         'address' => 'getAddress',
-        'countrycode' => 'getCountrycode'
+        'comment' => 'getComment',
+        'agent_account' => 'getAgentAccount',
+        'id_number' => 'getIdNumber',
+        'zipcode' => 'getZipcode',
+        'leverage' => 'getLeverage',
+        'enabled' => 'getEnabled',
+        'enable_change_password' => 'getEnableChangePassword',
+        'send_report' => 'getSendReport',
+        'read_only' => 'getReadOnly'
     ];
 
     /**
@@ -222,16 +272,26 @@ class UsersInner implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['firstname'] = isset($data['firstname']) ? $data['firstname'] : null;
-        $this->container['lastname'] = isset($data['lastname']) ? $data['lastname'] : null;
+        $this->container['login'] = isset($data['login']) ? $data['login'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['group'] = isset($data['group']) ? $data['group'] : null;
         $this->container['email'] = isset($data['email']) ? $data['email'] : null;
+        $this->container['phone'] = isset($data['phone']) ? $data['phone'] : null;
         $this->container['password'] = isset($data['password']) ? $data['password'] : null;
-        $this->container['phonenumber'] = isset($data['phonenumber']) ? $data['phonenumber'] : null;
+        $this->container['password_investor'] = isset($data['password_investor']) ? $data['password_investor'] : null;
+        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
         $this->container['state'] = isset($data['state']) ? $data['state'] : null;
         $this->container['city'] = isset($data['city']) ? $data['city'] : null;
         $this->container['address'] = isset($data['address']) ? $data['address'] : null;
-        $this->container['countrycode'] = isset($data['countrycode']) ? $data['countrycode'] : null;
+        $this->container['comment'] = isset($data['comment']) ? $data['comment'] : null;
+        $this->container['agent_account'] = isset($data['agent_account']) ? $data['agent_account'] : null;
+        $this->container['id_number'] = isset($data['id_number']) ? $data['id_number'] : null;
+        $this->container['zipcode'] = isset($data['zipcode']) ? $data['zipcode'] : null;
+        $this->container['leverage'] = isset($data['leverage']) ? $data['leverage'] : null;
+        $this->container['enabled'] = isset($data['enabled']) ? $data['enabled'] : null;
+        $this->container['enable_change_password'] = isset($data['enable_change_password']) ? $data['enable_change_password'] : null;
+        $this->container['send_report'] = isset($data['send_report']) ? $data['send_report'] : null;
+        $this->container['read_only'] = isset($data['read_only']) ? $data['read_only'] : null;
     }
 
     /**
@@ -259,49 +319,49 @@ class UsersInner implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets firstname
+     * Gets login
      *
-     * @return string
+     * @return int
      */
-    public function getFirstname()
+    public function getLogin()
     {
-        return $this->container['firstname'];
+        return $this->container['login'];
     }
 
     /**
-     * Sets firstname
+     * Sets login
      *
-     * @param string $firstname firstname
+     * @param int $login login
      *
      * @return $this
      */
-    public function setFirstname($firstname)
+    public function setLogin($login)
     {
-        $this->container['firstname'] = $firstname;
+        $this->container['login'] = $login;
 
         return $this;
     }
 
     /**
-     * Gets lastname
+     * Gets name
      *
      * @return string
      */
-    public function getLastname()
+    public function getName()
     {
-        return $this->container['lastname'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets lastname
+     * Sets name
      *
-     * @param string $lastname lastname
+     * @param string $name name
      *
      * @return $this
      */
-    public function setLastname($lastname)
+    public function setName($name)
     {
-        $this->container['lastname'] = $lastname;
+        $this->container['name'] = $name;
 
         return $this;
     }
@@ -355,6 +415,30 @@ class UsersInner implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets phone
+     *
+     * @return string
+     */
+    public function getPhone()
+    {
+        return $this->container['phone'];
+    }
+
+    /**
+     * Sets phone
+     *
+     * @param string $phone phone
+     *
+     * @return $this
+     */
+    public function setPhone($phone)
+    {
+        $this->container['phone'] = $phone;
+
+        return $this;
+    }
+
+    /**
      * Gets password
      *
      * @return string
@@ -379,25 +463,49 @@ class UsersInner implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets phonenumber
+     * Gets password_investor
      *
      * @return string
      */
-    public function getPhonenumber()
+    public function getPasswordInvestor()
     {
-        return $this->container['phonenumber'];
+        return $this->container['password_investor'];
     }
 
     /**
-     * Sets phonenumber
+     * Sets password_investor
      *
-     * @param string $phonenumber phonenumber
+     * @param string $password_investor password_investor
      *
      * @return $this
      */
-    public function setPhonenumber($phonenumber)
+    public function setPasswordInvestor($password_investor)
     {
-        $this->container['phonenumber'] = $phonenumber;
+        $this->container['password_investor'] = $password_investor;
+
+        return $this;
+    }
+
+    /**
+     * Gets status
+     *
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->container['status'];
+    }
+
+    /**
+     * Sets status
+     *
+     * @param string $status status
+     *
+     * @return $this
+     */
+    public function setStatus($status)
+    {
+        $this->container['status'] = $status;
 
         return $this;
     }
@@ -475,25 +583,217 @@ class UsersInner implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets countrycode
+     * Gets comment
      *
      * @return string
      */
-    public function getCountrycode()
+    public function getComment()
     {
-        return $this->container['countrycode'];
+        return $this->container['comment'];
     }
 
     /**
-     * Sets countrycode
+     * Sets comment
      *
-     * @param string $countrycode countrycode
+     * @param string $comment comment
      *
      * @return $this
      */
-    public function setCountrycode($countrycode)
+    public function setComment($comment)
     {
-        $this->container['countrycode'] = $countrycode;
+        $this->container['comment'] = $comment;
+
+        return $this;
+    }
+
+    /**
+     * Gets agent_account
+     *
+     * @return int
+     */
+    public function getAgentAccount()
+    {
+        return $this->container['agent_account'];
+    }
+
+    /**
+     * Sets agent_account
+     *
+     * @param int $agent_account agent_account
+     *
+     * @return $this
+     */
+    public function setAgentAccount($agent_account)
+    {
+        $this->container['agent_account'] = $agent_account;
+
+        return $this;
+    }
+
+    /**
+     * Gets id_number
+     *
+     * @return string
+     */
+    public function getIdNumber()
+    {
+        return $this->container['id_number'];
+    }
+
+    /**
+     * Sets id_number
+     *
+     * @param string $id_number id_number
+     *
+     * @return $this
+     */
+    public function setIdNumber($id_number)
+    {
+        $this->container['id_number'] = $id_number;
+
+        return $this;
+    }
+
+    /**
+     * Gets zipcode
+     *
+     * @return string
+     */
+    public function getZipcode()
+    {
+        return $this->container['zipcode'];
+    }
+
+    /**
+     * Sets zipcode
+     *
+     * @param string $zipcode zipcode
+     *
+     * @return $this
+     */
+    public function setZipcode($zipcode)
+    {
+        $this->container['zipcode'] = $zipcode;
+
+        return $this;
+    }
+
+    /**
+     * Gets leverage
+     *
+     * @return int
+     */
+    public function getLeverage()
+    {
+        return $this->container['leverage'];
+    }
+
+    /**
+     * Sets leverage
+     *
+     * @param int $leverage leverage
+     *
+     * @return $this
+     */
+    public function setLeverage($leverage)
+    {
+        $this->container['leverage'] = $leverage;
+
+        return $this;
+    }
+
+    /**
+     * Gets enabled
+     *
+     * @return int
+     */
+    public function getEnabled()
+    {
+        return $this->container['enabled'];
+    }
+
+    /**
+     * Sets enabled
+     *
+     * @param int $enabled enabled
+     *
+     * @return $this
+     */
+    public function setEnabled($enabled)
+    {
+        $this->container['enabled'] = $enabled;
+
+        return $this;
+    }
+
+    /**
+     * Gets enable_change_password
+     *
+     * @return int
+     */
+    public function getEnableChangePassword()
+    {
+        return $this->container['enable_change_password'];
+    }
+
+    /**
+     * Sets enable_change_password
+     *
+     * @param int $enable_change_password enable_change_password
+     *
+     * @return $this
+     */
+    public function setEnableChangePassword($enable_change_password)
+    {
+        $this->container['enable_change_password'] = $enable_change_password;
+
+        return $this;
+    }
+
+    /**
+     * Gets send_report
+     *
+     * @return int
+     */
+    public function getSendReport()
+    {
+        return $this->container['send_report'];
+    }
+
+    /**
+     * Sets send_report
+     *
+     * @param int $send_report send_report
+     *
+     * @return $this
+     */
+    public function setSendReport($send_report)
+    {
+        $this->container['send_report'] = $send_report;
+
+        return $this;
+    }
+
+    /**
+     * Gets read_only
+     *
+     * @return int
+     */
+    public function getReadOnly()
+    {
+        return $this->container['read_only'];
+    }
+
+    /**
+     * Sets read_only
+     *
+     * @param int $read_only read_only
+     *
+     * @return $this
+     */
+    public function setReadOnly($read_only)
+    {
+        $this->container['read_only'] = $read_only;
 
         return $this;
     }

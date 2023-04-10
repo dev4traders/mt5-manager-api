@@ -1,4 +1,4 @@
-# D4T\AccountApi
+# D4T\MT5Sdk\AccountApi
 
 All URIs are relative to *http://localhost:6503/v1*
 
@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **accountLoginGet**
-> \D4T\MT5ManagerModels\Account accountLoginGet($token, $login)
+> \D4T\MT5Sdk\Models\Account accountLoginGet($token, $login)
 
 Get account by user login
 
@@ -19,7 +19,7 @@ Get account by user login
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new D4T\Api\AccountApi(
+$apiInstance = new D4T\MT5Sdk\Api\AccountApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -45,7 +45,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\D4T\MT5ManagerModels\Account**](../Model/Account.md)
+[**\D4T\MT5Sdk\Models\Account**](../Model/Account.md)
 
 ### Authorization
 

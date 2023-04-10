@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  D4T
+ * @package  D4T\MT5Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace D4T\MT5ManagerModels;
+namespace D4T\MT5Sdk\Models;
 
 use \ArrayAccess;
-use \D4T\ObjectSerializer;
+use \D4T\MT5Sdk\ObjectSerializer;
 
 /**
  * UserReturnType Class Doc Comment
  *
  * @category Class
- * @package  D4T
+ * @package  D4T\MT5Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -59,7 +59,7 @@ class UserReturnType implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'code' => 'int',
         'message' => 'string',
-        'user' => '\D4T\MT5ManagerModels\UserReturnTypeUser'
+        'user' => '\D4T\MT5Sdk\Models\UserReturnTypeUser'
     ];
 
     /**
@@ -267,7 +267,7 @@ class UserReturnType implements ModelInterface, ArrayAccess
     /**
      * Gets user
      *
-     * @return \D4T\MT5ManagerModels\UserReturnTypeUser
+     * @return \D4T\MT5Sdk\Models\UserReturnTypeUser
      */
     public function getUser()
     {
@@ -277,7 +277,7 @@ class UserReturnType implements ModelInterface, ArrayAccess
     /**
      * Sets user
      *
-     * @param \D4T\MT5ManagerModels\UserReturnTypeUser $user user
+     * @param \D4T\MT5Sdk\Models\UserReturnTypeUser $user user
      *
      * @return $this
      */

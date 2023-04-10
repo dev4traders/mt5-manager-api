@@ -1,11 +1,11 @@
 <?php
 /**
- * TradesFilterType
+ * BalanceType
  *
  * PHP version 5
  *
  * @category Class
- * @package  D4T
+ * @package  D4T\MT5Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,20 +27,20 @@
  * Do not edit the class manually.
  */
 
-namespace D4T\MT5ManagerModels;
+namespace D4T\MT5Sdk\Models;
 
 use \ArrayAccess;
-use \D4T\ObjectSerializer;
+use \D4T\MT5Sdk\ObjectSerializer;
 
 /**
- * TradesFilterType Class Doc Comment
+ * BalanceType Class Doc Comment
  *
  * @category Class
- * @package  D4T
+ * @package  D4T\MT5Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class TradesFilterType implements ModelInterface, ArrayAccess
+class BalanceType implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class TradesFilterType implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'TradesFilterType';
+    protected static $swaggerModelName = 'BalanceType';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,9 +57,10 @@ class TradesFilterType implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'from' => 'string',
-        'to' => 'string',
-        'types' => 'string'
+        'login' => 'int',
+        'amount' => 'float',
+        'type' => 'float',
+        'comment' => 'string'
     ];
 
     /**
@@ -68,9 +69,10 @@ class TradesFilterType implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'from' => null,
-        'to' => null,
-        'types' => null
+        'login' => null,
+        'amount' => null,
+        'type' => null,
+        'comment' => null
     ];
 
     /**
@@ -100,9 +102,10 @@ class TradesFilterType implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'from' => 'from',
-        'to' => 'to',
-        'types' => 'types'
+        'login' => 'login',
+        'amount' => 'amount',
+        'type' => 'type',
+        'comment' => 'comment'
     ];
 
     /**
@@ -111,9 +114,10 @@ class TradesFilterType implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'from' => 'setFrom',
-        'to' => 'setTo',
-        'types' => 'setTypes'
+        'login' => 'setLogin',
+        'amount' => 'setAmount',
+        'type' => 'setType',
+        'comment' => 'setComment'
     ];
 
     /**
@@ -122,9 +126,10 @@ class TradesFilterType implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'from' => 'getFrom',
-        'to' => 'getTo',
-        'types' => 'getTypes'
+        'login' => 'getLogin',
+        'amount' => 'getAmount',
+        'type' => 'getType',
+        'comment' => 'getComment'
     ];
 
     /**
@@ -187,9 +192,10 @@ class TradesFilterType implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['from'] = isset($data['from']) ? $data['from'] : null;
-        $this->container['to'] = isset($data['to']) ? $data['to'] : null;
-        $this->container['types'] = isset($data['types']) ? $data['types'] : null;
+        $this->container['login'] = isset($data['login']) ? $data['login'] : null;
+        $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['comment'] = isset($data['comment']) ? $data['comment'] : null;
     }
 
     /**
@@ -217,73 +223,97 @@ class TradesFilterType implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets from
+     * Gets login
      *
-     * @return string
+     * @return int
      */
-    public function getFrom()
+    public function getLogin()
     {
-        return $this->container['from'];
+        return $this->container['login'];
     }
 
     /**
-     * Sets from
+     * Sets login
      *
-     * @param string $from from
+     * @param int $login login
      *
      * @return $this
      */
-    public function setFrom($from)
+    public function setLogin($login)
     {
-        $this->container['from'] = $from;
+        $this->container['login'] = $login;
 
         return $this;
     }
 
     /**
-     * Gets to
+     * Gets amount
      *
-     * @return string
+     * @return float
      */
-    public function getTo()
+    public function getAmount()
     {
-        return $this->container['to'];
+        return $this->container['amount'];
     }
 
     /**
-     * Sets to
+     * Sets amount
      *
-     * @param string $to to
+     * @param float $amount amount
      *
      * @return $this
      */
-    public function setTo($to)
+    public function setAmount($amount)
     {
-        $this->container['to'] = $to;
+        $this->container['amount'] = $amount;
 
         return $this;
     }
 
     /**
-     * Gets types
+     * Gets type
      *
-     * @return string
+     * @return float
      */
-    public function getTypes()
+    public function getType()
     {
-        return $this->container['types'];
+        return $this->container['type'];
     }
 
     /**
-     * Sets types
+     * Sets type
      *
-     * @param string $types types
+     * @param float $type type
      *
      * @return $this
      */
-    public function setTypes($types)
+    public function setType($type)
     {
-        $this->container['types'] = $types;
+        $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets comment
+     *
+     * @return string
+     */
+    public function getComment()
+    {
+        return $this->container['comment'];
+    }
+
+    /**
+     * Sets comment
+     *
+     * @param string $comment comment
+     *
+     * @return $this
+     */
+    public function setComment($comment)
+    {
+        $this->container['comment'] = $comment;
 
         return $this;
     }

@@ -1,11 +1,11 @@
 <?php
 /**
- * ArrayOfPositionsInner
+ * ArrayOfCachedLogins
  *
  * PHP version 5
  *
  * @category Class
- * @package  D4T
+ * @package  D4T\MT5Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,20 +27,20 @@
  * Do not edit the class manually.
  */
 
-namespace D4T\MT5ManagerModels;
+namespace D4T\MT5Sdk\Models;
 
 use \ArrayAccess;
-use \D4T\ObjectSerializer;
+use \D4T\MT5Sdk\ObjectSerializer;
 
 /**
- * ArrayOfPositionsInner Class Doc Comment
+ * ArrayOfCachedLogins Class Doc Comment
  *
  * @category Class
- * @package  D4T
+ * @package  D4T\MT5Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ArrayOfPositionsInner implements ModelInterface, ArrayAccess
+class ArrayOfCachedLogins implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class ArrayOfPositionsInner implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ArrayOfPositions_inner';
+    protected static $swaggerModelName = 'ArrayOfCachedLogins';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,12 +57,8 @@ class ArrayOfPositionsInner implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'action' => 'int',
-        'volume' => 'float',
-        'symbol' => 'string',
-        'price' => 'float',
-        'time' => 'string',
-        'id' => 'int'
+        'cached_at' => 'int',
+        'data' => 'int[]'
     ];
 
     /**
@@ -71,12 +67,8 @@ class ArrayOfPositionsInner implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'action' => null,
-        'volume' => null,
-        'symbol' => null,
-        'price' => null,
-        'time' => null,
-        'id' => null
+        'cached_at' => null,
+        'data' => null
     ];
 
     /**
@@ -106,12 +98,8 @@ class ArrayOfPositionsInner implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'action' => 'action',
-        'volume' => 'volume',
-        'symbol' => 'symbol',
-        'price' => 'price',
-        'time' => 'time',
-        'id' => 'id'
+        'cached_at' => 'cached_at',
+        'data' => 'data'
     ];
 
     /**
@@ -120,12 +108,8 @@ class ArrayOfPositionsInner implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'action' => 'setAction',
-        'volume' => 'setVolume',
-        'symbol' => 'setSymbol',
-        'price' => 'setPrice',
-        'time' => 'setTime',
-        'id' => 'setId'
+        'cached_at' => 'setCachedAt',
+        'data' => 'setData'
     ];
 
     /**
@@ -134,12 +118,8 @@ class ArrayOfPositionsInner implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'action' => 'getAction',
-        'volume' => 'getVolume',
-        'symbol' => 'getSymbol',
-        'price' => 'getPrice',
-        'time' => 'getTime',
-        'id' => 'getId'
+        'cached_at' => 'getCachedAt',
+        'data' => 'getData'
     ];
 
     /**
@@ -202,12 +182,8 @@ class ArrayOfPositionsInner implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['action'] = isset($data['action']) ? $data['action'] : null;
-        $this->container['volume'] = isset($data['volume']) ? $data['volume'] : null;
-        $this->container['symbol'] = isset($data['symbol']) ? $data['symbol'] : null;
-        $this->container['price'] = isset($data['price']) ? $data['price'] : null;
-        $this->container['time'] = isset($data['time']) ? $data['time'] : null;
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['cached_at'] = isset($data['cached_at']) ? $data['cached_at'] : null;
+        $this->container['data'] = isset($data['data']) ? $data['data'] : null;
     }
 
     /**
@@ -235,145 +211,49 @@ class ArrayOfPositionsInner implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets action
+     * Gets cached_at
      *
      * @return int
      */
-    public function getAction()
+    public function getCachedAt()
     {
-        return $this->container['action'];
+        return $this->container['cached_at'];
     }
 
     /**
-     * Sets action
+     * Sets cached_at
      *
-     * @param int $action action
+     * @param int $cached_at cached_at
      *
      * @return $this
      */
-    public function setAction($action)
+    public function setCachedAt($cached_at)
     {
-        $this->container['action'] = $action;
+        $this->container['cached_at'] = $cached_at;
 
         return $this;
     }
 
     /**
-     * Gets volume
+     * Gets data
      *
-     * @return float
+     * @return int[]
      */
-    public function getVolume()
+    public function getData()
     {
-        return $this->container['volume'];
+        return $this->container['data'];
     }
 
     /**
-     * Sets volume
+     * Sets data
      *
-     * @param float $volume volume
+     * @param int[] $data data
      *
      * @return $this
      */
-    public function setVolume($volume)
+    public function setData($data)
     {
-        $this->container['volume'] = $volume;
-
-        return $this;
-    }
-
-    /**
-     * Gets symbol
-     *
-     * @return string
-     */
-    public function getSymbol()
-    {
-        return $this->container['symbol'];
-    }
-
-    /**
-     * Sets symbol
-     *
-     * @param string $symbol symbol
-     *
-     * @return $this
-     */
-    public function setSymbol($symbol)
-    {
-        $this->container['symbol'] = $symbol;
-
-        return $this;
-    }
-
-    /**
-     * Gets price
-     *
-     * @return float
-     */
-    public function getPrice()
-    {
-        return $this->container['price'];
-    }
-
-    /**
-     * Sets price
-     *
-     * @param float $price price
-     *
-     * @return $this
-     */
-    public function setPrice($price)
-    {
-        $this->container['price'] = $price;
-
-        return $this;
-    }
-
-    /**
-     * Gets time
-     *
-     * @return string
-     */
-    public function getTime()
-    {
-        return $this->container['time'];
-    }
-
-    /**
-     * Sets time
-     *
-     * @param string $time time
-     *
-     * @return $this
-     */
-    public function setTime($time)
-    {
-        $this->container['time'] = $time;
-
-        return $this;
-    }
-
-    /**
-     * Gets id
-     *
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param int $id id
-     *
-     * @return $this
-     */
-    public function setId($id)
-    {
-        $this->container['id'] = $id;
+        $this->container['data'] = $data;
 
         return $this;
     }

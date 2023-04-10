@@ -1,4 +1,4 @@
-# D4T\TradesApi
+# D4T\MT5Sdk\TradesApi
 
 All URIs are relative to *http://localhost:6503/v1*
 
@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **positionsUserLoginGet**
-> \D4T\MT5ManagerModels\ArrayOfPositions positionsUserLoginGet($token, $user_login)
+> \D4T\MT5Sdk\Models\ArrayOfPositions positionsUserLoginGet($token, $user_login)
 
 Get list of user positions
 
@@ -18,7 +18,7 @@ Get list of user positions
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new D4T\Api\TradesApi(
+$apiInstance = new D4T\MT5Sdk\Api\TradesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -44,7 +44,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\D4T\MT5ManagerModels\ArrayOfPositions**](../Model/ArrayOfPositions.md)
+[**\D4T\MT5Sdk\Models\ArrayOfPositions**](../Model/ArrayOfPositions.md)
 
 ### Authorization
 
@@ -58,7 +58,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **tradesUserLoginGet**
-> \D4T\MT5ManagerModels\ArrayOfTrades tradesUserLoginGet($token, $user_login, $days_back, $types)
+> \D4T\MT5Sdk\Models\ArrayOfTrades tradesUserLoginGet($token, $user_login, $days_back, $types)
 
 Get list of user trades
 
@@ -67,7 +67,7 @@ Get list of user trades
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new D4T\Api\TradesApi(
+$apiInstance = new D4T\MT5Sdk\Api\TradesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -97,7 +97,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\D4T\MT5ManagerModels\ArrayOfTrades**](../Model/ArrayOfTrades.md)
+[**\D4T\MT5Sdk\Models\ArrayOfTrades**](../Model/ArrayOfTrades.md)
 
 ### Authorization
 

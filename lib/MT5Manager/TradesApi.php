@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  D4T
+ * @package  D4T\MT5Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace D4T\MT5Manager;
+namespace D4T\MT5Sdk\MT5Manager;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use D4T\ApiException;
-use D4T\Configuration;
-use D4T\HeaderSelector;
-use D4T\ObjectSerializer;
+use D4T\MT5Sdk\ApiException;
+use D4T\MT5Sdk\Configuration;
+use D4T\MT5Sdk\HeaderSelector;
+use D4T\MT5Sdk\ObjectSerializer;
 
 /**
  * TradesApi Class Doc Comment
  *
  * @category Class
- * @package  D4T
+ * @package  D4T\MT5Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -95,9 +95,9 @@ class TradesApi
      * @param  string $token Session token (required)
      * @param  string $user_login The name that needs to be fetched for. (required)
      *
-     * @throws \D4T\ApiException on non-2xx response
+     * @throws \D4T\MT5Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \D4T\MT5ManagerModels\ArrayOfPositions
+     * @return \D4T\MT5Sdk\Models\ArrayOfPositions
      */
     public function positionsUserLoginGet($token, $user_login)
     {
@@ -113,13 +113,13 @@ class TradesApi
      * @param  string $token Session token (required)
      * @param  string $user_login The name that needs to be fetched for. (required)
      *
-     * @throws \D4T\ApiException on non-2xx response
+     * @throws \D4T\MT5Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \D4T\MT5ManagerModels\ArrayOfPositions, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \D4T\MT5Sdk\Models\ArrayOfPositions, HTTP status code, HTTP response headers (array of strings)
      */
     public function positionsUserLoginGetWithHttpInfo($token, $user_login)
     {
-        $returnType = '\D4T\MT5ManagerModels\ArrayOfPositions';
+        $returnType = '\D4T\MT5Sdk\Models\ArrayOfPositions';
         $request = $this->positionsUserLoginGetRequest($token, $user_login);
 
         try {
@@ -171,7 +171,7 @@ class TradesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\D4T\MT5ManagerModels\ArrayOfPositions',
+                        '\D4T\MT5Sdk\Models\ArrayOfPositions',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -179,7 +179,7 @@ class TradesApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\D4T\MT5ManagerModels\ReturnType',
+                        '\D4T\MT5Sdk\Models\ReturnType',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -223,7 +223,7 @@ class TradesApi
      */
     public function positionsUserLoginGetAsyncWithHttpInfo($token, $user_login)
     {
-        $returnType = '\D4T\MT5ManagerModels\ArrayOfPositions';
+        $returnType = '\D4T\MT5Sdk\Models\ArrayOfPositions';
         $request = $this->positionsUserLoginGetRequest($token, $user_login);
 
         return $this->client
@@ -389,9 +389,9 @@ class TradesApi
      * @param  string $days_back Days Back (required)
      * @param  string $types Types (required)
      *
-     * @throws \D4T\ApiException on non-2xx response
+     * @throws \D4T\MT5Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \D4T\MT5ManagerModels\ArrayOfTrades
+     * @return \D4T\MT5Sdk\Models\ArrayOfTrades
      */
     public function tradesUserLoginGet($token, $user_login, $days_back, $types)
     {
@@ -409,13 +409,13 @@ class TradesApi
      * @param  string $days_back Days Back (required)
      * @param  string $types Types (required)
      *
-     * @throws \D4T\ApiException on non-2xx response
+     * @throws \D4T\MT5Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \D4T\MT5ManagerModels\ArrayOfTrades, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \D4T\MT5Sdk\Models\ArrayOfTrades, HTTP status code, HTTP response headers (array of strings)
      */
     public function tradesUserLoginGetWithHttpInfo($token, $user_login, $days_back, $types)
     {
-        $returnType = '\D4T\MT5ManagerModels\ArrayOfTrades';
+        $returnType = '\D4T\MT5Sdk\Models\ArrayOfTrades';
         $request = $this->tradesUserLoginGetRequest($token, $user_login, $days_back, $types);
 
         try {
@@ -467,7 +467,7 @@ class TradesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\D4T\MT5ManagerModels\ArrayOfTrades',
+                        '\D4T\MT5Sdk\Models\ArrayOfTrades',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -475,7 +475,7 @@ class TradesApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\D4T\MT5ManagerModels\ReturnType',
+                        '\D4T\MT5Sdk\Models\ReturnType',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -523,7 +523,7 @@ class TradesApi
      */
     public function tradesUserLoginGetAsyncWithHttpInfo($token, $user_login, $days_back, $types)
     {
-        $returnType = '\D4T\MT5ManagerModels\ArrayOfTrades';
+        $returnType = '\D4T\MT5Sdk\Models\ArrayOfTrades';
         $request = $this->tradesUserLoginGetRequest($token, $user_login, $days_back, $types);
 
         return $this->client

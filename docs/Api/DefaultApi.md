@@ -1,4 +1,4 @@
-# D4T\DefaultApi
+# D4T\MT5Sdk\DefaultApi
 
 All URIs are relative to *http://localhost:6503/v1*
 
@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **initGet**
-> \D4T\MT5ManagerModels\InitReturnType initGet($server, $login, $password, $timeout)
+> \D4T\MT5Sdk\Models\InitReturnType initGet($server, $login, $password, $timeout)
 
 Init manager
 
@@ -19,7 +19,7 @@ Init manager
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new D4T\Api\DefaultApi(
+$apiInstance = new D4T\MT5Sdk\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -49,7 +49,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\D4T\MT5ManagerModels\InitReturnType**](../Model/InitReturnType.md)
+[**\D4T\MT5Sdk\Models\InitReturnType**](../Model/InitReturnType.md)
 
 ### Authorization
 

@@ -1,11 +1,11 @@
 <?php
 /**
- * ReturnType
+ * InitReturnType
  *
  * PHP version 5
  *
  * @category Class
- * @package  D4T
+ * @package  D4T\MT5Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,20 +27,20 @@
  * Do not edit the class manually.
  */
 
-namespace D4T\MT5ManagerModels;
+namespace D4T\MT5Sdk\Models;
 
 use \ArrayAccess;
-use \D4T\ObjectSerializer;
+use \D4T\MT5Sdk\ObjectSerializer;
 
 /**
- * ReturnType Class Doc Comment
+ * InitReturnType Class Doc Comment
  *
  * @category Class
- * @package  D4T
+ * @package  D4T\MT5Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ReturnType implements ModelInterface, ArrayAccess
+class InitReturnType implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class ReturnType implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ReturnType';
+    protected static $swaggerModelName = 'InitReturnType';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,7 +58,7 @@ class ReturnType implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'code' => 'int',
-        'message' => 'string'
+        'token' => 'string'
     ];
 
     /**
@@ -68,7 +68,7 @@ class ReturnType implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'code' => 'int32',
-        'message' => null
+        'token' => null
     ];
 
     /**
@@ -99,7 +99,7 @@ class ReturnType implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'code' => 'code',
-        'message' => 'message'
+        'token' => 'token'
     ];
 
     /**
@@ -109,7 +109,7 @@ class ReturnType implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'code' => 'setCode',
-        'message' => 'setMessage'
+        'token' => 'setToken'
     ];
 
     /**
@@ -119,7 +119,7 @@ class ReturnType implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'code' => 'getCode',
-        'message' => 'getMessage'
+        'token' => 'getToken'
     ];
 
     /**
@@ -183,7 +183,7 @@ class ReturnType implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['code'] = isset($data['code']) ? $data['code'] : null;
-        $this->container['message'] = isset($data['message']) ? $data['message'] : null;
+        $this->container['token'] = isset($data['token']) ? $data['token'] : null;
     }
 
     /**
@@ -235,25 +235,25 @@ class ReturnType implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets message
+     * Gets token
      *
      * @return string
      */
-    public function getMessage()
+    public function getToken()
     {
-        return $this->container['message'];
+        return $this->container['token'];
     }
 
     /**
-     * Sets message
+     * Sets token
      *
-     * @param string $message message
+     * @param string $token token
      *
      * @return $this
      */
-    public function setMessage($message)
+    public function setToken($token)
     {
-        $this->container['message'] = $message;
+        $this->container['token'] = $token;
 
         return $this;
     }

@@ -1,11 +1,11 @@
 <?php
 /**
- * ArrayOfTradesInner
+ * ResetPwdType
  *
  * PHP version 5
  *
  * @category Class
- * @package  D4T
+ * @package  D4T\MT5Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,20 +27,20 @@
  * Do not edit the class manually.
  */
 
-namespace D4T\MT5ManagerModels;
+namespace D4T\MT5Sdk\Models;
 
 use \ArrayAccess;
-use \D4T\ObjectSerializer;
+use \D4T\MT5Sdk\ObjectSerializer;
 
 /**
- * ArrayOfTradesInner Class Doc Comment
+ * ResetPwdType Class Doc Comment
  *
  * @category Class
- * @package  D4T
+ * @package  D4T\MT5Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ArrayOfTradesInner implements ModelInterface, ArrayAccess
+class ResetPwdType implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class ArrayOfTradesInner implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ArrayOfTrades_inner';
+    protected static $swaggerModelName = 'ResetPwdType';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,10 +57,9 @@ class ArrayOfTradesInner implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'symbol' => 'string',
-        'type' => 'int',
-        'type_str' => 'string',
-        'profit' => 'float'
+        'login' => 'int',
+        'password' => 'string',
+        'change_investor' => 'int'
     ];
 
     /**
@@ -69,10 +68,9 @@ class ArrayOfTradesInner implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'symbol' => null,
-        'type' => null,
-        'type_str' => null,
-        'profit' => null
+        'login' => 'int64',
+        'password' => null,
+        'change_investor' => null
     ];
 
     /**
@@ -102,10 +100,9 @@ class ArrayOfTradesInner implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'symbol' => 'symbol',
-        'type' => 'type',
-        'type_str' => 'type_str',
-        'profit' => 'profit'
+        'login' => 'login',
+        'password' => 'password',
+        'change_investor' => 'change_investor'
     ];
 
     /**
@@ -114,10 +111,9 @@ class ArrayOfTradesInner implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'symbol' => 'setSymbol',
-        'type' => 'setType',
-        'type_str' => 'setTypeStr',
-        'profit' => 'setProfit'
+        'login' => 'setLogin',
+        'password' => 'setPassword',
+        'change_investor' => 'setChangeInvestor'
     ];
 
     /**
@@ -126,10 +122,9 @@ class ArrayOfTradesInner implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'symbol' => 'getSymbol',
-        'type' => 'getType',
-        'type_str' => 'getTypeStr',
-        'profit' => 'getProfit'
+        'login' => 'getLogin',
+        'password' => 'getPassword',
+        'change_investor' => 'getChangeInvestor'
     ];
 
     /**
@@ -192,10 +187,9 @@ class ArrayOfTradesInner implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['symbol'] = isset($data['symbol']) ? $data['symbol'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['type_str'] = isset($data['type_str']) ? $data['type_str'] : null;
-        $this->container['profit'] = isset($data['profit']) ? $data['profit'] : null;
+        $this->container['login'] = isset($data['login']) ? $data['login'] : null;
+        $this->container['password'] = isset($data['password']) ? $data['password'] : null;
+        $this->container['change_investor'] = isset($data['change_investor']) ? $data['change_investor'] : null;
     }
 
     /**
@@ -223,97 +217,73 @@ class ArrayOfTradesInner implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets symbol
-     *
-     * @return string
-     */
-    public function getSymbol()
-    {
-        return $this->container['symbol'];
-    }
-
-    /**
-     * Sets symbol
-     *
-     * @param string $symbol symbol
-     *
-     * @return $this
-     */
-    public function setSymbol($symbol)
-    {
-        $this->container['symbol'] = $symbol;
-
-        return $this;
-    }
-
-    /**
-     * Gets type
+     * Gets login
      *
      * @return int
      */
-    public function getType()
+    public function getLogin()
     {
-        return $this->container['type'];
+        return $this->container['login'];
     }
 
     /**
-     * Sets type
+     * Sets login
      *
-     * @param int $type type
+     * @param int $login login
      *
      * @return $this
      */
-    public function setType($type)
+    public function setLogin($login)
     {
-        $this->container['type'] = $type;
+        $this->container['login'] = $login;
 
         return $this;
     }
 
     /**
-     * Gets type_str
+     * Gets password
      *
      * @return string
      */
-    public function getTypeStr()
+    public function getPassword()
     {
-        return $this->container['type_str'];
+        return $this->container['password'];
     }
 
     /**
-     * Sets type_str
+     * Sets password
      *
-     * @param string $type_str type_str
+     * @param string $password password
      *
      * @return $this
      */
-    public function setTypeStr($type_str)
+    public function setPassword($password)
     {
-        $this->container['type_str'] = $type_str;
+        $this->container['password'] = $password;
 
         return $this;
     }
 
     /**
-     * Gets profit
+     * Gets change_investor
      *
-     * @return float
+     * @return int
      */
-    public function getProfit()
+    public function getChangeInvestor()
     {
-        return $this->container['profit'];
+        return $this->container['change_investor'];
     }
 
     /**
-     * Sets profit
+     * Sets change_investor
      *
-     * @param float $profit profit
+     * @param int $change_investor change_investor
      *
      * @return $this
      */
-    public function setProfit($profit)
+    public function setChangeInvestor($change_investor)
     {
-        $this->container['profit'] = $profit;
+        $this->container['change_investor'] = $change_investor;
 
         return $this;
     }

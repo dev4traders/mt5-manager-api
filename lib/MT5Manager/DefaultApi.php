@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  D4T
+ * @package  D4T\MT5Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace D4T\MT5Manager;
+namespace D4T\MT5Sdk\MT5Manager;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use D4T\ApiException;
-use D4T\Configuration;
-use D4T\HeaderSelector;
-use D4T\ObjectSerializer;
+use D4T\MT5Sdk\ApiException;
+use D4T\MT5Sdk\Configuration;
+use D4T\MT5Sdk\HeaderSelector;
+use D4T\MT5Sdk\ObjectSerializer;
 
 /**
  * DefaultApi Class Doc Comment
  *
  * @category Class
- * @package  D4T
+ * @package  D4T\MT5Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -97,9 +97,9 @@ class DefaultApi
      * @param  string $password MetaTrader manager password (required)
      * @param  float $timeout Connection timeout milliseconds (optional)
      *
-     * @throws \D4T\ApiException on non-2xx response
+     * @throws \D4T\MT5Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \D4T\MT5ManagerModels\InitReturnType
+     * @return \D4T\MT5Sdk\Models\InitReturnType
      */
     public function initGet($server, $login, $password, $timeout = null)
     {
@@ -117,13 +117,13 @@ class DefaultApi
      * @param  string $password MetaTrader manager password (required)
      * @param  float $timeout Connection timeout milliseconds (optional)
      *
-     * @throws \D4T\ApiException on non-2xx response
+     * @throws \D4T\MT5Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \D4T\MT5ManagerModels\InitReturnType, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \D4T\MT5Sdk\Models\InitReturnType, HTTP status code, HTTP response headers (array of strings)
      */
     public function initGetWithHttpInfo($server, $login, $password, $timeout = null)
     {
-        $returnType = '\D4T\MT5ManagerModels\InitReturnType';
+        $returnType = '\D4T\MT5Sdk\Models\InitReturnType';
         $request = $this->initGetRequest($server, $login, $password, $timeout);
 
         try {
@@ -175,7 +175,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\D4T\MT5ManagerModels\InitReturnType',
+                        '\D4T\MT5Sdk\Models\InitReturnType',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -223,7 +223,7 @@ class DefaultApi
      */
     public function initGetAsyncWithHttpInfo($server, $login, $password, $timeout = null)
     {
-        $returnType = '\D4T\MT5ManagerModels\InitReturnType';
+        $returnType = '\D4T\MT5Sdk\Models\InitReturnType';
         $request = $this->initGetRequest($server, $login, $password, $timeout);
 
         return $this->client

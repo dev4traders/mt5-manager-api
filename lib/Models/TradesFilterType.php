@@ -1,11 +1,11 @@
 <?php
 /**
- * Account
+ * TradesFilterType
  *
  * PHP version 5
  *
  * @category Class
- * @package  D4T
+ * @package  D4T\MT5Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,20 +27,20 @@
  * Do not edit the class manually.
  */
 
-namespace D4T\MT5ManagerModels;
+namespace D4T\MT5Sdk\Models;
 
 use \ArrayAccess;
-use \D4T\ObjectSerializer;
+use \D4T\MT5Sdk\ObjectSerializer;
 
 /**
- * Account Class Doc Comment
+ * TradesFilterType Class Doc Comment
  *
  * @category Class
- * @package  D4T
+ * @package  D4T\MT5Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class Account implements ModelInterface, ArrayAccess
+class TradesFilterType implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class Account implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Account';
+    protected static $swaggerModelName = 'TradesFilterType';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,15 +57,9 @@ class Account implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'login' => 'int',
-        'balance' => 'float',
-        'profit' => 'float',
-        'leverage' => 'float',
-        'volume' => 'float',
-        'equity' => 'float',
-        'margin' => 'float',
-        'margin_free' => 'float',
-        'margin_level' => 'float'
+        'from' => 'string',
+        'to' => 'string',
+        'types' => 'string'
     ];
 
     /**
@@ -74,15 +68,9 @@ class Account implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'login' => null,
-        'balance' => null,
-        'profit' => null,
-        'leverage' => null,
-        'volume' => null,
-        'equity' => null,
-        'margin' => null,
-        'margin_free' => null,
-        'margin_level' => null
+        'from' => null,
+        'to' => null,
+        'types' => null
     ];
 
     /**
@@ -112,15 +100,9 @@ class Account implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'login' => 'login',
-        'balance' => 'balance',
-        'profit' => 'profit',
-        'leverage' => 'leverage',
-        'volume' => 'volume',
-        'equity' => 'equity',
-        'margin' => 'margin',
-        'margin_free' => 'margin_free',
-        'margin_level' => 'margin_level'
+        'from' => 'from',
+        'to' => 'to',
+        'types' => 'types'
     ];
 
     /**
@@ -129,15 +111,9 @@ class Account implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'login' => 'setLogin',
-        'balance' => 'setBalance',
-        'profit' => 'setProfit',
-        'leverage' => 'setLeverage',
-        'volume' => 'setVolume',
-        'equity' => 'setEquity',
-        'margin' => 'setMargin',
-        'margin_free' => 'setMarginFree',
-        'margin_level' => 'setMarginLevel'
+        'from' => 'setFrom',
+        'to' => 'setTo',
+        'types' => 'setTypes'
     ];
 
     /**
@@ -146,15 +122,9 @@ class Account implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'login' => 'getLogin',
-        'balance' => 'getBalance',
-        'profit' => 'getProfit',
-        'leverage' => 'getLeverage',
-        'volume' => 'getVolume',
-        'equity' => 'getEquity',
-        'margin' => 'getMargin',
-        'margin_free' => 'getMarginFree',
-        'margin_level' => 'getMarginLevel'
+        'from' => 'getFrom',
+        'to' => 'getTo',
+        'types' => 'getTypes'
     ];
 
     /**
@@ -217,15 +187,9 @@ class Account implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['login'] = isset($data['login']) ? $data['login'] : null;
-        $this->container['balance'] = isset($data['balance']) ? $data['balance'] : null;
-        $this->container['profit'] = isset($data['profit']) ? $data['profit'] : null;
-        $this->container['leverage'] = isset($data['leverage']) ? $data['leverage'] : null;
-        $this->container['volume'] = isset($data['volume']) ? $data['volume'] : null;
-        $this->container['equity'] = isset($data['equity']) ? $data['equity'] : null;
-        $this->container['margin'] = isset($data['margin']) ? $data['margin'] : null;
-        $this->container['margin_free'] = isset($data['margin_free']) ? $data['margin_free'] : null;
-        $this->container['margin_level'] = isset($data['margin_level']) ? $data['margin_level'] : null;
+        $this->container['from'] = isset($data['from']) ? $data['from'] : null;
+        $this->container['to'] = isset($data['to']) ? $data['to'] : null;
+        $this->container['types'] = isset($data['types']) ? $data['types'] : null;
     }
 
     /**
@@ -237,9 +201,6 @@ class Account implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['login'] === null) {
-            $invalidProperties[] = "'login' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -256,217 +217,73 @@ class Account implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets login
+     * Gets from
      *
-     * @return int
+     * @return string
      */
-    public function getLogin()
+    public function getFrom()
     {
-        return $this->container['login'];
+        return $this->container['from'];
     }
 
     /**
-     * Sets login
+     * Sets from
      *
-     * @param int $login login
+     * @param string $from from
      *
      * @return $this
      */
-    public function setLogin($login)
+    public function setFrom($from)
     {
-        $this->container['login'] = $login;
+        $this->container['from'] = $from;
 
         return $this;
     }
 
     /**
-     * Gets balance
+     * Gets to
      *
-     * @return float
+     * @return string
      */
-    public function getBalance()
+    public function getTo()
     {
-        return $this->container['balance'];
+        return $this->container['to'];
     }
 
     /**
-     * Sets balance
+     * Sets to
      *
-     * @param float $balance balance
+     * @param string $to to
      *
      * @return $this
      */
-    public function setBalance($balance)
+    public function setTo($to)
     {
-        $this->container['balance'] = $balance;
+        $this->container['to'] = $to;
 
         return $this;
     }
 
     /**
-     * Gets profit
+     * Gets types
      *
-     * @return float
+     * @return string
      */
-    public function getProfit()
+    public function getTypes()
     {
-        return $this->container['profit'];
+        return $this->container['types'];
     }
 
     /**
-     * Sets profit
+     * Sets types
      *
-     * @param float $profit profit
+     * @param string $types types
      *
      * @return $this
      */
-    public function setProfit($profit)
+    public function setTypes($types)
     {
-        $this->container['profit'] = $profit;
-
-        return $this;
-    }
-
-    /**
-     * Gets leverage
-     *
-     * @return float
-     */
-    public function getLeverage()
-    {
-        return $this->container['leverage'];
-    }
-
-    /**
-     * Sets leverage
-     *
-     * @param float $leverage leverage
-     *
-     * @return $this
-     */
-    public function setLeverage($leverage)
-    {
-        $this->container['leverage'] = $leverage;
-
-        return $this;
-    }
-
-    /**
-     * Gets volume
-     *
-     * @return float
-     */
-    public function getVolume()
-    {
-        return $this->container['volume'];
-    }
-
-    /**
-     * Sets volume
-     *
-     * @param float $volume volume
-     *
-     * @return $this
-     */
-    public function setVolume($volume)
-    {
-        $this->container['volume'] = $volume;
-
-        return $this;
-    }
-
-    /**
-     * Gets equity
-     *
-     * @return float
-     */
-    public function getEquity()
-    {
-        return $this->container['equity'];
-    }
-
-    /**
-     * Sets equity
-     *
-     * @param float $equity equity
-     *
-     * @return $this
-     */
-    public function setEquity($equity)
-    {
-        $this->container['equity'] = $equity;
-
-        return $this;
-    }
-
-    /**
-     * Gets margin
-     *
-     * @return float
-     */
-    public function getMargin()
-    {
-        return $this->container['margin'];
-    }
-
-    /**
-     * Sets margin
-     *
-     * @param float $margin margin
-     *
-     * @return $this
-     */
-    public function setMargin($margin)
-    {
-        $this->container['margin'] = $margin;
-
-        return $this;
-    }
-
-    /**
-     * Gets margin_free
-     *
-     * @return float
-     */
-    public function getMarginFree()
-    {
-        return $this->container['margin_free'];
-    }
-
-    /**
-     * Sets margin_free
-     *
-     * @param float $margin_free margin_free
-     *
-     * @return $this
-     */
-    public function setMarginFree($margin_free)
-    {
-        $this->container['margin_free'] = $margin_free;
-
-        return $this;
-    }
-
-    /**
-     * Gets margin_level
-     *
-     * @return float
-     */
-    public function getMarginLevel()
-    {
-        return $this->container['margin_level'];
-    }
-
-    /**
-     * Sets margin_level
-     *
-     * @param float $margin_level margin_level
-     *
-     * @return $this
-     */
-    public function setMarginLevel($margin_level)
-    {
-        $this->container['margin_level'] = $margin_level;
+        $this->container['types'] = $types;
 
         return $this;
     }

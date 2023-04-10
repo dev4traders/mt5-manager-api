@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  D4T\MT5ManagerModels
+ * @package  D4T\MT5Sdk\Models
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,12 +27,12 @@
  * Do not edit the class manually.
  */
 
-namespace D4T\MT5ManagerModels;
+namespace D4T\MT5Sdk\Models;
 
 /**
  * Interface abstracting model access.
  *
- * @package D4T\MT5ManagerModels
+ * @package D4T\MT5Sdk\Models
  * @author  Swagger Codegen team
  */
 interface ModelInterface

@@ -1,11 +1,11 @@
 <?php
 /**
- * ResetPwdType
+ * Account
  *
  * PHP version 5
  *
  * @category Class
- * @package  D4T
+ * @package  D4T\MT5Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,20 +27,20 @@
  * Do not edit the class manually.
  */
 
-namespace D4T\MT5ManagerModels;
+namespace D4T\MT5Sdk\Models;
 
 use \ArrayAccess;
-use \D4T\ObjectSerializer;
+use \D4T\MT5Sdk\ObjectSerializer;
 
 /**
- * ResetPwdType Class Doc Comment
+ * Account Class Doc Comment
  *
  * @category Class
- * @package  D4T
+ * @package  D4T\MT5Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ResetPwdType implements ModelInterface, ArrayAccess
+class Account implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class ResetPwdType implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ResetPwdType';
+    protected static $swaggerModelName = 'Account';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,8 +58,14 @@ class ResetPwdType implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'login' => 'int',
-        'password' => 'string',
-        'change_investor' => 'int'
+        'balance' => 'float',
+        'profit' => 'float',
+        'leverage' => 'float',
+        'volume' => 'float',
+        'equity' => 'float',
+        'margin' => 'float',
+        'margin_free' => 'float',
+        'margin_level' => 'float'
     ];
 
     /**
@@ -68,9 +74,15 @@ class ResetPwdType implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'login' => 'int64',
-        'password' => null,
-        'change_investor' => null
+        'login' => null,
+        'balance' => null,
+        'profit' => null,
+        'leverage' => null,
+        'volume' => null,
+        'equity' => null,
+        'margin' => null,
+        'margin_free' => null,
+        'margin_level' => null
     ];
 
     /**
@@ -101,8 +113,14 @@ class ResetPwdType implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'login' => 'login',
-        'password' => 'password',
-        'change_investor' => 'change_investor'
+        'balance' => 'balance',
+        'profit' => 'profit',
+        'leverage' => 'leverage',
+        'volume' => 'volume',
+        'equity' => 'equity',
+        'margin' => 'margin',
+        'margin_free' => 'margin_free',
+        'margin_level' => 'margin_level'
     ];
 
     /**
@@ -112,8 +130,14 @@ class ResetPwdType implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'login' => 'setLogin',
-        'password' => 'setPassword',
-        'change_investor' => 'setChangeInvestor'
+        'balance' => 'setBalance',
+        'profit' => 'setProfit',
+        'leverage' => 'setLeverage',
+        'volume' => 'setVolume',
+        'equity' => 'setEquity',
+        'margin' => 'setMargin',
+        'margin_free' => 'setMarginFree',
+        'margin_level' => 'setMarginLevel'
     ];
 
     /**
@@ -123,8 +147,14 @@ class ResetPwdType implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'login' => 'getLogin',
-        'password' => 'getPassword',
-        'change_investor' => 'getChangeInvestor'
+        'balance' => 'getBalance',
+        'profit' => 'getProfit',
+        'leverage' => 'getLeverage',
+        'volume' => 'getVolume',
+        'equity' => 'getEquity',
+        'margin' => 'getMargin',
+        'margin_free' => 'getMarginFree',
+        'margin_level' => 'getMarginLevel'
     ];
 
     /**
@@ -188,8 +218,14 @@ class ResetPwdType implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['login'] = isset($data['login']) ? $data['login'] : null;
-        $this->container['password'] = isset($data['password']) ? $data['password'] : null;
-        $this->container['change_investor'] = isset($data['change_investor']) ? $data['change_investor'] : null;
+        $this->container['balance'] = isset($data['balance']) ? $data['balance'] : null;
+        $this->container['profit'] = isset($data['profit']) ? $data['profit'] : null;
+        $this->container['leverage'] = isset($data['leverage']) ? $data['leverage'] : null;
+        $this->container['volume'] = isset($data['volume']) ? $data['volume'] : null;
+        $this->container['equity'] = isset($data['equity']) ? $data['equity'] : null;
+        $this->container['margin'] = isset($data['margin']) ? $data['margin'] : null;
+        $this->container['margin_free'] = isset($data['margin_free']) ? $data['margin_free'] : null;
+        $this->container['margin_level'] = isset($data['margin_level']) ? $data['margin_level'] : null;
     }
 
     /**
@@ -201,6 +237,9 @@ class ResetPwdType implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['login'] === null) {
+            $invalidProperties[] = "'login' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -241,49 +280,193 @@ class ResetPwdType implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets password
+     * Gets balance
      *
-     * @return string
+     * @return float
      */
-    public function getPassword()
+    public function getBalance()
     {
-        return $this->container['password'];
+        return $this->container['balance'];
     }
 
     /**
-     * Sets password
+     * Sets balance
      *
-     * @param string $password password
+     * @param float $balance balance
      *
      * @return $this
      */
-    public function setPassword($password)
+    public function setBalance($balance)
     {
-        $this->container['password'] = $password;
+        $this->container['balance'] = $balance;
 
         return $this;
     }
 
     /**
-     * Gets change_investor
+     * Gets profit
      *
-     * @return int
+     * @return float
      */
-    public function getChangeInvestor()
+    public function getProfit()
     {
-        return $this->container['change_investor'];
+        return $this->container['profit'];
     }
 
     /**
-     * Sets change_investor
+     * Sets profit
      *
-     * @param int $change_investor change_investor
+     * @param float $profit profit
      *
      * @return $this
      */
-    public function setChangeInvestor($change_investor)
+    public function setProfit($profit)
     {
-        $this->container['change_investor'] = $change_investor;
+        $this->container['profit'] = $profit;
+
+        return $this;
+    }
+
+    /**
+     * Gets leverage
+     *
+     * @return float
+     */
+    public function getLeverage()
+    {
+        return $this->container['leverage'];
+    }
+
+    /**
+     * Sets leverage
+     *
+     * @param float $leverage leverage
+     *
+     * @return $this
+     */
+    public function setLeverage($leverage)
+    {
+        $this->container['leverage'] = $leverage;
+
+        return $this;
+    }
+
+    /**
+     * Gets volume
+     *
+     * @return float
+     */
+    public function getVolume()
+    {
+        return $this->container['volume'];
+    }
+
+    /**
+     * Sets volume
+     *
+     * @param float $volume volume
+     *
+     * @return $this
+     */
+    public function setVolume($volume)
+    {
+        $this->container['volume'] = $volume;
+
+        return $this;
+    }
+
+    /**
+     * Gets equity
+     *
+     * @return float
+     */
+    public function getEquity()
+    {
+        return $this->container['equity'];
+    }
+
+    /**
+     * Sets equity
+     *
+     * @param float $equity equity
+     *
+     * @return $this
+     */
+    public function setEquity($equity)
+    {
+        $this->container['equity'] = $equity;
+
+        return $this;
+    }
+
+    /**
+     * Gets margin
+     *
+     * @return float
+     */
+    public function getMargin()
+    {
+        return $this->container['margin'];
+    }
+
+    /**
+     * Sets margin
+     *
+     * @param float $margin margin
+     *
+     * @return $this
+     */
+    public function setMargin($margin)
+    {
+        $this->container['margin'] = $margin;
+
+        return $this;
+    }
+
+    /**
+     * Gets margin_free
+     *
+     * @return float
+     */
+    public function getMarginFree()
+    {
+        return $this->container['margin_free'];
+    }
+
+    /**
+     * Sets margin_free
+     *
+     * @param float $margin_free margin_free
+     *
+     * @return $this
+     */
+    public function setMarginFree($margin_free)
+    {
+        $this->container['margin_free'] = $margin_free;
+
+        return $this;
+    }
+
+    /**
+     * Gets margin_level
+     *
+     * @return float
+     */
+    public function getMarginLevel()
+    {
+        return $this->container['margin_level'];
+    }
+
+    /**
+     * Sets margin_level
+     *
+     * @param float $margin_level margin_level
+     *
+     * @return $this
+     */
+    public function setMarginLevel($margin_level)
+    {
+        $this->container['margin_level'] = $margin_level;
 
         return $this;
     }

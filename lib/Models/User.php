@@ -1,11 +1,11 @@
 <?php
 /**
- * UserReturnTypeUser
+ * User
  *
  * PHP version 5
  *
  * @category Class
- * @package  D4T
+ * @package  D4T\MT5Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,20 +27,20 @@
  * Do not edit the class manually.
  */
 
-namespace D4T\MT5ManagerModels;
+namespace D4T\MT5Sdk\Models;
 
 use \ArrayAccess;
-use \D4T\ObjectSerializer;
+use \D4T\MT5Sdk\ObjectSerializer;
 
 /**
- * UserReturnTypeUser Class Doc Comment
+ * User Class Doc Comment
  *
  * @category Class
- * @package  D4T
+ * @package  D4T\MT5Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class UserReturnTypeUser implements ModelInterface, ArrayAccess
+class User implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class UserReturnTypeUser implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'UserReturnType_user';
+    protected static $swaggerModelName = 'User';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -60,23 +60,22 @@ class UserReturnTypeUser implements ModelInterface, ArrayAccess
         'login' => 'int',
         'name' => 'string',
         'group' => 'string',
-        'email' => 'string',
-        'phone' => 'string',
+        'leverage' => 'int',
         'password' => 'string',
         'password_investor' => 'string',
+        'rights' => 'int',
+        'email' => 'string',
+        'city' => 'string',
+        'phone' => 'string',
+        'phone_password' => 'string',
         'status' => 'string',
         'state' => 'string',
-        'city' => 'string',
         'address' => 'string',
         'comment' => 'string',
+        'zipcode' => 'string',
         'agent_account' => 'int',
         'id_number' => 'string',
-        'zipcode' => 'string',
-        'leverage' => 'int',
-        'enabled' => 'int',
-        'enable_change_password' => 'int',
-        'send_report' => 'int',
-        'read_only' => 'int'
+        'reg_date' => 'string'
     ];
 
     /**
@@ -88,23 +87,22 @@ class UserReturnTypeUser implements ModelInterface, ArrayAccess
         'login' => null,
         'name' => null,
         'group' => null,
-        'email' => null,
-        'phone' => null,
+        'leverage' => null,
         'password' => null,
         'password_investor' => null,
+        'rights' => null,
+        'email' => null,
+        'city' => null,
+        'phone' => null,
+        'phone_password' => null,
         'status' => null,
         'state' => null,
-        'city' => null,
         'address' => null,
         'comment' => null,
+        'zipcode' => null,
         'agent_account' => null,
         'id_number' => null,
-        'zipcode' => null,
-        'leverage' => null,
-        'enabled' => null,
-        'enable_change_password' => null,
-        'send_report' => null,
-        'read_only' => null
+        'reg_date' => null
     ];
 
     /**
@@ -137,23 +135,22 @@ class UserReturnTypeUser implements ModelInterface, ArrayAccess
         'login' => 'login',
         'name' => 'name',
         'group' => 'group',
-        'email' => 'email',
-        'phone' => 'phone',
+        'leverage' => 'leverage',
         'password' => 'password',
         'password_investor' => 'password_investor',
+        'rights' => 'rights',
+        'email' => 'email',
+        'city' => 'city',
+        'phone' => 'phone',
+        'phone_password' => 'phone_password',
         'status' => 'status',
         'state' => 'state',
-        'city' => 'city',
         'address' => 'address',
         'comment' => 'comment',
+        'zipcode' => 'zipcode',
         'agent_account' => 'agent_account',
         'id_number' => 'id_number',
-        'zipcode' => 'zipcode',
-        'leverage' => 'leverage',
-        'enabled' => 'enabled',
-        'enable_change_password' => 'enable_change_password',
-        'send_report' => 'send_report',
-        'read_only' => 'read_only'
+        'reg_date' => 'reg_date'
     ];
 
     /**
@@ -165,23 +162,22 @@ class UserReturnTypeUser implements ModelInterface, ArrayAccess
         'login' => 'setLogin',
         'name' => 'setName',
         'group' => 'setGroup',
-        'email' => 'setEmail',
-        'phone' => 'setPhone',
+        'leverage' => 'setLeverage',
         'password' => 'setPassword',
         'password_investor' => 'setPasswordInvestor',
+        'rights' => 'setRights',
+        'email' => 'setEmail',
+        'city' => 'setCity',
+        'phone' => 'setPhone',
+        'phone_password' => 'setPhonePassword',
         'status' => 'setStatus',
         'state' => 'setState',
-        'city' => 'setCity',
         'address' => 'setAddress',
         'comment' => 'setComment',
+        'zipcode' => 'setZipcode',
         'agent_account' => 'setAgentAccount',
         'id_number' => 'setIdNumber',
-        'zipcode' => 'setZipcode',
-        'leverage' => 'setLeverage',
-        'enabled' => 'setEnabled',
-        'enable_change_password' => 'setEnableChangePassword',
-        'send_report' => 'setSendReport',
-        'read_only' => 'setReadOnly'
+        'reg_date' => 'setRegDate'
     ];
 
     /**
@@ -193,23 +189,22 @@ class UserReturnTypeUser implements ModelInterface, ArrayAccess
         'login' => 'getLogin',
         'name' => 'getName',
         'group' => 'getGroup',
-        'email' => 'getEmail',
-        'phone' => 'getPhone',
+        'leverage' => 'getLeverage',
         'password' => 'getPassword',
         'password_investor' => 'getPasswordInvestor',
+        'rights' => 'getRights',
+        'email' => 'getEmail',
+        'city' => 'getCity',
+        'phone' => 'getPhone',
+        'phone_password' => 'getPhonePassword',
         'status' => 'getStatus',
         'state' => 'getState',
-        'city' => 'getCity',
         'address' => 'getAddress',
         'comment' => 'getComment',
+        'zipcode' => 'getZipcode',
         'agent_account' => 'getAgentAccount',
         'id_number' => 'getIdNumber',
-        'zipcode' => 'getZipcode',
-        'leverage' => 'getLeverage',
-        'enabled' => 'getEnabled',
-        'enable_change_password' => 'getEnableChangePassword',
-        'send_report' => 'getSendReport',
-        'read_only' => 'getReadOnly'
+        'reg_date' => 'getRegDate'
     ];
 
     /**
@@ -275,23 +270,22 @@ class UserReturnTypeUser implements ModelInterface, ArrayAccess
         $this->container['login'] = isset($data['login']) ? $data['login'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['group'] = isset($data['group']) ? $data['group'] : null;
-        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
-        $this->container['phone'] = isset($data['phone']) ? $data['phone'] : null;
+        $this->container['leverage'] = isset($data['leverage']) ? $data['leverage'] : null;
         $this->container['password'] = isset($data['password']) ? $data['password'] : null;
         $this->container['password_investor'] = isset($data['password_investor']) ? $data['password_investor'] : null;
+        $this->container['rights'] = isset($data['rights']) ? $data['rights'] : null;
+        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
+        $this->container['city'] = isset($data['city']) ? $data['city'] : null;
+        $this->container['phone'] = isset($data['phone']) ? $data['phone'] : null;
+        $this->container['phone_password'] = isset($data['phone_password']) ? $data['phone_password'] : null;
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
         $this->container['state'] = isset($data['state']) ? $data['state'] : null;
-        $this->container['city'] = isset($data['city']) ? $data['city'] : null;
         $this->container['address'] = isset($data['address']) ? $data['address'] : null;
         $this->container['comment'] = isset($data['comment']) ? $data['comment'] : null;
+        $this->container['zipcode'] = isset($data['zipcode']) ? $data['zipcode'] : null;
         $this->container['agent_account'] = isset($data['agent_account']) ? $data['agent_account'] : null;
         $this->container['id_number'] = isset($data['id_number']) ? $data['id_number'] : null;
-        $this->container['zipcode'] = isset($data['zipcode']) ? $data['zipcode'] : null;
-        $this->container['leverage'] = isset($data['leverage']) ? $data['leverage'] : null;
-        $this->container['enabled'] = isset($data['enabled']) ? $data['enabled'] : null;
-        $this->container['enable_change_password'] = isset($data['enable_change_password']) ? $data['enable_change_password'] : null;
-        $this->container['send_report'] = isset($data['send_report']) ? $data['send_report'] : null;
-        $this->container['read_only'] = isset($data['read_only']) ? $data['read_only'] : null;
+        $this->container['reg_date'] = isset($data['reg_date']) ? $data['reg_date'] : null;
     }
 
     /**
@@ -303,6 +297,15 @@ class UserReturnTypeUser implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['name'] === null) {
+            $invalidProperties[] = "'name' can't be null";
+        }
+        if ($this->container['group'] === null) {
+            $invalidProperties[] = "'group' can't be null";
+        }
+        if ($this->container['email'] === null) {
+            $invalidProperties[] = "'email' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -391,49 +394,25 @@ class UserReturnTypeUser implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets email
+     * Gets leverage
      *
-     * @return string
+     * @return int
      */
-    public function getEmail()
+    public function getLeverage()
     {
-        return $this->container['email'];
+        return $this->container['leverage'];
     }
 
     /**
-     * Sets email
+     * Sets leverage
      *
-     * @param string $email email
+     * @param int $leverage leverage
      *
      * @return $this
      */
-    public function setEmail($email)
+    public function setLeverage($leverage)
     {
-        $this->container['email'] = $email;
-
-        return $this;
-    }
-
-    /**
-     * Gets phone
-     *
-     * @return string
-     */
-    public function getPhone()
-    {
-        return $this->container['phone'];
-    }
-
-    /**
-     * Sets phone
-     *
-     * @param string $phone phone
-     *
-     * @return $this
-     */
-    public function setPhone($phone)
-    {
-        $this->container['phone'] = $phone;
+        $this->container['leverage'] = $leverage;
 
         return $this;
     }
@@ -487,6 +466,126 @@ class UserReturnTypeUser implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets rights
+     *
+     * @return int
+     */
+    public function getRights()
+    {
+        return $this->container['rights'];
+    }
+
+    /**
+     * Sets rights
+     *
+     * @param int $rights rights
+     *
+     * @return $this
+     */
+    public function setRights($rights)
+    {
+        $this->container['rights'] = $rights;
+
+        return $this;
+    }
+
+    /**
+     * Gets email
+     *
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->container['email'];
+    }
+
+    /**
+     * Sets email
+     *
+     * @param string $email email
+     *
+     * @return $this
+     */
+    public function setEmail($email)
+    {
+        $this->container['email'] = $email;
+
+        return $this;
+    }
+
+    /**
+     * Gets city
+     *
+     * @return string
+     */
+    public function getCity()
+    {
+        return $this->container['city'];
+    }
+
+    /**
+     * Sets city
+     *
+     * @param string $city city
+     *
+     * @return $this
+     */
+    public function setCity($city)
+    {
+        $this->container['city'] = $city;
+
+        return $this;
+    }
+
+    /**
+     * Gets phone
+     *
+     * @return string
+     */
+    public function getPhone()
+    {
+        return $this->container['phone'];
+    }
+
+    /**
+     * Sets phone
+     *
+     * @param string $phone phone
+     *
+     * @return $this
+     */
+    public function setPhone($phone)
+    {
+        $this->container['phone'] = $phone;
+
+        return $this;
+    }
+
+    /**
+     * Gets phone_password
+     *
+     * @return string
+     */
+    public function getPhonePassword()
+    {
+        return $this->container['phone_password'];
+    }
+
+    /**
+     * Sets phone_password
+     *
+     * @param string $phone_password phone_password
+     *
+     * @return $this
+     */
+    public function setPhonePassword($phone_password)
+    {
+        $this->container['phone_password'] = $phone_password;
+
+        return $this;
+    }
+
+    /**
      * Gets status
      *
      * @return string
@@ -530,30 +629,6 @@ class UserReturnTypeUser implements ModelInterface, ArrayAccess
     public function setState($state)
     {
         $this->container['state'] = $state;
-
-        return $this;
-    }
-
-    /**
-     * Gets city
-     *
-     * @return string
-     */
-    public function getCity()
-    {
-        return $this->container['city'];
-    }
-
-    /**
-     * Sets city
-     *
-     * @param string $city city
-     *
-     * @return $this
-     */
-    public function setCity($city)
-    {
-        $this->container['city'] = $city;
 
         return $this;
     }
@@ -607,6 +682,30 @@ class UserReturnTypeUser implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets zipcode
+     *
+     * @return string
+     */
+    public function getZipcode()
+    {
+        return $this->container['zipcode'];
+    }
+
+    /**
+     * Sets zipcode
+     *
+     * @param string $zipcode zipcode
+     *
+     * @return $this
+     */
+    public function setZipcode($zipcode)
+    {
+        $this->container['zipcode'] = $zipcode;
+
+        return $this;
+    }
+
+    /**
      * Gets agent_account
      *
      * @return int
@@ -655,145 +754,25 @@ class UserReturnTypeUser implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets zipcode
+     * Gets reg_date
      *
      * @return string
      */
-    public function getZipcode()
+    public function getRegDate()
     {
-        return $this->container['zipcode'];
+        return $this->container['reg_date'];
     }
 
     /**
-     * Sets zipcode
+     * Sets reg_date
      *
-     * @param string $zipcode zipcode
+     * @param string $reg_date reg_date
      *
      * @return $this
      */
-    public function setZipcode($zipcode)
+    public function setRegDate($reg_date)
     {
-        $this->container['zipcode'] = $zipcode;
-
-        return $this;
-    }
-
-    /**
-     * Gets leverage
-     *
-     * @return int
-     */
-    public function getLeverage()
-    {
-        return $this->container['leverage'];
-    }
-
-    /**
-     * Sets leverage
-     *
-     * @param int $leverage leverage
-     *
-     * @return $this
-     */
-    public function setLeverage($leverage)
-    {
-        $this->container['leverage'] = $leverage;
-
-        return $this;
-    }
-
-    /**
-     * Gets enabled
-     *
-     * @return int
-     */
-    public function getEnabled()
-    {
-        return $this->container['enabled'];
-    }
-
-    /**
-     * Sets enabled
-     *
-     * @param int $enabled enabled
-     *
-     * @return $this
-     */
-    public function setEnabled($enabled)
-    {
-        $this->container['enabled'] = $enabled;
-
-        return $this;
-    }
-
-    /**
-     * Gets enable_change_password
-     *
-     * @return int
-     */
-    public function getEnableChangePassword()
-    {
-        return $this->container['enable_change_password'];
-    }
-
-    /**
-     * Sets enable_change_password
-     *
-     * @param int $enable_change_password enable_change_password
-     *
-     * @return $this
-     */
-    public function setEnableChangePassword($enable_change_password)
-    {
-        $this->container['enable_change_password'] = $enable_change_password;
-
-        return $this;
-    }
-
-    /**
-     * Gets send_report
-     *
-     * @return int
-     */
-    public function getSendReport()
-    {
-        return $this->container['send_report'];
-    }
-
-    /**
-     * Sets send_report
-     *
-     * @param int $send_report send_report
-     *
-     * @return $this
-     */
-    public function setSendReport($send_report)
-    {
-        $this->container['send_report'] = $send_report;
-
-        return $this;
-    }
-
-    /**
-     * Gets read_only
-     *
-     * @return int
-     */
-    public function getReadOnly()
-    {
-        return $this->container['read_only'];
-    }
-
-    /**
-     * Sets read_only
-     *
-     * @param int $read_only read_only
-     *
-     * @return $this
-     */
-    public function setReadOnly($read_only)
-    {
-        $this->container['read_only'] = $read_only;
+        $this->container['reg_date'] = $reg_date;
 
         return $this;
     }
