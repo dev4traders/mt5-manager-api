@@ -4,31 +4,34 @@ All URIs are relative to *http://localhost:6503/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**accountLoginGet**](AccountApi.md#accountLoginGet) | **GET** /account/{login} | Get account by user login
-
+[**accountLoginGet**](AccountApi.md#accountloginget) | **GET** /account/{login} | Get account by user login
 
 # **accountLoginGet**
-> \D4T\MT5Sdk\Models\Account accountLoginGet($token, $login)
+> \D4T\MT5Sdk\Models\Account accountLoginGet($login)
 
 Get account by user login
 
-
+Get account by user login
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearerAuth
+    $config = D4T\MT5Sdk\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$apiInstance = new D4T\MT5Sdk\Api\AccountApi(
+
+$apiInstance = new D4T\MT5Sdk\MT5Manager\AccountApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
-$token = "token_example"; // string | Session token
 $login = "login_example"; // string | Login
 
 try {
-    $result = $apiInstance->accountLoginGet($token, $login);
+    $result = $apiInstance->accountLoginGet($login);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccountApi->accountLoginGet: ', $e->getMessage(), PHP_EOL;
@@ -40,7 +43,6 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **token** | **string**| Session token |
  **login** | **string**| Login |
 
 ### Return type
@@ -49,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../../README.md#bearerAuth)
 
 ### HTTP request headers
 

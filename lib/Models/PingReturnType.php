@@ -1,6 +1,6 @@
 <?php
 /**
- * InitReturnType
+ * PingReturnType
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \D4T\MT5Sdk\ObjectSerializer;
 
 /**
- * InitReturnType Class Doc Comment
+ * PingReturnType Class Doc Comment
  *
  * @category Class
  * @package  D4T\MT5Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class InitReturnType implements ModelInterface, ArrayAccess
+class PingReturnType implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class InitReturnType implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'InitReturnType';
+    protected static $swaggerModelName = 'PingReturnType';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,8 +56,7 @@ class InitReturnType implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'code' => 'int',
-'token' => 'string'    ];
+        'success' => 'bool'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -65,8 +64,7 @@ class InitReturnType implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'code' => 'int32',
-'token' => null    ];
+        'success' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -95,8 +93,7 @@ class InitReturnType implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'code' => 'code',
-'token' => 'token'    ];
+        'success' => 'success'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -104,8 +101,7 @@ class InitReturnType implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'code' => 'setCode',
-'token' => 'setToken'    ];
+        'success' => 'setSuccess'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -113,8 +109,7 @@ class InitReturnType implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'code' => 'getCode',
-'token' => 'getToken'    ];
+        'success' => 'getSuccess'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -174,8 +169,7 @@ class InitReturnType implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['code'] = isset($data['code']) ? $data['code'] : null;
-        $this->container['token'] = isset($data['token']) ? $data['token'] : null;
+        $this->container['success'] = isset($data['success']) ? $data['success'] : null;
     }
 
     /**
@@ -203,49 +197,25 @@ class InitReturnType implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets code
+     * Gets success
      *
-     * @return int
+     * @return bool
      */
-    public function getCode()
+    public function getSuccess()
     {
-        return $this->container['code'];
+        return $this->container['success'];
     }
 
     /**
-     * Sets code
+     * Sets success
      *
-     * @param int $code code
+     * @param bool $success success
      *
      * @return $this
      */
-    public function setCode($code)
+    public function setSuccess($success)
     {
-        $this->container['code'] = $code;
-
-        return $this;
-    }
-
-    /**
-     * Gets token
-     *
-     * @return string
-     */
-    public function getToken()
-    {
-        return $this->container['token'];
-    }
-
-    /**
-     * Sets token
-     *
-     * @param string $token token
-     *
-     * @return $this
-     */
-    public function setToken($token)
-    {
-        $this->container['token'] = $token;
+        $this->container['success'] = $success;
 
         return $this;
     }

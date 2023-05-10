@@ -1,6 +1,6 @@
 <?php
 /**
- * ArrayOfTradesTest
+ * PingReturnTypeTest
  *
  * PHP version 5
  *
@@ -31,15 +31,15 @@ namespace D4T\MT5Sdk;
 use PHPUnit\Framework\TestCase;
 
 /**
- * ArrayOfTradesTest Class Doc Comment
+ * PingReturnTypeTest Class Doc Comment
  *
  * @category    Class
- * @description ArrayOfTrades
+ * @description PingReturnType
  * @package     D4T\MT5Sdk
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class ArrayOfTradesTest extends TestCase
+class PingReturnTypeTest extends TestCase
 {
 
     /**
@@ -71,9 +71,16 @@ class ArrayOfTradesTest extends TestCase
     }
 
     /**
-     * Test "ArrayOfTrades"
+     * Test "PingReturnType"
      */
-    public function testArrayOfTrades()
+    public function testPingReturnType()
+    {
+    }
+
+    /**
+     * Test attribute "success"
+     */
+    public function testPropertySuccess()
     {
     }
 }

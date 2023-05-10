@@ -1,41 +1,39 @@
-# D4T\MT5Sdk\GroupApi
+# D4T\MT5Sdk\BasicApi
 
 All URIs are relative to *http://localhost:6503/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**groupGroupNameGet**](GroupApi.md#groupgroupnameget) | **GET** /group/{group_name} | Get group by name
-[**groupsGet**](GroupApi.md#groupsget) | **GET** /groups/ | Get list of groups
+[**initGet**](BasicApi.md#initget) | **GET** /init/ | Init manager
+[**pingGet**](BasicApi.md#pingget) | **GET** /ping/ | Ping API
 
-# **groupGroupNameGet**
-> \D4T\MT5Sdk\Models\Group groupGroupNameGet($group_name)
+# **initGet**
+> \D4T\MT5Sdk\Models\InitReturnType initGet($server, $login, $password, $timeout)
 
-Get group by name
+Init manager
 
-Get group by name
+Init manager
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-    // Configure HTTP bearer authorization: bearerAuth
-    $config = D4T\MT5Sdk\Configuration::getDefaultConfiguration()
-    ->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
-$apiInstance = new D4T\MT5Sdk\MT5Manager\GroupApi(
+$apiInstance = new D4T\MT5Sdk\MT5Manager\BasicApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
-$group_name = "group_name_example"; // string | The name that needs to be fetched.
+$server = "server_example"; // string | MetaTrader5 server IP with port. Example: 127.0.0.1:443
+$login = "login_example"; // string | MetaTrader manager login
+$password = "password_example"; // string | MetaTrader manager password
+$timeout = 1.2; // float | Connection timeout milliseconds
 
 try {
-    $result = $apiInstance->groupGroupNameGet($group_name);
+    $result = $apiInstance->initGet($server, $login, $password, $timeout);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling GroupApi->groupGroupNameGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling BasicApi->initGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -44,15 +42,18 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **group_name** | **string**| The name that needs to be fetched. |
+ **server** | **string**| MetaTrader5 server IP with port. Example: 127.0.0.1:443 |
+ **login** | **string**| MetaTrader manager login |
+ **password** | **string**| MetaTrader manager password |
+ **timeout** | **float**| Connection timeout milliseconds | [optional]
 
 ### Return type
 
-[**\D4T\MT5Sdk\Models\Group**](../Model/Group.md)
+[**\D4T\MT5Sdk\Models\InitReturnType**](../Model/InitReturnType.md)
 
 ### Authorization
 
-[bearerAuth](../../README.md#bearerAuth)
+No authorization required
 
 ### HTTP request headers
 
@@ -61,10 +62,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **groupsGet**
-> \D4T\MT5Sdk\Models\ArrayOfGroups groupsGet()
+# **pingGet**
+> \D4T\MT5Sdk\Models\PingReturnType pingGet()
 
-Get list of groups
+Ping API
 
 ### Example
 ```php
@@ -75,7 +76,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
     ->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new D4T\MT5Sdk\MT5Manager\GroupApi(
+$apiInstance = new D4T\MT5Sdk\MT5Manager\BasicApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -83,10 +84,10 @@ $apiInstance = new D4T\MT5Sdk\MT5Manager\GroupApi(
 );
 
 try {
-    $result = $apiInstance->groupsGet();
+    $result = $apiInstance->pingGet();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling GroupApi->groupsGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling BasicApi->pingGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -96,7 +97,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\D4T\MT5Sdk\Models\ArrayOfGroups**](../Model/ArrayOfGroups.md)
+[**\D4T\MT5Sdk\Models\PingReturnType**](../Model/PingReturnType.md)
 
 ### Authorization
 

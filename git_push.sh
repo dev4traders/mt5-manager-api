@@ -9,17 +9,17 @@ release_note=$3
 git_repo_base_url=$4
 
 if [ "$git_user_id" = "" ]; then
-    git_user_id=""
+    git_user_id="GIT_USER_ID"
     echo "[INFO] No command line input provided. Set \$git_user_id to $git_user_id"
 fi
 
 if [ "$git_repo_id" = "" ]; then
-    git_repo_id=""
+    git_repo_id="GIT_REPO_ID"
     echo "[INFO] No command line input provided. Set \$git_repo_id to $git_repo_id"
 fi
 
 if [ "$release_note" = "" ]; then
-    release_note=""
+    release_note="Minor update"
     echo "[INFO] No command line input provided. Set \$release_note to $release_note"
 fi
 
@@ -47,7 +47,7 @@ if [ "$git_remote" = "" ]; then # git remote not defined
     else
         git_repo_base_url=${git_repo_base_url#*//}
         git_repo_base_url=${git_repo_base_url%%.*}
-        git remote add origin https://${git_user_id}:${GIT_TOKEN}@${git_repo_base_url}.com/${git_user_id}/${git_repo_id}.git
+        git remote add origin https://${git_user_id}:${GIT_TOKEN}@${git_repo_base_url}/${git_user_id}/${git_repo_id}.git
     fi
 
 fi
@@ -55,6 +55,6 @@ fi
 git pull origin master
 
 # Pushes (Forces) the changes in the local repository up to the remote repository
-echo "Git pushing to https://${git_repo_base_url}.com/${git_user_id}/${git_repo_id}.git"
+echo "Git pushing to ${git_repo_base_url}/${git_user_id}/${git_repo_id}.git"
 git push origin master 2>&1 | grep -v 'To https'
 
