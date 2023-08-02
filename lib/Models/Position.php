@@ -1,6 +1,6 @@
 <?php
 /**
- * ArrayOfCachedLogins
+ * Position
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \D4T\MT5Sdk\ObjectSerializer;
 
 /**
- * ArrayOfCachedLogins Class Doc Comment
+ * Position Class Doc Comment
  *
  * @category Class
  * @package  D4T\MT5Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ArrayOfCachedLogins implements ModelInterface, ArrayAccess
+class Position implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class ArrayOfCachedLogins implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ArrayOfCachedLogins';
+    protected static $swaggerModelName = 'Position';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,8 +56,12 @@ class ArrayOfCachedLogins implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'cached_at' => 'int',
-        'data' => 'int[]'
+        'action' => 'int',
+        'volume' => 'float',
+        'symbol' => 'string',
+        'price' => 'float',
+        'time' => 'string',
+        'id' => 'int'
     ];
 
     /**
@@ -66,8 +70,12 @@ class ArrayOfCachedLogins implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'cached_at' => null,
-        'data' => null
+        'action' => null,
+        'volume' => null,
+        'symbol' => null,
+        'price' => null,
+        'time' => null,
+        'id' => null
     ];
 
     /**
@@ -97,8 +105,12 @@ class ArrayOfCachedLogins implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'cached_at' => 'cached_at',
-        'data' => 'data'
+        'action' => 'action',
+        'volume' => 'volume',
+        'symbol' => 'symbol',
+        'price' => 'price',
+        'time' => 'time',
+        'id' => 'id'
     ];
 
     /**
@@ -107,8 +119,12 @@ class ArrayOfCachedLogins implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'cached_at' => 'setCachedAt',
-        'data' => 'setData'
+        'action' => 'setAction',
+        'volume' => 'setVolume',
+        'symbol' => 'setSymbol',
+        'price' => 'setPrice',
+        'time' => 'setTime',
+        'id' => 'setId'
     ];
 
     /**
@@ -117,8 +133,12 @@ class ArrayOfCachedLogins implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'cached_at' => 'getCachedAt',
-        'data' => 'getData'
+        'action' => 'getAction',
+        'volume' => 'getVolume',
+        'symbol' => 'getSymbol',
+        'price' => 'getPrice',
+        'time' => 'getTime',
+        'id' => 'getId'
     ];
 
     /**
@@ -162,7 +182,21 @@ class ArrayOfCachedLogins implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
+    const ACTION_0 = 0;
+    const ACTION_1 = 1;
 
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getActionAllowableValues()
+    {
+        return [
+            self::ACTION_0,
+            self::ACTION_1,
+        ];
+    }
 
     /**
      * Associative array for storing property values
@@ -179,8 +213,12 @@ class ArrayOfCachedLogins implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['cached_at'] = isset($data['cached_at']) ? $data['cached_at'] : null;
-        $this->container['data'] = isset($data['data']) ? $data['data'] : null;
+        $this->container['action'] = isset($data['action']) ? $data['action'] : null;
+        $this->container['volume'] = isset($data['volume']) ? $data['volume'] : null;
+        $this->container['symbol'] = isset($data['symbol']) ? $data['symbol'] : null;
+        $this->container['price'] = isset($data['price']) ? $data['price'] : null;
+        $this->container['time'] = isset($data['time']) ? $data['time'] : null;
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
     }
 
     /**
@@ -191,6 +229,14 @@ class ArrayOfCachedLogins implements ModelInterface, ArrayAccess
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        $allowedValues = $this->getActionAllowableValues();
+        if (!is_null($this->container['action']) && !in_array($this->container['action'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'action', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
 
         return $invalidProperties;
     }
@@ -208,49 +254,154 @@ class ArrayOfCachedLogins implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets cached_at
+     * Gets action
      *
      * @return int
      */
-    public function getCachedAt()
+    public function getAction()
     {
-        return $this->container['cached_at'];
+        return $this->container['action'];
     }
 
     /**
-     * Sets cached_at
+     * Sets action
      *
-     * @param int $cached_at cached_at
+     * @param int $action action
      *
      * @return $this
      */
-    public function setCachedAt($cached_at)
+    public function setAction($action)
     {
-        $this->container['cached_at'] = $cached_at;
+        $allowedValues = $this->getActionAllowableValues();
+        if (!is_null($action) && !in_array($action, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'action', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['action'] = $action;
 
         return $this;
     }
 
     /**
-     * Gets data
+     * Gets volume
      *
-     * @return int[]
+     * @return float
      */
-    public function getData()
+    public function getVolume()
     {
-        return $this->container['data'];
+        return $this->container['volume'];
     }
 
     /**
-     * Sets data
+     * Sets volume
      *
-     * @param int[] $data data
+     * @param float $volume volume
      *
      * @return $this
      */
-    public function setData($data)
+    public function setVolume($volume)
     {
-        $this->container['data'] = $data;
+        $this->container['volume'] = $volume;
+
+        return $this;
+    }
+
+    /**
+     * Gets symbol
+     *
+     * @return string
+     */
+    public function getSymbol()
+    {
+        return $this->container['symbol'];
+    }
+
+    /**
+     * Sets symbol
+     *
+     * @param string $symbol symbol
+     *
+     * @return $this
+     */
+    public function setSymbol($symbol)
+    {
+        $this->container['symbol'] = $symbol;
+
+        return $this;
+    }
+
+    /**
+     * Gets price
+     *
+     * @return float
+     */
+    public function getPrice()
+    {
+        return $this->container['price'];
+    }
+
+    /**
+     * Sets price
+     *
+     * @param float $price price
+     *
+     * @return $this
+     */
+    public function setPrice($price)
+    {
+        $this->container['price'] = $price;
+
+        return $this;
+    }
+
+    /**
+     * Gets time
+     *
+     * @return string
+     */
+    public function getTime()
+    {
+        return $this->container['time'];
+    }
+
+    /**
+     * Sets time
+     *
+     * @param string $time time
+     *
+     * @return $this
+     */
+    public function setTime($time)
+    {
+        $this->container['time'] = $time;
+
+        return $this;
+    }
+
+    /**
+     * Gets id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param int $id id
+     *
+     * @return $this
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
 
         return $this;
     }

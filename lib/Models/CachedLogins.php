@@ -1,6 +1,6 @@
 <?php
 /**
- * ArrayOfCachedLogins
+ * CachedLogins
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \D4T\MT5Sdk\ObjectSerializer;
 
 /**
- * ArrayOfCachedLogins Class Doc Comment
+ * CachedLogins Class Doc Comment
  *
  * @category Class
  * @package  D4T\MT5Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ArrayOfCachedLogins implements ModelInterface, ArrayAccess
+class CachedLogins implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class ArrayOfCachedLogins implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ArrayOfCachedLogins';
+    protected static $swaggerModelName = 'CachedLogins';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

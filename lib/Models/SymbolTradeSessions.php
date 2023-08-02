@@ -1,6 +1,6 @@
 <?php
 /**
- * ArrayOfCachedLogins
+ * SymbolTradeSessions
  *
  * PHP version 5
  *
@@ -29,17 +29,19 @@
 namespace D4T\MT5Sdk\Models;
 
 use \ArrayAccess;
+use JsonSerializable;
+
 use \D4T\MT5Sdk\ObjectSerializer;
 
 /**
- * ArrayOfCachedLogins Class Doc Comment
+ * SymbolTradeSessions Class Doc Comment
  *
  * @category Class
  * @package  D4T\MT5Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ArrayOfCachedLogins implements ModelInterface, ArrayAccess
+class SymbolTradeSessions implements ModelInterface, ArrayAccess, JsonSerializable 
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +50,7 @@ class ArrayOfCachedLogins implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ArrayOfCachedLogins';
+    protected static $swaggerModelName = 'Symbol_trade_sessions';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,8 +58,10 @@ class ArrayOfCachedLogins implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'cached_at' => 'int',
-        'data' => 'int[]'
+        'wday' => 'int',
+        'wdayname' => 'string',
+        'open' => 'string',
+        'close' => 'string'
     ];
 
     /**
@@ -66,8 +70,10 @@ class ArrayOfCachedLogins implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'cached_at' => null,
-        'data' => null
+        'wday' => null,
+        'wdayname' => null,
+        'open' => null,
+        'close' => null
     ];
 
     /**
@@ -97,8 +103,10 @@ class ArrayOfCachedLogins implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'cached_at' => 'cached_at',
-        'data' => 'data'
+        'wday' => 'wday',
+        'wdayname' => 'wdayname',
+        'open' => 'open',
+        'close' => 'close'
     ];
 
     /**
@@ -107,8 +115,10 @@ class ArrayOfCachedLogins implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'cached_at' => 'setCachedAt',
-        'data' => 'setData'
+        'wday' => 'setWday',
+        'wdayname' => 'setWdayname',
+        'open' => 'setOpen',
+        'close' => 'setClose'
     ];
 
     /**
@@ -117,8 +127,10 @@ class ArrayOfCachedLogins implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'cached_at' => 'getCachedAt',
-        'data' => 'getData'
+        'wday' => 'getWday',
+        'wdayname' => 'getWdayname',
+        'open' => 'getOpen',
+        'close' => 'getClose'
     ];
 
     /**
@@ -179,8 +191,10 @@ class ArrayOfCachedLogins implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['cached_at'] = isset($data['cached_at']) ? $data['cached_at'] : null;
-        $this->container['data'] = isset($data['data']) ? $data['data'] : null;
+        $this->container['wday'] = isset($data['wday']) ? $data['wday'] : null;
+        $this->container['wdayname'] = isset($data['wdayname']) ? $data['wdayname'] : null;
+        $this->container['open'] = isset($data['open']) ? $data['open'] : null;
+        $this->container['close'] = isset($data['close']) ? $data['close'] : null;
     }
 
     /**
@@ -208,49 +222,97 @@ class ArrayOfCachedLogins implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets cached_at
+     * Gets wday
      *
      * @return int
      */
-    public function getCachedAt()
+    public function getWday()
     {
-        return $this->container['cached_at'];
+        return $this->container['wday'];
     }
 
     /**
-     * Sets cached_at
+     * Sets wday
      *
-     * @param int $cached_at cached_at
+     * @param int $wday wday
      *
      * @return $this
      */
-    public function setCachedAt($cached_at)
+    public function setWday($wday)
     {
-        $this->container['cached_at'] = $cached_at;
+        $this->container['wday'] = $wday;
 
         return $this;
     }
 
     /**
-     * Gets data
+     * Gets wdayname
      *
-     * @return int[]
+     * @return string
      */
-    public function getData()
+    public function getWdayname()
     {
-        return $this->container['data'];
+        return $this->container['wdayname'];
     }
 
     /**
-     * Sets data
+     * Sets wdayname
      *
-     * @param int[] $data data
+     * @param string $wdayname wdayname
      *
      * @return $this
      */
-    public function setData($data)
+    public function setWdayname($wdayname)
     {
-        $this->container['data'] = $data;
+        $this->container['wdayname'] = $wdayname;
+
+        return $this;
+    }
+
+    /**
+     * Gets open
+     *
+     * @return string
+     */
+    public function getOpen()
+    {
+        return $this->container['open'];
+    }
+
+    /**
+     * Sets open
+     *
+     * @param string $open open
+     *
+     * @return $this
+     */
+    public function setOpen($open)
+    {
+        $this->container['open'] = $open;
+
+        return $this;
+    }
+
+    /**
+     * Gets close
+     *
+     * @return string
+     */
+    public function getClose()
+    {
+        return $this->container['close'];
+    }
+
+    /**
+     * Sets close
+     *
+     * @param string $close close
+     *
+     * @return $this
+     */
+    public function setClose($close)
+    {
+        $this->container['close'] = $close;
 
         return $this;
     }
@@ -309,6 +371,11 @@ class ArrayOfCachedLogins implements ModelInterface, ArrayAccess
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);
+    }
+
+    #[\ReturnTypeWillChange]
+    public function jsonSerialize() {
+        return $this->container;
     }
 
     /**
