@@ -1,6 +1,6 @@
 <?php
 /**
- * BalanceTypeTest
+ * DealTest
  *
  * PHP version 5
  *
@@ -31,15 +31,15 @@ namespace D4T\MT5Sdk;
 use PHPUnit\Framework\TestCase;
 
 /**
- * BalanceTypeTest Class Doc Comment
+ * DealTest Class Doc Comment
  *
  * @category    Class
- * @description BalanceType
+ * @description Deal
  * @package     D4T\MT5Sdk
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class BalanceTypeTest extends TestCase
+class DealTest extends TestCase
 {
 
     /**
@@ -71,23 +71,37 @@ class BalanceTypeTest extends TestCase
     }
 
     /**
-     * Test "BalanceType"
+     * Test "Deal"
      */
-    public function testBalanceType()
+    public function testDeal()
     {
     }
 
     /**
-     * Test attribute "login"
+     * Test attribute "ticket"
      */
-    public function testPropertyLogin()
+    public function testPropertyTicket()
     {
     }
 
     /**
-     * Test attribute "amount"
+     * Test attribute "entry"
      */
-    public function testPropertyAmount()
+    public function testPropertyEntry()
+    {
+    }
+
+    /**
+     * Test attribute "reason"
+     */
+    public function testPropertyReason()
+    {
+    }
+
+    /**
+     * Test attribute "action"
+     */
+    public function testPropertyAction()
     {
     }
 
@@ -99,9 +113,79 @@ class BalanceTypeTest extends TestCase
     }
 
     /**
+     * Test attribute "type_str"
+     */
+    public function testPropertyTypeStr()
+    {
+    }
+
+    /**
+     * Test attribute "symbol"
+     */
+    public function testPropertySymbol()
+    {
+    }
+
+    /**
+     * Test attribute "lots"
+     */
+    public function testPropertyLots()
+    {
+    }
+
+    /**
+     * Test attribute "time"
+     */
+    public function testPropertyTime()
+    {
+    }
+
+    /**
+     * Test attribute "price"
+     */
+    public function testPropertyPrice()
+    {
+    }
+
+    /**
      * Test attribute "comment"
      */
     public function testPropertyComment()
+    {
+    }
+
+    /**
+     * Test attribute "sl"
+     */
+    public function testPropertySl()
+    {
+    }
+
+    /**
+     * Test attribute "tp"
+     */
+    public function testPropertyTp()
+    {
+    }
+
+    /**
+     * Test attribute "pl"
+     */
+    public function testPropertyPl()
+    {
+    }
+
+    /**
+     * Test attribute "commission"
+     */
+    public function testPropertyCommission()
+    {
+    }
+
+    /**
+     * Test attribute "swap"
+     */
+    public function testPropertySwap()
     {
     }
 }

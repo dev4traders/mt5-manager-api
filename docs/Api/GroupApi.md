@@ -1,6 +1,6 @@
 # D4T\MT5Sdk\GroupApi
 
-All URIs are relative to *http://localhost:6503/v1*
+All URIs are relative to */v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -62,7 +62,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **groupsGet**
-> \D4T\MT5Sdk\Models\ArrayOfGroups groupsGet()
+> string[] groupsGet()
 
 Get list of groups
 
@@ -96,7 +96,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\D4T\MT5Sdk\Models\ArrayOfGroups**](../Model/ArrayOfGroups.md)
+**string[]**
 
 ### Authorization
 

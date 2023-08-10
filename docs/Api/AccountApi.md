@@ -1,6 +1,6 @@
 # D4T\MT5Sdk\AccountApi
 
-All URIs are relative to *http://localhost:6503/v1*
+All URIs are relative to */v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

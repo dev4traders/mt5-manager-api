@@ -29,8 +29,6 @@
 namespace D4T\MT5Sdk\Models;
 
 use \ArrayAccess;
-use JsonSerializable;
-
 use \D4T\MT5Sdk\ObjectSerializer;
 
 /**
@@ -41,7 +39,7 @@ use \D4T\MT5Sdk\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class SymbolTradeSessions implements ModelInterface, ArrayAccess, JsonSerializable 
+class SymbolTradeSessions implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -371,11 +369,6 @@ class SymbolTradeSessions implements ModelInterface, ArrayAccess, JsonSerializab
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);
-    }
-
-    #[\ReturnTypeWillChange]
-    public function jsonSerialize() {
-        return $this->container;
     }
 
     /**

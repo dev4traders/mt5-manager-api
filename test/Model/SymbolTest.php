@@ -1,6 +1,6 @@
 <?php
 /**
- * UserReturnTypeUserTest
+ * SymbolTest
  *
  * PHP version 5
  *
@@ -31,15 +31,15 @@ namespace D4T\MT5Sdk;
 use PHPUnit\Framework\TestCase;
 
 /**
- * UserReturnTypeUserTest Class Doc Comment
+ * SymbolTest Class Doc Comment
  *
  * @category    Class
- * @description UserReturnTypeUser
+ * @description Symbol
  * @package     D4T\MT5Sdk
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class UserReturnTypeUserTest extends TestCase
+class SymbolTest extends TestCase
 {
 
     /**
@@ -71,16 +71,9 @@ class UserReturnTypeUserTest extends TestCase
     }
 
     /**
-     * Test "UserReturnTypeUser"
+     * Test "Symbol"
      */
-    public function testUserReturnTypeUser()
-    {
-    }
-
-    /**
-     * Test attribute "login"
-     */
-    public function testPropertyLogin()
+    public function testSymbol()
     {
     }
 
@@ -92,128 +85,121 @@ class UserReturnTypeUserTest extends TestCase
     }
 
     /**
-     * Test attribute "group"
+     * Test attribute "path"
      */
-    public function testPropertyGroup()
+    public function testPropertyPath()
     {
     }
 
     /**
-     * Test attribute "email"
+     * Test attribute "currency_base"
      */
-    public function testPropertyEmail()
+    public function testPropertyCurrencyBase()
     {
     }
 
     /**
-     * Test attribute "phone"
+     * Test attribute "description"
      */
-    public function testPropertyPhone()
+    public function testPropertyDescription()
     {
     }
 
     /**
-     * Test attribute "password"
+     * Test attribute "spread"
      */
-    public function testPropertyPassword()
+    public function testPropertySpread()
     {
     }
 
     /**
-     * Test attribute "password_investor"
+     * Test attribute "swap_mode"
      */
-    public function testPropertyPasswordInvestor()
+    public function testPropertySwapMode()
     {
     }
 
     /**
-     * Test attribute "status"
+     * Test attribute "swap_long"
      */
-    public function testPropertyStatus()
+    public function testPropertySwapLong()
     {
     }
 
     /**
-     * Test attribute "state"
+     * Test attribute "swap_short"
      */
-    public function testPropertyState()
+    public function testPropertySwapShort()
     {
     }
 
     /**
-     * Test attribute "city"
+     * Test attribute "vol_min"
      */
-    public function testPropertyCity()
+    public function testPropertyVolMin()
     {
     }
 
     /**
-     * Test attribute "address"
+     * Test attribute "vol_max"
      */
-    public function testPropertyAddress()
+    public function testPropertyVolMax()
     {
     }
 
     /**
-     * Test attribute "comment"
+     * Test attribute "vol_limit"
      */
-    public function testPropertyComment()
+    public function testPropertyVolLimit()
     {
     }
 
     /**
-     * Test attribute "agent_account"
+     * Test attribute "vol_step"
      */
-    public function testPropertyAgentAccount()
+    public function testPropertyVolStep()
     {
     }
 
     /**
-     * Test attribute "id_number"
+     * Test attribute "tick_value"
      */
-    public function testPropertyIdNumber()
+    public function testPropertyTickValue()
     {
     }
 
     /**
-     * Test attribute "zipcode"
+     * Test attribute "tick_size"
      */
-    public function testPropertyZipcode()
+    public function testPropertyTickSize()
     {
     }
 
     /**
-     * Test attribute "leverage"
+     * Test attribute "contract_size"
      */
-    public function testPropertyLeverage()
+    public function testPropertyContractSize()
     {
     }
 
     /**
-     * Test attribute "enabled"
+     * Test attribute "calc_mode"
      */
-    public function testPropertyEnabled()
+    public function testPropertyCalcMode()
     {
     }
 
     /**
-     * Test attribute "enable_change_password"
+     * Test attribute "digits"
      */
-    public function testPropertyEnableChangePassword()
+    public function testPropertyDigits()
     {
     }
 
     /**
-     * Test attribute "send_report"
+     * Test attribute "trade_sessions"
      */
-    public function testPropertySendReport()
-    {
-    }
-
-    /**
-     * Test attribute "read_only"
-     */
-    public function testPropertyReadOnly()
+    public function testPropertyTradeSessions()
     {
     }
 }

@@ -1,6 +1,6 @@
 # D4T\MT5Sdk\UserApi
 
-All URIs are relative to *http://localhost:6503/v1*
+All URIs are relative to */v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -381,7 +381,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **usersGroupGet**
-> \D4T\MT5Sdk\Models\ArrayOfCachedLogins usersGroupGet($group)
+> \D4T\MT5Sdk\Models\CachedLogins usersGroupGet($group)
 
 Get list of users
 
@@ -419,7 +419,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\D4T\MT5Sdk\Models\ArrayOfCachedLogins**](../Model/ArrayOfCachedLogins.md)
+[**\D4T\MT5Sdk\Models\CachedLogins**](../Model/CachedLogins.md)
 
 ### Authorization
 

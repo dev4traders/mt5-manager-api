@@ -1,6 +1,6 @@
 <?php
 /**
- * OrderApi
+ * TradeApi
  * PHP version 5
  *
  * @category Class
@@ -39,14 +39,14 @@ use D4T\MT5Sdk\HeaderSelector;
 use D4T\MT5Sdk\ObjectSerializer;
 
 /**
- * OrderApi Class Doc Comment
+ * TradeApi Class Doc Comment
  *
  * @category Class
  * @package  D4T\MT5Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class OrderApi
+class TradeApi
 {
     /**
      * @var ClientInterface
@@ -84,6 +84,599 @@ class OrderApi
     public function getConfig()
     {
         return $this->config;
+    }
+
+    /**
+     * Operation dealsUserLoginGet
+     *
+     * Get list of user deals
+     *
+     * @param  string $user_login The name that needs to be fetched for. (required)
+     * @param  string $days_back Days Back (required)
+     *
+     * @throws \D4T\MT5Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \D4T\MT5Sdk\Models\Deal[]
+     */
+    public function dealsUserLoginGet($user_login, $days_back)
+    {
+        list($response) = $this->dealsUserLoginGetWithHttpInfo($user_login, $days_back);
+        return $response;
+    }
+
+    /**
+     * Operation dealsUserLoginGetWithHttpInfo
+     *
+     * Get list of user deals
+     *
+     * @param  string $user_login The name that needs to be fetched for. (required)
+     * @param  string $days_back Days Back (required)
+     *
+     * @throws \D4T\MT5Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \D4T\MT5Sdk\Models\Deal[], HTTP status code, HTTP response headers (array of strings)
+     */
+    public function dealsUserLoginGetWithHttpInfo($user_login, $days_back)
+    {
+        $returnType = '\D4T\MT5Sdk\Models\Deal[]';
+        $request = $this->dealsUserLoginGetRequest($user_login, $days_back);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if (!in_array($returnType, ['string','integer','bool'])) {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\D4T\MT5Sdk\Models\Deal[]',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\D4T\MT5Sdk\Models\ReturnType',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation dealsUserLoginGetAsync
+     *
+     * Get list of user deals
+     *
+     * @param  string $user_login The name that needs to be fetched for. (required)
+     * @param  string $days_back Days Back (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function dealsUserLoginGetAsync($user_login, $days_back)
+    {
+        return $this->dealsUserLoginGetAsyncWithHttpInfo($user_login, $days_back)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation dealsUserLoginGetAsyncWithHttpInfo
+     *
+     * Get list of user deals
+     *
+     * @param  string $user_login The name that needs to be fetched for. (required)
+     * @param  string $days_back Days Back (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function dealsUserLoginGetAsyncWithHttpInfo($user_login, $days_back)
+    {
+        $returnType = '\D4T\MT5Sdk\Models\Deal[]';
+        $request = $this->dealsUserLoginGetRequest($user_login, $days_back);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'dealsUserLoginGet'
+     *
+     * @param  string $user_login The name that needs to be fetched for. (required)
+     * @param  string $days_back Days Back (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function dealsUserLoginGetRequest($user_login, $days_back)
+    {
+        // verify the required parameter 'user_login' is set
+        if ($user_login === null || (is_array($user_login) && count($user_login) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $user_login when calling dealsUserLoginGet'
+            );
+        }
+        // verify the required parameter 'days_back' is set
+        if ($days_back === null || (is_array($days_back) && count($days_back) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $days_back when calling dealsUserLoginGet'
+            );
+        }
+
+        $resourcePath = '/deals/{user_login}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($days_back !== null) {
+            $queryParams['days_back'] = ObjectSerializer::toQueryValue($days_back, null);
+        }
+
+        // path params
+        if ($user_login !== null) {
+            $resourcePath = str_replace(
+                '{' . 'user_login' . '}',
+                ObjectSerializer::toPathValue($user_login),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+            // // this endpoint requires Bearer token
+            if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation ordersUserLoginGet
+     *
+     * Get list of user orders
+     *
+     * @param  string $user_login The name that needs to be fetched for. (required)
+     * @param  string $days_back Days Back (required)
+     * @param  string $types Types (required)
+     *
+     * @throws \D4T\MT5Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \D4T\MT5Sdk\Models\Order[]
+     */
+    public function ordersUserLoginGet($user_login, $days_back, $types)
+    {
+        list($response) = $this->ordersUserLoginGetWithHttpInfo($user_login, $days_back, $types);
+        return $response;
+    }
+
+    /**
+     * Operation ordersUserLoginGetWithHttpInfo
+     *
+     * Get list of user orders
+     *
+     * @param  string $user_login The name that needs to be fetched for. (required)
+     * @param  string $days_back Days Back (required)
+     * @param  string $types Types (required)
+     *
+     * @throws \D4T\MT5Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \D4T\MT5Sdk\Models\Order[], HTTP status code, HTTP response headers (array of strings)
+     */
+    public function ordersUserLoginGetWithHttpInfo($user_login, $days_back, $types)
+    {
+        $returnType = '\D4T\MT5Sdk\Models\Order[]';
+        $request = $this->ordersUserLoginGetRequest($user_login, $days_back, $types);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if (!in_array($returnType, ['string','integer','bool'])) {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\D4T\MT5Sdk\Models\Order[]',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\D4T\MT5Sdk\Models\ReturnType',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation ordersUserLoginGetAsync
+     *
+     * Get list of user orders
+     *
+     * @param  string $user_login The name that needs to be fetched for. (required)
+     * @param  string $days_back Days Back (required)
+     * @param  string $types Types (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function ordersUserLoginGetAsync($user_login, $days_back, $types)
+    {
+        return $this->ordersUserLoginGetAsyncWithHttpInfo($user_login, $days_back, $types)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation ordersUserLoginGetAsyncWithHttpInfo
+     *
+     * Get list of user orders
+     *
+     * @param  string $user_login The name that needs to be fetched for. (required)
+     * @param  string $days_back Days Back (required)
+     * @param  string $types Types (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function ordersUserLoginGetAsyncWithHttpInfo($user_login, $days_back, $types)
+    {
+        $returnType = '\D4T\MT5Sdk\Models\Order[]';
+        $request = $this->ordersUserLoginGetRequest($user_login, $days_back, $types);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'ordersUserLoginGet'
+     *
+     * @param  string $user_login The name that needs to be fetched for. (required)
+     * @param  string $days_back Days Back (required)
+     * @param  string $types Types (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function ordersUserLoginGetRequest($user_login, $days_back, $types)
+    {
+        // verify the required parameter 'user_login' is set
+        if ($user_login === null || (is_array($user_login) && count($user_login) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $user_login when calling ordersUserLoginGet'
+            );
+        }
+        // verify the required parameter 'days_back' is set
+        if ($days_back === null || (is_array($days_back) && count($days_back) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $days_back when calling ordersUserLoginGet'
+            );
+        }
+        // verify the required parameter 'types' is set
+        if ($types === null || (is_array($types) && count($types) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $types when calling ordersUserLoginGet'
+            );
+        }
+
+        $resourcePath = '/orders/{user_login}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($days_back !== null) {
+            $queryParams['days_back'] = ObjectSerializer::toQueryValue($days_back, null);
+        }
+        // query params
+        if ($types !== null) {
+            $queryParams['types'] = ObjectSerializer::toQueryValue($types, null);
+        }
+
+        // path params
+        if ($user_login !== null) {
+            $resourcePath = str_replace(
+                '{' . 'user_login' . '}',
+                ObjectSerializer::toPathValue($user_login),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+            // // this endpoint requires Bearer token
+            if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
     }
 
     /**
@@ -282,310 +875,6 @@ class OrderApi
         $httpBody = '';
         $multipart = false;
 
-
-        // path params
-        if ($user_login !== null) {
-            $resourcePath = str_replace(
-                '{' . 'user_login' . '}',
-                ObjectSerializer::toPathValue($user_login),
-                $resourcePath
-            );
-        }
-
-        // body params
-        $_tempBody = null;
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            // $_tempBody is the method argument, if present
-            $httpBody = $_tempBody;
-            // \stdClass has no __toString(), so we should encode it manually
-            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($httpBody);
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
-                        'name' => $formParamName,
-                        'contents' => $formParamValue
-                    ];
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
-            }
-        }
-
-            // // this endpoint requires Bearer token
-            if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-            }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
-        return new Request(
-            'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation tradesUserLoginGet
-     *
-     * Get list of user trades
-     *
-     * @param  string $user_login The name that needs to be fetched for. (required)
-     * @param  string $days_back Days Back (required)
-     * @param  string $types Types (required)
-     *
-     * @throws \D4T\MT5Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \D4T\MT5Sdk\Models\Trade[]
-     */
-    public function tradesUserLoginGet($user_login, $days_back, $types)
-    {
-        list($response) = $this->tradesUserLoginGetWithHttpInfo($user_login, $days_back, $types);
-        return $response;
-    }
-
-    /**
-     * Operation tradesUserLoginGetWithHttpInfo
-     *
-     * Get list of user trades
-     *
-     * @param  string $user_login The name that needs to be fetched for. (required)
-     * @param  string $days_back Days Back (required)
-     * @param  string $types Types (required)
-     *
-     * @throws \D4T\MT5Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \D4T\MT5Sdk\Models\Trade[], HTTP status code, HTTP response headers (array of strings)
-     */
-    public function tradesUserLoginGetWithHttpInfo($user_login, $days_back, $types)
-    {
-        $returnType = '\D4T\MT5Sdk\Models\Trade[]';
-        $request = $this->tradesUserLoginGetRequest($user_login, $days_back, $types);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    $response->getBody()
-                );
-            }
-
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if (!in_array($returnType, ['string','integer','bool'])) {
-                    $content = json_decode($content);
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\D4T\MT5Sdk\Models\Trade[]',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 400:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\D4T\MT5Sdk\Models\ReturnType',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation tradesUserLoginGetAsync
-     *
-     * Get list of user trades
-     *
-     * @param  string $user_login The name that needs to be fetched for. (required)
-     * @param  string $days_back Days Back (required)
-     * @param  string $types Types (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function tradesUserLoginGetAsync($user_login, $days_back, $types)
-    {
-        return $this->tradesUserLoginGetAsyncWithHttpInfo($user_login, $days_back, $types)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation tradesUserLoginGetAsyncWithHttpInfo
-     *
-     * Get list of user trades
-     *
-     * @param  string $user_login The name that needs to be fetched for. (required)
-     * @param  string $days_back Days Back (required)
-     * @param  string $types Types (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function tradesUserLoginGetAsyncWithHttpInfo($user_login, $days_back, $types)
-    {
-        $returnType = '\D4T\MT5Sdk\Models\Trade[]';
-        $request = $this->tradesUserLoginGetRequest($user_login, $days_back, $types);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'tradesUserLoginGet'
-     *
-     * @param  string $user_login The name that needs to be fetched for. (required)
-     * @param  string $days_back Days Back (required)
-     * @param  string $types Types (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    protected function tradesUserLoginGetRequest($user_login, $days_back, $types)
-    {
-        // verify the required parameter 'user_login' is set
-        if ($user_login === null || (is_array($user_login) && count($user_login) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $user_login when calling tradesUserLoginGet'
-            );
-        }
-        // verify the required parameter 'days_back' is set
-        if ($days_back === null || (is_array($days_back) && count($days_back) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $days_back when calling tradesUserLoginGet'
-            );
-        }
-        // verify the required parameter 'types' is set
-        if ($types === null || (is_array($types) && count($types) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $types when calling tradesUserLoginGet'
-            );
-        }
-
-        $resourcePath = '/trades/{user_login}';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-        // query params
-        if ($days_back !== null) {
-            $queryParams['days_back'] = ObjectSerializer::toQueryValue($days_back, null);
-        }
-        // query params
-        if ($types !== null) {
-            $queryParams['types'] = ObjectSerializer::toQueryValue($types, null);
-        }
 
         // path params
         if ($user_login !== null) {

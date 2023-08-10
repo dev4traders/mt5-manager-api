@@ -1,6 +1,6 @@
 <?php
 /**
- * Trade
+ * Order
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \D4T\MT5Sdk\ObjectSerializer;
 
 /**
- * Trade Class Doc Comment
+ * Order Class Doc Comment
  *
  * @category Class
  * @package  D4T\MT5Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class Trade implements ModelInterface, ArrayAccess
+class Order implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class Trade implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Trade';
+    protected static $swaggerModelName = 'Order';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

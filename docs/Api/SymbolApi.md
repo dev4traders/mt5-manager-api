@@ -1,13 +1,13 @@
 # D4T\MT5Sdk\SymbolApi
 
-All URIs are relative to *http://localhost:6503/v1*
+All URIs are relative to */v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**symbolsGet**](SymbolApi.md#symbolsget) | **GET** /symbols/ | Get list of market symbols
 
 # **symbolsGet**
-> \D4T\MT5Sdk\Models\ArrayOfSymbols symbolsGet()
+> \D4T\MT5Sdk\Models\Symbol[] symbolsGet()
 
 Get list of market symbols
 
@@ -41,7 +41,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\D4T\MT5Sdk\Models\ArrayOfSymbols**](../Model/ArrayOfSymbols.md)
+[**\D4T\MT5Sdk\Models\Symbol[]**](../Model/Symbol.md)
 
 ### Authorization
 

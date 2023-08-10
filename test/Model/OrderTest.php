@@ -1,6 +1,6 @@
 <?php
 /**
- * BalanceTypeTest
+ * OrderTest
  *
  * PHP version 5
  *
@@ -31,15 +31,15 @@ namespace D4T\MT5Sdk;
 use PHPUnit\Framework\TestCase;
 
 /**
- * BalanceTypeTest Class Doc Comment
+ * OrderTest Class Doc Comment
  *
  * @category    Class
- * @description BalanceType
+ * @description Order
  * @package     D4T\MT5Sdk
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class BalanceTypeTest extends TestCase
+class OrderTest extends TestCase
 {
 
     /**
@@ -71,23 +71,16 @@ class BalanceTypeTest extends TestCase
     }
 
     /**
-     * Test "BalanceType"
+     * Test "Order"
      */
-    public function testBalanceType()
+    public function testOrder()
     {
     }
 
     /**
-     * Test attribute "login"
+     * Test attribute "symbol"
      */
-    public function testPropertyLogin()
-    {
-    }
-
-    /**
-     * Test attribute "amount"
-     */
-    public function testPropertyAmount()
+    public function testPropertySymbol()
     {
     }
 
@@ -99,9 +92,16 @@ class BalanceTypeTest extends TestCase
     }
 
     /**
-     * Test attribute "comment"
+     * Test attribute "type_str"
      */
-    public function testPropertyComment()
+    public function testPropertyTypeStr()
+    {
+    }
+
+    /**
+     * Test attribute "profit"
+     */
+    public function testPropertyProfit()
     {
     }
 }

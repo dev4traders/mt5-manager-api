@@ -1,6 +1,6 @@
 <?php
 /**
- * BalanceTypeTest
+ * CachedLoginsTest
  *
  * PHP version 5
  *
@@ -31,15 +31,15 @@ namespace D4T\MT5Sdk;
 use PHPUnit\Framework\TestCase;
 
 /**
- * BalanceTypeTest Class Doc Comment
+ * CachedLoginsTest Class Doc Comment
  *
  * @category    Class
- * @description BalanceType
+ * @description CachedLogins
  * @package     D4T\MT5Sdk
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class BalanceTypeTest extends TestCase
+class CachedLoginsTest extends TestCase
 {
 
     /**
@@ -71,37 +71,23 @@ class BalanceTypeTest extends TestCase
     }
 
     /**
-     * Test "BalanceType"
+     * Test "CachedLogins"
      */
-    public function testBalanceType()
+    public function testCachedLogins()
     {
     }
 
     /**
-     * Test attribute "login"
+     * Test attribute "cached_at"
      */
-    public function testPropertyLogin()
+    public function testPropertyCachedAt()
     {
     }
 
     /**
-     * Test attribute "amount"
+     * Test attribute "data"
      */
-    public function testPropertyAmount()
-    {
-    }
-
-    /**
-     * Test attribute "type"
-     */
-    public function testPropertyType()
-    {
-    }
-
-    /**
-     * Test attribute "comment"
-     */
-    public function testPropertyComment()
+    public function testPropertyData()
     {
     }
 }
