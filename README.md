@@ -76,7 +76,7 @@ try {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *http://localhost:6503/v1*
+All URIs are relative to */v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -85,9 +85,11 @@ Class | Method | HTTP request | Description
 *BasicApi* | [**pingGet**](docs/Api/BasicApi.md#pingget) | **GET** /ping/ | Ping API
 *GroupApi* | [**groupGroupNameGet**](docs/Api/GroupApi.md#groupgroupnameget) | **GET** /group/{group_name} | Get group by name
 *GroupApi* | [**groupsGet**](docs/Api/GroupApi.md#groupsget) | **GET** /groups/ | Get list of groups
-*OrderApi* | [**positionsUserLoginGet**](docs/Api/OrderApi.md#positionsuserloginget) | **GET** /positions/{user_login} | Get list of user positions
-*OrderApi* | [**tradesUserLoginGet**](docs/Api/OrderApi.md#tradesuserloginget) | **GET** /trades/{user_login} | Get list of user trades
 *SymbolApi* | [**symbolsGet**](docs/Api/SymbolApi.md#symbolsget) | **GET** /symbols/ | Get list of market symbols
+*TradeApi* | [**closeAllUserLoginDelete**](docs/Api/TradeApi.md#closealluserlogindelete) | **DELETE** /close_all/{user_login} | Close all positions
+*TradeApi* | [**dealsUserLoginGet**](docs/Api/TradeApi.md#dealsuserloginget) | **GET** /deals/{user_login} | Get list of user deals
+*TradeApi* | [**ordersUserLoginGet**](docs/Api/TradeApi.md#ordersuserloginget) | **GET** /orders/{user_login} | Get list of user orders
+*TradeApi* | [**positionsUserLoginGet**](docs/Api/TradeApi.md#positionsuserloginget) | **GET** /positions/{user_login} | Get list of user positions
 *UserApi* | [**updateUser**](docs/Api/UserApi.md#updateuser) | **POST** /user/update | Update user
 *UserApi* | [**userAddPost**](docs/Api/UserApi.md#useraddpost) | **POST** /user/add | Create user
 *UserApi* | [**userDepositPost**](docs/Api/UserApi.md#userdepositpost) | **POST** /user/deposit | Deposit account
@@ -100,28 +102,21 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [Account](docs/Model/Account.md)
- - [ArrayOfCachedLogins](docs/Model/ArrayOfCachedLogins.md)
- - [ArrayOfGroups](docs/Model/ArrayOfGroups.md)
- - [ArrayOfPositions](docs/Model/ArrayOfPositions.md)
- - [ArrayOfPositionsInner](docs/Model/ArrayOfPositionsInner.md)
- - [ArrayOfSymbols](docs/Model/ArrayOfSymbols.md)
- - [ArrayOfSymbolsInner](docs/Model/ArrayOfSymbolsInner.md)
- - [ArrayOfTrades](docs/Model/ArrayOfTrades.md)
- - [ArrayOfTradesInner](docs/Model/ArrayOfTradesInner.md)
- - [ArrayOfUserResponses](docs/Model/ArrayOfUserResponses.md)
- - [ArrayOfUserResponsesInner](docs/Model/ArrayOfUserResponsesInner.md)
  - [BalanceType](docs/Model/BalanceType.md)
+ - [CachedLogins](docs/Model/CachedLogins.md)
+ - [Deal](docs/Model/Deal.md)
  - [Group](docs/Model/Group.md)
  - [InitReturnType](docs/Model/InitReturnType.md)
+ - [Order](docs/Model/Order.md)
  - [PingReturnType](docs/Model/PingReturnType.md)
+ - [Position](docs/Model/Position.md)
  - [ResetPwdType](docs/Model/ResetPwdType.md)
  - [ReturnType](docs/Model/ReturnType.md)
- - [TradesFilterType](docs/Model/TradesFilterType.md)
+ - [Symbol](docs/Model/Symbol.md)
+ - [SymbolTradeSessions](docs/Model/SymbolTradeSessions.md)
  - [User](docs/Model/User.md)
  - [UserReturnType](docs/Model/UserReturnType.md)
  - [UserReturnTypeUser](docs/Model/UserReturnTypeUser.md)
- - [Users](docs/Model/Users.md)
- - [UsersInner](docs/Model/UsersInner.md)
 
 ## Documentation For Authorization
 

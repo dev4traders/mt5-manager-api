@@ -4,9 +4,61 @@ All URIs are relative to */v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**closeAllUserLoginDelete**](TradeApi.md#closealluserlogindelete) | **DELETE** /close_all/{user_login} | Close all positions
 [**dealsUserLoginGet**](TradeApi.md#dealsuserloginget) | **GET** /deals/{user_login} | Get list of user deals
 [**ordersUserLoginGet**](TradeApi.md#ordersuserloginget) | **GET** /orders/{user_login} | Get list of user orders
 [**positionsUserLoginGet**](TradeApi.md#positionsuserloginget) | **GET** /positions/{user_login} | Get list of user positions
+
+# **closeAllUserLoginDelete**
+> closeAllUserLoginDelete($user_login)
+
+Close all positions
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearerAuth
+    $config = D4T\MT5Sdk\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new D4T\MT5Sdk\MT5Manager\TradeApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$user_login = "user_login_example"; // string | The login that needs to be flattern
+
+try {
+    $apiInstance->closeAllUserLoginDelete($user_login);
+} catch (Exception $e) {
+    echo 'Exception when calling TradeApi->closeAllUserLoginDelete: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **user_login** | **string**| The login that needs to be flattern |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[bearerAuth](../../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **dealsUserLoginGet**
 > \D4T\MT5Sdk\Models\Deal[] dealsUserLoginGet($user_login, $days_back)
