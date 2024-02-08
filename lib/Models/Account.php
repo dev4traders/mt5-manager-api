@@ -60,6 +60,7 @@ class Account implements ModelInterface, ArrayAccess
         'balance' => 'float',
         'profit' => 'float',
         'blocked_profit' => 'float',
+        'blocked_commission' => 'float',
         'leverage' => 'float',
         'volume' => 'float',
         'equity' => 'float',
@@ -78,6 +79,7 @@ class Account implements ModelInterface, ArrayAccess
         'balance' => null,
         'profit' => null,
         'blocked_profit' => null,
+        'blocked_commission' => null,
         'leverage' => null,
         'volume' => null,
         'equity' => null,
@@ -117,6 +119,7 @@ class Account implements ModelInterface, ArrayAccess
         'balance' => 'balance',
         'profit' => 'profit',
         'blocked_profit' => 'blocked_profit',
+        'blocked_commission' => 'blocked_commission',
         'leverage' => 'leverage',
         'volume' => 'volume',
         'equity' => 'equity',
@@ -135,6 +138,7 @@ class Account implements ModelInterface, ArrayAccess
         'balance' => 'setBalance',
         'profit' => 'setProfit',
         'blocked_profit' => 'setBlockedProfit',
+        'blocked_commission' => 'setBlockedCommission',
         'leverage' => 'setLeverage',
         'volume' => 'setVolume',
         'equity' => 'setEquity',
@@ -153,6 +157,7 @@ class Account implements ModelInterface, ArrayAccess
         'balance' => 'getBalance',
         'profit' => 'getProfit',
         'blocked_profit' => 'getBlockedProfit',
+        'blocked_commission' => 'getBlockedCommission',
         'leverage' => 'getLeverage',
         'volume' => 'getVolume',
         'equity' => 'getEquity',
@@ -223,6 +228,7 @@ class Account implements ModelInterface, ArrayAccess
         $this->container['balance'] = isset($data['balance']) ? $data['balance'] : null;
         $this->container['profit'] = isset($data['profit']) ? $data['profit'] : null;
         $this->container['blocked_profit'] = isset($data['blocked_profit']) ? $data['blocked_profit'] : null;
+        $this->container['blocked_commission'] = isset($data['blocked_commission']) ? $data['blocked_commission'] : null;
         $this->container['leverage'] = isset($data['leverage']) ? $data['leverage'] : null;
         $this->container['volume'] = isset($data['volume']) ? $data['volume'] : null;
         $this->container['equity'] = isset($data['equity']) ? $data['equity'] : null;
@@ -350,6 +356,30 @@ class Account implements ModelInterface, ArrayAccess
     public function setBlockedProfit($blocked_profit)
     {
         $this->container['blocked_profit'] = $blocked_profit;
+
+        return $this;
+    }
+
+    /**
+     * Gets blocked_commission
+     *
+     * @return float
+     */
+    public function getBlockedCommission()
+    {
+        return $this->container['blocked_commission'];
+    }
+
+    /**
+     * Sets blocked_commission
+     *
+     * @param float $blocked_commission blocked_commission
+     *
+     * @return $this
+     */
+    public function setBlockedCommission($blocked_commission)
+    {
+        $this->container['blocked_commission'] = $blocked_commission;
 
         return $this;
     }
