@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 **login** | **int** |  | 
 **balance** | **float** |  | [optional] 
 **profit** | **float** |  | [optional] 
+**blocked_profit** | **float** |  | [optional] 
 **leverage** | **float** |  | [optional] 
 **volume** | **float** |  | [optional] 
 **equity** | **float** |  | [optional] 
