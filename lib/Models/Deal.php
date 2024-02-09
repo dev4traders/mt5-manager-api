@@ -263,6 +263,7 @@ class Deal implements ModelInterface, ArrayAccess
     const ACTION_7 = 7;
     const TYPE_0 = 0;
     const TYPE_1 = 1;
+    const TYPE_4 = 4;
     const TYPE_6 = 6;
     const TYPE_7 = 7;
 
@@ -335,6 +336,7 @@ class Deal implements ModelInterface, ArrayAccess
         return [
             self::TYPE_0,
             self::TYPE_1,
+            self::TYPE_4,
             self::TYPE_6,
             self::TYPE_7,
         ];
@@ -466,7 +468,7 @@ class Deal implements ModelInterface, ArrayAccess
     /**
      * Sets entry
      *
-     * @param int $entry Deal Утекн:  * `0` - in market  * `1` - out of market  * `2` - reverse  * `3` - closed by  hedged position
+     * @param int $entry Deal Enum:  * `0` - in market  * `1` - out of market  * `2` - reverse  * `3` - closed by  hedged position
      *
      * @return $this
      */
@@ -565,7 +567,7 @@ class Deal implements ModelInterface, ArrayAccess
     /**
      * Sets type
      *
-     * @param int $type Deal Type:  * `0` - buy  * `1` - sell  * `6` - balance  * `7` - commission
+     * @param int $type Deal Type:  * `0` - buy  * `1` - sell  * `4` - charge               * `6` - balance  * `7` - commission
      *
      * @return $this
      */
